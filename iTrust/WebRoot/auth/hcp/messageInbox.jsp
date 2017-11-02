@@ -57,7 +57,7 @@ pageTitle = "iTrust - View My Message ";
 			nf += request.getParameter("endDate");
 			
 			//Validate Filter
-			nf = action.validateAndCreateFilter(nf);
+			//nf = action.validateAndCreateFilter(nf);
 			if(nf.startsWith("Error")) {
 				error = true;
 				headerMessage = nf;
@@ -67,7 +67,7 @@ pageTitle = "iTrust - View My Message ";
 				if(request.getParameter("test") != null) {
 					response.sendRedirect("messageInbox.jsp?edit=true&testFilter="+nf);
 				} else if(request.getParameter("save") != null) {
-					f_action.editMessageFilter(nf);
+					//f_action.editMessageFilter(nf);
 					response.sendRedirect("messageInbox.jsp?filter=true"); 
 				}
 			}
@@ -83,7 +83,7 @@ pageTitle = "iTrust - View My Message ";
 					//do nothing
 				}
 			}
-		} else {
+		} /** else {
 			String filter = dao.getPersonnel(loggedInMID.longValue()).getMessageFilter();
 			if(!filter.equals("")) {
 				String[] f = filter.split(",", -1);
@@ -95,7 +95,7 @@ pageTitle = "iTrust - View My Message ";
 					}
 				}
 			}
-		}
+		} */
 	}
 	
 	//Sorts messages
@@ -125,7 +125,7 @@ pageTitle = "iTrust - View My Message ";
 		if(request.getParameter("testFilter") != null) {
 			filter = request.getParameter("testFilter");
 		} else {
-			filter = dao.getPersonnel(loggedInMID.longValue()).getMessageFilter();
+			//filter = dao.getPersonnel(loggedInMID.longValue()).getMessageFilter();
 		}
 		if(!filter.equals("") && !filter.equals(",,,,,")) {
 			List<MessageBean> filtered = action.filterMessages(messages, filter);
