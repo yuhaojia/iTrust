@@ -122,5 +122,19 @@ public class EditPersonnelTest extends TestCase {
 		assertEquals("10453", p.getZip());
 		assertEquals("999-888-7777", p.getPhone());
 	}
+
+	/**
+	 * Test editing filter
+	 * @throws Exception
+	 */
+	public void testEditFilter() throws Exception {
+		String filter = "Andy Programmer,Scratchy Throat,,,,";
+		long mid = 9000000000L;
+		PersonnelBean p = personnelDAO.getPersonnel(mid);
+		assertEquals(",,,,,", p.getMessageFilter());
+		personnelDAO.editMessageFilter(filter, mid);
+		p = personnelDAO.getPersonnel(mid);
+		assertEquals(filter, p.getMessageFilter());
+	}
 	
 }

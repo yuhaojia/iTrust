@@ -161,4 +161,13 @@ public class EditPatientAction extends PatientBaseAction {
 		
 		return true;
 	}
+
+	public void editMessageFilter(String filter, long mid) {
+		try {
+			patientDAO.editMessageFilter(filter, mid);
+		}
+		catch(DBException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
