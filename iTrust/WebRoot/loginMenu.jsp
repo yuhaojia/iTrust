@@ -71,9 +71,10 @@ function fillLoginFields(u,p) {
 		<br />
 <%
 	if (!AddNewPRAction.getEmailValidation()){
-	    %>
+	    String msg = String.valueOf(AddNewPRAction.getEmailValidation());
+%>
 		<div style="align: center; margin-bottom: 10px;">
-			<span class="iTrustError" style="font-size: 16px;"><%= StringEscapeUtils.escapeHtml("Email not valid") %></span>
+			<span class="iTrustError" style="font-size: 16px;"><%= StringEscapeUtils.escapeHtml("Email not valid"+msg) %></span>
 		</div>
 <%
 	}

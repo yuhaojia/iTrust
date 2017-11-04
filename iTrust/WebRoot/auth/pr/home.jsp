@@ -14,7 +14,7 @@
 
 <%@include file="/header.jsp" %>
 
-<%@include file="/auth/uap/notificationArea.jsp" %>
+<%@include file="/auth/pr/notificationArea.jsp" %>
 
 <div style="text-align: center; height: 300px;">
     <h2>Welcome <%= StringEscapeUtils.escapeHtml("" + (userName )) %>!</h2>

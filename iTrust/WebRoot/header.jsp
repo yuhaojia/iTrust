@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="edu.ncsu.csc.itrust.action.AddNewPRAction"%>
-
 <%@taglib uri='/WEB-INF/cewolf.tld' prefix='cewolf'%>
 <%@page import="org.apache.commons.lang.StringEscapeUtils"%>
+<%@page import="edu.ncsu.csc.itrust.action.AddNewPRAction"%>
 
 <%@include file="/authenticate.jsp"%>
 
@@ -138,6 +137,9 @@
 					<%
 						} else if (userRole.equals("lt")) {
 					%><%@include file="/auth/lt/menu.jsp"%>
+					<%
+						} else if (AddNewPRAction.getIsNewPR()){
+					%><%@include file="/auth/pr/menu.jsp"%>
 					<%
 						}
 							} //no one is logged in

@@ -8,6 +8,8 @@
 
 <%@page import="edu.ncsu.csc.itrust.action.AddNewPRAction"%>
 <%@page import="edu.ncsu.csc.itrust.enums.TransactionType"%>
+<%@page import="edu.ncsu.csc.itrust.beans.PreregisteredPatientBean"%>
+<%@ page import="edu.ncsu.csc.itrust.dao.mysql.PatientDAO" %>
 
 <%@include file="/global.jsp" %>
 
@@ -22,7 +24,7 @@ String pass = request.getParameter("j_password");
 String passverif = request.getParameter("j_passwordverif");
 
 if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
-//    session.setAttribute("userRole", "pr");
+    AddNewPRAction.setIsNewPR(true);
 %>
 
 <%@include file="/header.jsp" %>
@@ -50,6 +52,26 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
     String height = request.getParameter("j_height");
     String weight = request.getParameter("j_weight");
     String smoking = request.getParameter("smoking");
+
+    PreregisteredPatientBean p = new PreregisteredPatientBean();
+
+    p.setFirstName(firstname);
+    p.setLastName(lastname);
+    p.setStreetAddress1(addr1);
+    p.setStreetAddress2(addr2);
+    p.setCity(city);
+    p.setState(state);
+    p.setZip(zip);
+    p.setPhone(phone);
+
+    p.setIcName(ins_name);
+    p.setIcAddress1(ins_addr1);
+    p.setIcAddress2(ins_addr2);
+    p.setIcCity(ins_city);
+    p.setIcState(ins_state);
+    p.setIcZip(ins_zip);
+    p.setIcPhone(ins_phone);
+
 
     }
 else {
