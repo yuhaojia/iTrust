@@ -4,6 +4,7 @@
 <%@page import="edu.ncsu.csc.itrust.dao.mysql.AuthDAO"%>
 <%@page import="edu.ncsu.csc.itrust.action.EventLoggingAction"%>
 <%@page import="edu.ncsu.csc.itrust.enums.TransactionType"%>
+<%@page import="edu.ncsu.csc.itrust.action.AddNewPRAction"%>
 
 <%
 DAOFactory prodDAO = DAOFactory.getProductionInstance(); 
@@ -58,6 +59,7 @@ try {
 		else if (request.isUserInRole("lt")) {
 			userRole = "lt";
 		}
+
 		session.setAttribute("userRole", userRole);
 	}
 	

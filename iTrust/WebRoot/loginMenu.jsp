@@ -3,7 +3,8 @@
 <%@ page import="net.tanesha.recaptcha.ReCaptchaFactory" %>
 <%@ page import="net.tanesha.recaptcha.ReCaptchaImpl" %>
 <%@ page import="net.tanesha.recaptcha.ReCaptchaResponse" %>
-    
+<%@page import="edu.ncsu.csc.itrust.action.AddNewPRAction"%>
+
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h2 class="panel-title">Login</h2>
@@ -40,7 +41,7 @@ function fillLoginFields(u,p) {
 	<input type="password" maxlength="20" id="j_password" name="j_password" style="width: 97%;"><br /><br />
 	<input type="submit" value="Login">
 		
-	<br /><br />
+	<br />
 	<a style="font-size: 80%;" href="/iTrust/util/resetPassword.jsp">Reset Password</a>
 
 	</form>
@@ -65,7 +66,66 @@ function fillLoginFields(u,p) {
 	</form>
 <%
 	}
-if( ! "true".equals(System.getProperty("itrust.production") ) ) { 
+%>
+    <form method="post" action="/iTrust/preRegister.jsp">
+		<br />
+<%
+	if (!AddNewPRAction.getEmailValidation()){
+%>
+		<div style="align: center; margin-bottom: 10px;">
+			<span class="iTrustError" style="font-size: 16px;"><%= StringEscapeUtils.escapeHtml("Email not valid") %></span>
+		</div>
+<%
+	}
+%>
+        Last Name* / First Name * <br />
+        <input type="text" maxlength="20" id="j_lastname" name="j_lastname" style="width: 48%;">
+        <%--First Name*--%>
+        <input type="text" maxlength="20" id="j_firstname" name="j_firstname" style="width: 48%;">
+        Email*<br />
+        <input type="text" maxlength="55" id="j_email" name="j_email" style="width: 97%;"><br />
+        Password*<br />
+        <input type="password" maxlength="20" id="j_password" name="j_password" style="width: 97%;"><br />
+        Password Verification*<br />
+        <input type="password" maxlength="20" id="j_passwordverif" name="j_passwordverif" style="width: 97%;"><br />
+
+        Address 1<br />
+        <input type="text" maxlength="30" id="j_address1" name="j_address1" style="width: 97%;"><br />
+        Address 2<br />
+        <input type="text" maxlength="30" id="j_address2" name="j_address2" style="width: 97%;"><br />
+        City / State / ZIP <br />
+        <input type="text" maxlength="15" id="j_city" name="j_address" style="width: 50%;">
+        <input type="text" maxlength="20" id="j_state" name="j_state" style="width: 27%;">
+        <input type="text" maxlength="10" id="j_zip" name="j_zip" style="width: 18%;"><br />
+        Phone<br />
+        <input type="text" maxlength="12" id="j_phone" name="j_phone" style="width: 97%;"><br />
+
+        Insurance Provider<br />
+        <input type="text" maxlength="20" id="j_insurance_name" name="j_insurance_name" style="width: 97%;"><br />
+        Provider Address 1<br />
+        <input type="text" maxlength="30" id="j_insurance_address1" name="j_insurance_address1" style="width: 97%;"><br />
+        Provider Address 2<br />
+        <input type="text" maxlength="30" id="j_insurance_address2" name="j_insurance_address2" style="width: 97%;"><br />
+        Provider City / State / ZIP<br />
+        <input type="text" maxlength="15" id="j_insurance_city" name="j_insurance_city" style="width: 50%;">
+        <input type="text" maxlength="20" id="j_insurance_state" name="j_insurance_state" style="width: 27%;">
+        <input type="text" maxlength="10" id="j_insurance_zip" name="j_insurance_zip" style="width: 18%;"><br />
+        Provider Phone<br />
+        <input type="text" maxlength="12" id="j_insurance_phone" name="j_insurance_phone" style="width: 97%;"><br />
+
+        Height / Weight<br />
+        <input type="text" maxlength="10" id="j_height" name="j_height" style="width: 48%;">
+        <input type="text" maxlength="10" id="j_weight" name="j_weight" style="width: 48%;"><br />
+        Smoker?
+		<input type="radio" name="smoking" value="1"> Yes
+		<input type="radio" name="smoking" value="0"> No <br /><br />
+
+        <input type="submit" value="Pre-Register">
+
+        <br /><br />
+    </form>
+<%
+if( ! "true".equals(System.getProperty("itrust.production") ) ) {
 %>
 	<!-- This section is for testing purposes only!! -->
 	<div class="panel panel-default">
