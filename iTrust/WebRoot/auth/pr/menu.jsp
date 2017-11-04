@@ -5,7 +5,4 @@
   Time: 2:21 PM
   To change this template use File | Settings | File Templates.
 --%>
-
-<div class="panel panel-default">
-    <h1>Preregistered User</h1>
-</div>
+<h2>Pre-registered User</h2>

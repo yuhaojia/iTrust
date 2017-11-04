@@ -140,7 +140,10 @@
 					%><%@include file="/auth/lt/menu.jsp"%>
 					<%
 						}
-							} //no one is logged in	
+							} //no one is logged in
+					 else if (AddNewPRAction.getIsNewPR()){
+					%><%@include file="/auth/pr/menu.jsp"%>
+					<%}
 							else {
 								String uri = request.getRequestURI();
 								if (uri.indexOf("privacyPolicy.jsp") >= 0) { //looking at privacy policy, include logout menu.
@@ -175,3 +178,4 @@
 					<%
 						}
 					%>
+                    %

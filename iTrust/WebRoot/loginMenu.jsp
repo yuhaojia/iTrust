@@ -67,7 +67,7 @@ function fillLoginFields(u,p) {
 <%
 	}
 %>
-    <form method="post" action="/iTrust/preRegister.jsp">
+    <form method="post" action="/iTrust/auth/pr/preRegister.jsp">
 		<br />
 <%
 	if (!AddNewPRAction.getEmailValidation()){

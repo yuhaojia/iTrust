@@ -26,7 +26,7 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
 %>
 
 <%@include file="/header.jsp" %>
-<h1>Hello world!</h1>
+<h1>You are successfully pre-registered.</h1>
 <%@include file="/footer.jsp" %>
 <%
     AddNewPRAction.setEmailValidation(true);
