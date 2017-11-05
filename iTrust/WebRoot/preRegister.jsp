@@ -32,6 +32,7 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
 
 <%@include file="/header.jsp" %>
 <h1>You are successfully pre-registered.</h1>
+<h2>You require HCP approval for full access.</h2>
 <%@include file="/footer.jsp" %>
 <%
     AddNewPRAction.setEmailValidation(true);
@@ -89,7 +90,7 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
         p.setStreetAddress2(addr2);
     if (city != null)
         p.setCity(city);
-    if (state != null)
+    if (state != null && !state.equals(""))
         p.setState(state);
     if (zip != null)
         p.setZip(zip);
@@ -103,7 +104,7 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
         p.setIcAddress2(ins_addr2);
     if (ins_city != null)
         p.setIcCity(ins_city);
-    if (ins_state != null)
+    if (ins_state != null && !ins_state.equals(""))
         p.setIcState(ins_state);
     if (ins_zip != null)
         p.setIcZip(ins_zip);
