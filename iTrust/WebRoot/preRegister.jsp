@@ -6,10 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@page import="edu.ncsu.csc.itrust.action.AddNewPRAction"%>
 <%@page import="edu.ncsu.csc.itrust.enums.TransactionType"%>
 <%@ page import="edu.ncsu.csc.itrust.dao.mysql.PatientDAO" %>
 <%@ page import="edu.ncsu.csc.itrust.beans.PatientBean" %>
+<%@ page import="edu.ncsu.csc.itrust.action.AddPatientAction" %>
+<%@ page import="edu.ncsu.csc.itrust.exception.FormValidationException" %>
+<%@ page import="edu.ncsu.csc.itrust.BeanBuilder" %>
+<%@ page import="edu.ncsu.csc.itrust.beans.HealthRecord" %>
 
 <%@include file="/global.jsp" %>
 
@@ -53,24 +56,71 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
     String weight = request.getParameter("j_weight");
     String smoking = request.getParameter("smoking");
 
-    PatientBean p = new PatientBean();
+    // Health record stores height, weight, smoking information
+    HealthRecord h = new HealthRecord();
+    try {
+        h.setHeight(Double.valueOf(height));
+        h.setWeight(Double.valueOf(weight));
+        int smoker = Integer.parseInt(smoking);
+        if (smoker == 1) {
+            // Smoker, unknown current status
+            h.setSmoker(5);
+        } else {
+            // Unknown if ever smoked
+            h.setSmoker(9);
+        }
+    } catch (Exception e) {
+        // Could not parse the user input
+    }
+    // Because the HealthRecord bean is not tested properly...
+    h.setOfficeVisitDateStr("00/00/0000");
 
+    // Patient bean stores all information that is not in health record
+    PatientBean p = new BeanBuilder<PatientBean>().build(request.getParameterMap(), new PatientBean());
+
+    // TODO: Find a cleaner way of doing this
+    // Populate the patient bean
     p.setFirstName(firstname);
     p.setLastName(lastname);
-    p.setStreetAddress1(addr1);
-    p.setStreetAddress2(addr2);
-    p.setCity(city);
-    p.setState(state);
-    p.setZip(zip);
-    p.setPhone(phone);
+    p.setEmail(email);
+    if (addr1 != null)
+        p.setStreetAddress1(addr1);
+    if (addr2 != null)
+        p.setStreetAddress2(addr2);
+    if (city != null)
+        p.setCity(city);
+    if (state != null)
+        p.setState(state);
+    if (zip != null)
+        p.setZip(zip);
+    if (phone != null)
+        p.setPhone(phone);
+    if (ins_name != null)
+        p.setIcName(ins_name);
+    if (ins_addr1 != null)
+        p.setIcAddress1(ins_addr1);
+    if (ins_addr2 != null)
+        p.setIcAddress2(ins_addr2);
+    if (ins_city != null)
+        p.setIcCity(ins_city);
+    if (ins_state != null)
+        p.setIcState(ins_state);
+    if (ins_zip != null)
+        p.setIcZip(ins_zip);
+    if (ins_phone != null)
+        p.setIcPhone(ins_phone);
+    p.setPreregistered(true);
 
-    p.setIcName(ins_name);
-    p.setIcAddress1(ins_addr1);
-    p.setIcAddress2(ins_addr2);
-    p.setIcCity(ins_city);
-    p.setIcState(ins_state);
-    p.setIcZip(ins_zip);
-    p.setIcPhone(ins_phone);
+    try {
+        long newMID = new AddPatientAction(prodDAO).addPRPatient(p, h);
+        loggingAction.logEvent(TransactionType.PATIENT_CREATE, 0, newMID, "New preregistered patient");
+    } catch(FormValidationException e){
+        %>
+        <div align=center>
+            <span class="iTrustError"><%=StringEscapeUtils.escapeHtml(e.getMessage()) %></span>
+        </div>
+        <%
+    }
 
 
     }
