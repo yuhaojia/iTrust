@@ -69,4 +69,22 @@ public class AddPatientAction {
 		patientDAO.editPatient(p, loggedInMID);
 		return newMID;
 	}
+
+	/**
+	 * Add a preregistered patient.
+	 *
+	 * @param p
+	 * @return
+	 * @throws FormValidationException
+	 * @throws ITrustException
+	 */
+	public long addPRPatient(PatientBean p) throws FormValidationException, ITrustException {
+		new AddPatientValidator().validate(p);
+		long newMID = patientDAO.addEmptyPatient();
+		p.setMID(newMID);
+		String pwd = authDAO.addUser(newMID, Role.PATIENT, RandomPassword.getRandomPassword());
+		p.setPassword(pwd);
+		patientDAO.editPatient(p, -1);
+		return newMID;
+	}
 }

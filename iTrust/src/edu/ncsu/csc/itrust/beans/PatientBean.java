@@ -60,8 +60,15 @@ public class PatientBean implements Serializable, Comparable<PatientBean> {
 	private String language = "";
 	private String spiritualPractices = "";
 	private String alternateName = "";
+
+
 	private String dateOfDeactivationStr = "";
 
+	private boolean isPreregistered = false;
+
+	public boolean isPreregistered() { return isPreregistered; }
+
+	public void setPreregistered(boolean preregistered) { isPreregistered = preregistered; }
 
 	public BloodType getBloodType() {
 		return bloodType;

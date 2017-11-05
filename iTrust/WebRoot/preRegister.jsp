@@ -8,8 +8,8 @@
 
 <%@page import="edu.ncsu.csc.itrust.action.AddNewPRAction"%>
 <%@page import="edu.ncsu.csc.itrust.enums.TransactionType"%>
-<%@page import="edu.ncsu.csc.itrust.beans.PreregisteredPatientBean"%>
 <%@ page import="edu.ncsu.csc.itrust.dao.mysql.PatientDAO" %>
+<%@ page import="edu.ncsu.csc.itrust.beans.PatientBean" %>
 
 <%@include file="/global.jsp" %>
 
@@ -53,7 +53,7 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
     String weight = request.getParameter("j_weight");
     String smoking = request.getParameter("smoking");
 
-    PreregisteredPatientBean p = new PreregisteredPatientBean();
+    PatientBean p = new PatientBean();
 
     p.setFirstName(firstname);
     p.setLastName(lastname);
