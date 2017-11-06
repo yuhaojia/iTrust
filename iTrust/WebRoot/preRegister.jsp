@@ -23,7 +23,7 @@ loggingAction.logEvent(TransactionType.HOME_VIEW, 0, 0, "PR Home");
 
 <%
 String email = request.getParameter("j_email");
-String pass = request.getParameter("j_password");
+String pass = request.getParameter("j_pass");
 String passverif = request.getParameter("j_passwordverif");
 String lastname = request.getParameter("j_lastname");
 String firstname = request.getParameter("j_firstname");
@@ -59,7 +59,7 @@ if (loginFlag){
 <%@include file="/header.jsp" %>
 <h1>You are successfully pre-registered.</h1>
 <h2>You require HCP approval for full access.</h2>
-<%@include file="/footer.jsp" %>
+
 <%
     AddNewPRAction.setEmailValidation(true);
     String addr1 = request.getParameter("j_address1");
@@ -107,6 +107,7 @@ if (loginFlag){
     // Populate the patient bean
     p.setFirstName(firstname);
     p.setLastName(lastname);
+    p.setPassword(pass);
     p.setEmail(email);
     if (addr1 != null)
         p.setStreetAddress1(addr1);
@@ -139,6 +140,9 @@ if (loginFlag){
     try {
         long newMID = new AddPatientAction(prodDAO).addPRPatient(p, h);
         loggingAction.logEvent(TransactionType.PATIENT_CREATE, 0, newMID, "New preregistered patient");
+    %>
+    <h2>New MID: <%=newMID%></h2>
+    <%
     } catch(FormValidationException e){
         %>
         <div align=center>
@@ -147,8 +151,10 @@ if (loginFlag){
         <%
     }
 
+    %>
 
-    }
+    <%@include file="/footer.jsp" %>
+<%  }
     else {
         response.sendRedirect("auth/forwardUser.jsp");
     }
