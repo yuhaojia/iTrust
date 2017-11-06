@@ -97,8 +97,6 @@ if (loginFlag){
     } catch (Exception e) {
         // Could not parse the user input
     }
-    // Because the HealthRecord bean is not tested properly...
-    h.setOfficeVisitDateStr("00/00/0000");
 
     // Patient bean stores all information that is not in health record
     PatientBean p = new BeanBuilder<PatientBean>().build(request.getParameterMap(), new PatientBean());

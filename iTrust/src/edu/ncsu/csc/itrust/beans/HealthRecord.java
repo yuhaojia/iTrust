@@ -17,7 +17,7 @@ import java.util.Date;
 public class HealthRecord {
 	private long patientID = 0;
 	private long officeVisitID = 0;
-	private String officeVisitDate = "0000-00-00";
+	private String officeVisitDate = "00/00/0000";
 	private double headCircumference = 0;
 	private double height = 0;
 	private double weight = 0;
