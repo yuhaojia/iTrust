@@ -25,8 +25,34 @@ loggingAction.logEvent(TransactionType.HOME_VIEW, 0, 0, "PR Home");
 String email = request.getParameter("j_email");
 String pass = request.getParameter("j_password");
 String passverif = request.getParameter("j_passwordverif");
+String lastname = request.getParameter("j_lastname");
+String firstname = request.getParameter("j_firstname");
 
-if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
+Boolean loginFlag = true;
+
+if (lastname.isEmpty() || firstname.isEmpty() || pass.isEmpty() || passverif.isEmpty() || email.isEmpty()){
+    loginFlag = false;
+    AddNewPRAction.setReqFields(false);
+}
+else {
+    AddNewPRAction.setReqFields(true);
+}
+if (!pass.equals(passverif) && !pass.isEmpty()){
+    loginFlag = false;
+    AddNewPRAction.setPwMatch(false);
+}
+else {
+    AddNewPRAction.setPwMatch(true);
+    }
+if(!AddNewPRAction.validateEmail(email)) {
+    loginFlag = false;
+    AddNewPRAction.setEmailValidation(false);
+}
+else{
+    AddNewPRAction.setEmailValidation(true);
+}
+
+if (loginFlag){
     AddNewPRAction.setIsNewPR(true);
 %>
 
@@ -36,8 +62,6 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
 <%@include file="/footer.jsp" %>
 <%
     AddNewPRAction.setEmailValidation(true);
-    String lastname = request.getParameter("j_lastname");
-    String firstname = request.getParameter("j_firstname");
     String addr1 = request.getParameter("j_address1");
     String addr2 = request.getParameter("j_address2");
     String city = request.getParameter("j_city");
@@ -125,10 +149,9 @@ if (pass.equals(passverif) && AddNewPRAction.validateEmail(email)){
 
 
     }
-else {
-    if (!AddNewPRAction.validateEmail(email)) {
-        AddNewPRAction.setEmailValidation(false);
+    else {
+        response.sendRedirect("auth/forwardUser.jsp");
     }
-    response.sendRedirect("auth/forwardUser.jsp");
-}
+
+
 %>
