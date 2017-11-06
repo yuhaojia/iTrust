@@ -4,6 +4,8 @@
 
 package edu.ncsu.csc.itrust.unit.action;
 
+import edu.ncsu.csc.itrust.beans.HealthRecord;
+import edu.ncsu.csc.itrust.dao.mysql.HealthRecordsDAO;
 import junit.framework.TestCase;
 import edu.ncsu.csc.itrust.action.AddPatientAction;
 import edu.ncsu.csc.itrust.beans.PatientBean;
@@ -52,5 +54,33 @@ public class AddPatientActionTest extends TestCase {
 		newMID = action.addPatient(p);
 		assertEquals(p.getMID(), newMID);
 		assertFalse(authDAO.isDependent(newMID));
+	}
+
+	/**
+	 * Tests adding a new preregistered patient
+	 * @throws Exception
+	 */
+	public void testAddPRPatient() throws Exception {
+		PatientBean p = new PatientBean();
+		HealthRecord h = new HealthRecord();
+		action = new AddPatientAction(factory);
+		p.setFirstName("Jiminy");
+		p.setLastName("Cricket");
+		p.setEmail("make.awish@gmail.com");
+		p.setCity("Test city");
+		p.setPassword("password");
+		p.setDateOfBirthStr("01/01/2017");
+		p.setEmergencyName("test");
+		p.setIcCity("testiccity");
+		p.setIcState("CA");
+		p.setState("CA");
+		p.setPhone("1111111111");
+		p.setStreetAddress1("street address");
+		p.setZip("11111");
+		p.setPreregistered(true);
+		long newMID = action.addPRPatient(p, h);
+		assertEquals(p.getMID(), newMID);
+		assertTrue(p.isPreregistered());
+		assertEquals(h.getPatientID(), newMID);
 	}
 }
