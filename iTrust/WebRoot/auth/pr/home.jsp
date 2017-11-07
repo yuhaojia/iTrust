@@ -49,13 +49,6 @@
 
     // TODO: Find a cleaner way of doing this
     // Populate the patient bean
-//    p.setFirstName(firstname);
-//    p.setLastName(lastname);
-//    p.setPassword(pass);
-//    p.setEmail(email);
-    // Example usage
-    //System.out.println("Email is unique: " + new AddPatientAction(prodDAO).checkPatientEmailIsUnique(p));
-//    p.setPassword(pass);
     if (addr1 != null)
         p.setStreetAddress1(addr1);
     if (addr2 != null)

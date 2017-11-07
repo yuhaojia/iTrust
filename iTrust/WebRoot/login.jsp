@@ -60,7 +60,6 @@ if(challenge != null) {
 	loginFailureAction.setCaptcha(false);
 } else if(user != null && !"true".equals(request.getParameter("loginError"))) {
 	session.setAttribute("loginFlag", "true");
-	System.out.println("login true");
 	response.sendRedirect("/iTrust/j_security_check?j_username=" + user + "&j_password=" + pass);
 }
 

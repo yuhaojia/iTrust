@@ -64,7 +64,6 @@ else{
 
 if (loginFlag){
     AddNewPRAction.setIsNewPR(true);
-    int newpr = 1;
 %>
 
 <%@include file="/header.jsp" %>

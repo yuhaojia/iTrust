@@ -28,20 +28,8 @@ function fillLoginFields(u,p) {
 	</div>
 <%
 	}
-	%>
-	<%--if (AddNewPRAction.getIsNewPR()){--%>
-	    <%--String newid = AddNewPRAction.getMID();--%>
-<%--%>--%>
-		<%--<h2>Successfully Preregistered</h2>--%>
-		<%--<h2>New MID: <%=newid%></h2>--%>
-<%--<%--%>
-	<%--}--%>
-<%--%>--%>
 
-<%--<%--%>
-<%
 	if(!loginFailureAction.needsCaptcha()){
-
 %>
 	<form method="post" action="/iTrust/login.jsp">
 	MID<br />

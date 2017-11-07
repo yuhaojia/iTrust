@@ -26,8 +26,7 @@
 
 
 <%
-//	System.out.println(loggedInMID.longValue()); //DEBUGGING PRINT
-	session.removeAttribute("personnelList");
+session.removeAttribute("personnelList");
 ViewMyRecordsAction surveyAction = new ViewMyRecordsAction(prodDAO,loggedInMID.longValue());
 List <OfficeVisitBean> surList = prodDAO.getOfficeVisitDAO().getOfficeVisitsWithNoSurvey(loggedInMID.longValue());
 PatientBean patient = new PatientDAO(prodDAO).getPatient(loggedInMID.longValue());
