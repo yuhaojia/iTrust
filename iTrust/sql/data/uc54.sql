@@ -207,6 +207,18 @@ insert into personalhealthinformation(PatientID,OfficeVisitID,HCPID,HeadCircumfe
 			(112,719,9000000000,0,0,1,0,0,0,0,3,0,0,0,'2013-01-02 09:48:53','2013-01-02',-1),
 			(112,720,9000000000,0,0,1000,0,0,0,0,3,0,0,0,'2013-01-03 10:20:48','2013-01-03',-1)
 	on duplicate key update OfficeVisitID = OfficeVisitID;
+
+insert into personalhealthinformation(PatientID,OfficeVisitID,HCPID,HeadCircumference,Weight,Height,BloodPressureN,BloodPressureD,Smoker,SmokingStatus,HouseholdSmokingStatus,CholesterolHDL,CholesterolLDL,CholesterolTri,AsOfDate,OfficeVisitDate,BMI)
+	values	(407,719,9000000000,0,0,60,0,0,0,0,3,0,0,0,'2013-01-01 15:03:11','2013-01-01',-1),
+			(112,719,9000000000,0,0,1,0,0,0,0,3,0,0,0,'2013-01-02 09:48:53','2013-01-02',-1),
+			(112,720,9000000000,0,0,1000,0,0,0,0,3,0,0,0,'2013-01-03 10:20:48','2013-01-03',-1)
+	on duplicate key update OfficeVisitID = OfficeVisitID;
+
+insert into personalhealthinformation(PatientID,OfficeVisitID,HCPID,HeadCircumference,Weight,Height,BloodPressureN,BloodPressureD,Smoker,SmokingStatus,HouseholdSmokingStatus,CholesterolHDL,CholesterolLDL,CholesterolTri,AsOfDate,OfficeVisitDate,BMI)
+	values	(408,720,9000000000,0,0,60,0,0,0,0,3,0,0,0,'2013-01-01 15:03:11','2013-01-01',-1),
+			(112,719,9000000000,0,0,1,0,0,0,0,3,0,0,0,'2013-01-02 09:48:53','2013-01-02',-1),
+			(112,720,9000000000,0,0,1000,0,0,0,0,3,0,0,0,'2013-01-03 10:20:48','2013-01-03',-1)
+	on duplicate key update OfficeVisitID = OfficeVisitID;
 	
 /* HeadCirc Test - Head Circumference Percentile EC */
 insert into personalhealthinformation(PatientID,OfficeVisitID,HCPID,HeadCircumference,Weight,Height,BloodPressureN,BloodPressureD,Smoker,SmokingStatus,HouseholdSmokingStatus,CholesterolHDL,CholesterolLDL,CholesterolTri,AsOfDate,OfficeVisitDate,BMI)
