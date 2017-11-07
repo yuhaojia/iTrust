@@ -115,9 +115,15 @@
 							if ((loggedInMID != null) && (loggedInMID.longValue() != 0L)) //someone is logged in
 							{
 								if (userRole.equals("patient")) {
+									if (AddNewPRAction.getIsNewPR()){
+					%><%@include file="/auth/pr/menu.jsp"%>
+					<%
+						}
+						else{
 					%><%@include file="/auth/patient/menu.jsp"%>
 					<%
-						} else if (userRole.equals("uap")) {
+						}
+					}else if (userRole.equals("uap")) {
 					%><%@include file="/auth/uap/menu.jsp"%>
 					<%
 						} else if (userRole.equals("hcp")) {
@@ -138,14 +144,13 @@
 						} else if (userRole.equals("lt")) {
 					%><%@include file="/auth/lt/menu.jsp"%>
 					<%
-						} else if (AddNewPRAction.getIsNewPR()){
-					%><%@include file="/auth/pr/menu.jsp"%>
-					<%
+
 						}
-							} //no one is logged in
+					} //no one is logged in
 					 else if (AddNewPRAction.getIsNewPR()){
-					%><%@include file="/auth/pr/menu.jsp"%>
-					<%}
+					%><%@include file="/auth/pr/menu_nolog.jsp"%>
+					<%
+							}
 							else {
 								String uri = request.getRequestURI();
 								if (uri.indexOf("privacyPolicy.jsp") >= 0) { //looking at privacy policy, include logout menu.
@@ -180,4 +185,4 @@
 					<%
 						}
 					%>
-                    %
+

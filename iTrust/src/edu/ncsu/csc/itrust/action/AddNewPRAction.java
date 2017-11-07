@@ -7,6 +7,7 @@ public class AddNewPRAction {
     private static boolean reqFields = true;
     private static boolean pwMatch = true;
     private static boolean isNewPR = false;
+//    private static String   mid = "-1";
 
     public static boolean validateEmail(String email){
         return ValidationFormat.EMAIL.getRegex().matcher(email).matches();
@@ -39,4 +40,12 @@ public class AddNewPRAction {
     public static boolean getIsNewPR() { return isNewPR; }
 
     public static void setIsNewPR(boolean val) { isNewPR = val; }
+
+//    public static String getMID() {
+//        return mid;
+//    }
+//
+//    public static void setMID(String val) {
+//        mid = val;
+//    }
 }

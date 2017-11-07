@@ -107,6 +107,7 @@ public class AddPatientAction {
 		h.setPatientID(newMID);
 		System.out.println("new mid:" + Long.toString(newMID));
 		String pwd = authDAO.addUser(newMID, Role.PATIENT, p.getPassword());
+		p.setPreregistered(true);
 		patientDAO.editPatient(p, 0);
 		healthRecordsDAO.add(h);
 		return newMID;
