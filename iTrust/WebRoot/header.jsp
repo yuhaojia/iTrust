@@ -147,10 +147,7 @@
 
 						}
 					} //no one is logged in
-					 else if (AddNewPRAction.getIsNewPR()){
-					%><%@include file="/auth/pr/menu_nolog.jsp"%>
-					<%
-							}
+						
 							else {
 								String uri = request.getRequestURI();
 								if (uri.indexOf("privacyPolicy.jsp") >= 0) { //looking at privacy policy, include logout menu.
