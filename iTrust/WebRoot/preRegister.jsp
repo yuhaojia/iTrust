@@ -13,6 +13,8 @@
 <%@ page import="edu.ncsu.csc.itrust.exception.FormValidationException" %>
 <%@ page import="edu.ncsu.csc.itrust.BeanBuilder" %>
 <%@ page import="edu.ncsu.csc.itrust.beans.HealthRecord" %>
+<%@ page import="edu.ncsu.csc.itrust.beans.EmailAddressBean" %>
+<%@ page import="edu.ncsu.csc.itrust.dao.mysql.EmailAddressDAO" %>
 
 <%@include file="/global.jsp" %>
 
@@ -107,6 +109,9 @@ if (loginFlag){
     p.setLastName(lastname);
     p.setPassword(pass);
     p.setEmail(email);
+    // Example usage
+    System.out.println("Email is unique: " + new AddPatientAction(prodDAO).checkPatientEmailIsUnique(p));
+    p.setPassword(pass);
     if (addr1 != null)
         p.setStreetAddress1(addr1);
     if (addr2 != null)

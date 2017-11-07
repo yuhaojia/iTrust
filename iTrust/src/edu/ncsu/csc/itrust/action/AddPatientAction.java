@@ -2,9 +2,11 @@ package edu.ncsu.csc.itrust.action;
 
 
 import edu.ncsu.csc.itrust.RandomPassword;
+import edu.ncsu.csc.itrust.beans.EmailAddressBean;
 import edu.ncsu.csc.itrust.beans.HealthRecord;
 import edu.ncsu.csc.itrust.beans.PatientBean;
 import edu.ncsu.csc.itrust.dao.DAOFactory;
+import edu.ncsu.csc.itrust.dao.mysql.EmailAddressDAO;
 import edu.ncsu.csc.itrust.dao.mysql.HealthRecordsDAO;
 import edu.ncsu.csc.itrust.dao.mysql.PatientDAO;
 import edu.ncsu.csc.itrust.dao.mysql.AuthDAO;
@@ -27,6 +29,7 @@ public class AddPatientAction {
 	private AuthDAO authDAO;
 	private long loggedInMID;
 	private HealthRecordsDAO healthRecordsDAO;
+	private EmailAddressDAO emailAddressDAO;
 
 	/**
 	 * Just the factory and logged in MID
@@ -45,6 +48,14 @@ public class AddPatientAction {
 		this.loggedInMID = 0;
 		this.authDAO = factory.getAuthDAO();
 		this.healthRecordsDAO = factory.getHealthRecordsDAO();
+		this.emailAddressDAO = factory.getEmailAddressDAO();
+	}
+
+	public boolean checkPatientEmailIsUnique(PatientBean p) throws FormValidationException, ITrustException {
+		EmailAddressBean e = new EmailAddressBean();
+		e.setAddress(p.getEmail());
+		EmailAddressBean newE = emailAddressDAO.isUniqueEmailAddress(e);
+		return newE.isUnique();
 	}
 
 	/**
@@ -95,8 +106,7 @@ public class AddPatientAction {
 		p.setMID(newMID);
 		h.setPatientID(newMID);
 		System.out.println("new mid:" + Long.toString(newMID));
-		String pwd = authDAO.addUser(newMID, Role.PATIENT, RandomPassword.getRandomPassword());
-		p.setPassword(pwd);
+		String pwd = authDAO.addUser(newMID, Role.PATIENT, p.getPassword());
 		patientDAO.editPatient(p, 0);
 		healthRecordsDAO.add(h);
 		return newMID;
