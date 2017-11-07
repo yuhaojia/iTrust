@@ -65,7 +65,6 @@ public class PatientBean implements Serializable, Comparable<PatientBean> {
 	private String weight = "";
 	private String isSmoker = "";
 
-
 	private String dateOfDeactivationStr = "";
 
 	private boolean isPreregistered = false;
@@ -93,6 +92,8 @@ public class PatientBean implements Serializable, Comparable<PatientBean> {
 	public String getSmoker(){
 		return isSmoker;
 	}
+
+
 
 
 
