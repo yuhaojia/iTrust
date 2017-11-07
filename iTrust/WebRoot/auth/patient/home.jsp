@@ -23,9 +23,10 @@
 	pageTitle = "iTrust - Patient Home";
 %>
 
-<%@include file="/header.jsp" %>
+
 
 <%
+//	System.out.println(loggedInMID.longValue()); //DEBUGGING PRINT
 	session.removeAttribute("personnelList");
 ViewMyRecordsAction surveyAction = new ViewMyRecordsAction(prodDAO,loggedInMID.longValue());
 List <OfficeVisitBean> surList = prodDAO.getOfficeVisitDAO().getOfficeVisitsWithNoSurvey(loggedInMID.longValue());
@@ -42,17 +43,27 @@ List<PersonnelBean> personnelList = new ArrayList<PersonnelBean>();
 int personnel_counter = 0;
 
 loggingAction.logEvent(TransactionType.HOME_VIEW, loggedInMID.longValue(), 0, "");
+AddNewPRAction.setIsNewPR(patient.isPreregistered());
 %>
-
+<%@include file="/header.jsp" %>
 <%
 	if(request.getParameter("rep") != null && request.getParameter("rep").equals("1")){
 %>
 <span class="iTrustMessage"><%=StringEscapeUtils.escapeHtml("" + ("Adverse Event Successfully Reported"))%></span>
 <%
 	}
+	if (!patient.isPreregistered()){
 %>
 <%@include file="/auth/patient/notificationArea.jsp" %>
 <%@include file="/auth/patient/activityFeed.jsp" %>
-</div>
+<%
+	}
+	else {
+%>
+<h2> You need a HCP to activate your account.</h2>
+<%
+	}
 
+%>
+</div>
 <%@include file="/footer.jsp" %>

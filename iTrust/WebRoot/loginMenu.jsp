@@ -28,8 +28,17 @@ function fillLoginFields(u,p) {
 	</div>
 <%
 	}
-%>
+	%>
+	<%--if (AddNewPRAction.getIsNewPR()){--%>
+	    <%--String newid = AddNewPRAction.getMID();--%>
+<%--%>--%>
+		<%--<h2>Successfully Preregistered</h2>--%>
+		<%--<h2>New MID: <%=newid%></h2>--%>
+<%--<%--%>
+	<%--}--%>
+<%--%>--%>
 
+<%--<%--%>
 <%
 	if(!loginFailureAction.needsCaptcha()){
 
@@ -66,15 +75,29 @@ function fillLoginFields(u,p) {
 	</form>
 <%
 	}
+
 %>
     <form method="post" action="/iTrust/preRegister.jsp">
 		<br />
 <%
-	if (!AddNewPRAction.getEmailValidation()){
-	    String msg = String.valueOf(AddNewPRAction.getEmailValidation());
+	if (!AddNewPRAction.getReqFields()) {
 %>
 		<div style="align: center; margin-bottom: 10px;">
-			<span class="iTrustError" style="font-size: 16px;"><%= StringEscapeUtils.escapeHtml("Email not valid"+msg) %></span>
+			<span class="iTrustError" style="font-size: 16px;"><%= StringEscapeUtils.escapeHtml("At lease one required field is not filled") %></span>
+		</div>
+<%
+	}
+	if (!AddNewPRAction.getPwMatch()){
+%>
+		<div style="align: center; margin-bottom: 10px;">
+			<span class="iTrustError" style="font-size: 16px;"><%= StringEscapeUtils.escapeHtml("Password does not match") %></span>
+		</div>
+<%
+	}
+	if (!AddNewPRAction.getEmailValidation()){
+%>
+		<div style="align: center; margin-bottom: 10px;">
+			<span class="iTrustError" style="font-size: 16px;"><%= StringEscapeUtils.escapeHtml("Email not valid") %></span>
 		</div>
 <%
 	}
@@ -126,7 +149,7 @@ function fillLoginFields(u,p) {
         <br /><br />
     </form>
 <%
-if( ! "true".equals(System.getProperty("itrust.production") ) ) {
+	if( ! "true".equals(System.getProperty("itrust.production") ) ) {
 %>
 	<!-- This section is for testing purposes only!! -->
 	<div class="panel panel-default">
@@ -207,7 +230,7 @@ if( ! "true".equals(System.getProperty("itrust.production") ) ) {
 	</table>
 	</div>
 <% 
-} 
+}
 %>
 </div>
 </div>

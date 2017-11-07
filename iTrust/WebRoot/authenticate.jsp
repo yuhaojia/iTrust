@@ -33,6 +33,7 @@ if (request.getAuthType() != null) {
 	if (request.getSession(false) != null) {
 		boolean isValidLogin = loginFailureAction.isValidForLogin();
 		if(!isValidLogin) {
+		    System.out.println("auth invalidlogin");
 			session.invalidate();
 			response.sendRedirect("/iTrust/login.jsp");
 			return;
