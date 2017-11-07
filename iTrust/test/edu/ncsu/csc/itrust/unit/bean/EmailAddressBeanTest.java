@@ -1,4 +1,4 @@
-test/edu/ncsu/csc/itrust/unit/bean/EmailAddressBeanLoaderTest.javapackage edu.ncsu.csc.itrust.unit.bean;
+package edu.ncsu.csc.itrust.unit.bean;
 
 import edu.ncsu.csc.itrust.beans.EmailAddressBean;
 import junit.framework.TestCase;
