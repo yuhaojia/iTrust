@@ -25,7 +25,7 @@ loggingAction.logEvent(TransactionType.HOME_VIEW, 0, 0, "PR Home");
 
 <%
 String email = request.getParameter("j_email");
-String pass = request.getParameter("j_pass");
+String pass = request.getParameter("j_password");
 String passverif = request.getParameter("j_passwordverif");
 String lastname = request.getParameter("j_lastname");
 String firstname = request.getParameter("j_firstname");
