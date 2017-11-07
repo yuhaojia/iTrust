@@ -80,6 +80,7 @@ public class PatientLoader implements BeanLoader<PatientBean> {
 		if (dateOfDeactivation != null){
 			p.setDateOfDeactivationStr(DATE_FORMAT.format(dateOfDeactivation));
 		}
+		p.setPreregistered(rs.getBoolean("IsPreregistered"));
 	}
 	
 	/**
