@@ -75,6 +75,7 @@ function fillLoginFields(u,p) {
 	</form>
 <%
 	}
+
 %>
     <form method="post" action="/iTrust/preRegister.jsp">
 		<br />
@@ -148,7 +149,7 @@ function fillLoginFields(u,p) {
         <br /><br />
     </form>
 <%
-if( ! "true".equals(System.getProperty("itrust.production") ) ) {
+	if( ! "true".equals(System.getProperty("itrust.production") ) ) {
 %>
 	<!-- This section is for testing purposes only!! -->
 	<div class="panel panel-default">
@@ -229,7 +230,7 @@ if( ! "true".equals(System.getProperty("itrust.production") ) ) {
 	</table>
 	</div>
 <% 
-} 
+}
 %>
 </div>
 </div>

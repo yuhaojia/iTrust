@@ -23,7 +23,7 @@
 	pageTitle = "iTrust - Patient Home";
 %>
 
-<%@include file="/header.jsp" %>
+
 
 <%
 //	System.out.println(loggedInMID.longValue()); //DEBUGGING PRINT
@@ -43,15 +43,15 @@ List<PersonnelBean> personnelList = new ArrayList<PersonnelBean>();
 int personnel_counter = 0;
 
 loggingAction.logEvent(TransactionType.HOME_VIEW, loggedInMID.longValue(), 0, "");
+AddNewPRAction.setIsNewPR(patient.isPreregistered());
 %>
-
+<%@include file="/header.jsp" %>
 <%
 	if(request.getParameter("rep") != null && request.getParameter("rep").equals("1")){
 %>
 <span class="iTrustMessage"><%=StringEscapeUtils.escapeHtml("" + ("Adverse Event Successfully Reported"))%></span>
 <%
 	}
-	System.out.println(String.valueOf(patient.isPreregistered()));
 	if (!patient.isPreregistered()){
 %>
 <%@include file="/auth/patient/notificationArea.jsp" %>

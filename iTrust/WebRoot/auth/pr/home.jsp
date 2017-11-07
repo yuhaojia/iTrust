@@ -9,7 +9,6 @@
 <h2>You require HCP approval for full access.</h2>
 
 <%
-    AddNewPRAction.setIsNewPR(true);
     AddNewPRAction.setEmailValidation(true);
     String addr1 = request.getParameter("j_address1");
     String addr2 = request.getParameter("j_address2");

@@ -63,13 +63,16 @@ else{
 }
 
 if (loginFlag){
-
+    AddNewPRAction.setIsNewPR(true);
+    int newpr = 1;
 %>
 
 <%@include file="/header.jsp" %>
 <%@include file="/auth/pr/home.jsp"%>
 <%@include file="/footer.jsp" %>
-<%  }
+<%
+    AddNewPRAction.setIsNewPR(false);
+}
     else {
         response.sendRedirect("auth/forwardUser.jsp");
     }

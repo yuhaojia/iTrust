@@ -81,5 +81,5 @@
 </form>
 
 <form method="post" action="/iTrust/logout.jsp">
-    <input type="submit" value="Log Out"><br />
+    <input type="submit" value="Back to Main"><br />
 </form>
