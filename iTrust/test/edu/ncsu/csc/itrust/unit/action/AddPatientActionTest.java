@@ -27,7 +27,7 @@ public class AddPatientActionTest extends TestCase {
 		gen = new TestDataGenerator();
 		
 		gen.transactionLog();
-		gen.hcp0();
+		gen.patient2();
 		action = new AddPatientAction(factory, 9000000000L);
 	}
 
@@ -82,5 +82,28 @@ public class AddPatientActionTest extends TestCase {
 		assertEquals(p.getMID(), newMID);
 		assertTrue(p.isPreregistered());
 		assertEquals(h.getPatientID(), newMID);
+	}
+
+	/**
+	 * Tests checking if email is unique in the case where it is unique
+	 * @throws Exception
+	 */
+	public void testCheckPatientEmailIsUniqueTrueCase() throws Exception {
+		PatientBean p = new PatientBean();
+		action = new AddPatientAction(factory);
+		p.setEmail("does.not@exist.com");
+		assertTrue(action.checkPatientEmailIsUnique(p));
+	}
+
+	/**
+	 * Tests checking if email is unique in the case where it is not unique.
+	 * The email used in this test is taken from the patient2.sql test file.
+	 * @throws Exception
+	 */
+	public void testCheckPatientEmailIsUniqueFalseCase() throws Exception {
+		PatientBean p = new PatientBean();
+		action = new AddPatientAction(factory);
+		p.setEmail("andy.programmer@gmail.com");
+		assertFalse(action.checkPatientEmailIsUnique(p));
 	}
 }

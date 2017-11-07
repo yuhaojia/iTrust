@@ -35,13 +35,9 @@ public class EmailAddressBeanLoader implements BeanLoader<EmailAddressBean> {
      */
     public EmailAddressBean loadSingle(ResultSet rs) throws SQLException {
         EmailAddressBean emailAddr = new EmailAddressBean();
-        loadCommon(rs, emailAddr);
-        return emailAddr;
-    }
-
-    private void loadCommon(ResultSet rs, EmailAddressBean emailAddr) throws SQLException{
         int numDuplicates = rs.getInt(1);
         emailAddr.setUnique(numDuplicates == 0);
+        return emailAddr;
     }
 
     /**
