@@ -9,5 +9,6 @@ validSession = false;
 if(loggedInMID != null) {
 	loggingAction.logEvent(TransactionType.LOGOUT, loggedInMID, loggedInMID, "");
 }
+AddNewPRAction.setIsNewPR(false);
 response.sendRedirect("/iTrust");
 %>
