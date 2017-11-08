@@ -589,4 +589,23 @@ public class PersonnelDAO {
 			DBUtil.closeConnection(conn, ps);
 		}
 	}
+
+	// Edit message filter for personnel
+	public void editMessageFilter(final String filter, final long mid) throws DBException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = factory.getConnection();
+			pstmt = conn.prepareStatement("UPDATE personnel SET messageFilter=? WHERE MID=?");
+			pstmt.setString(1, filter);
+			pstmt.setLong(2, mid);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, pstmt);
+		}
+	}
 }

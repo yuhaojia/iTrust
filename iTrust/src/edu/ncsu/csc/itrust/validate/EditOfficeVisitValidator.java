@@ -7,7 +7,7 @@ import edu.ncsu.csc.itrust.exception.FormValidationException;
 
 /**
  * Used to validate updating an office visit, by {@link EditOfficeVisitAction}
- * 
+ *
  *  
  * 
  */

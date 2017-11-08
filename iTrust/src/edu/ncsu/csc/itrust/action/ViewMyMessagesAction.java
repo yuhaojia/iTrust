@@ -9,13 +9,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import edu.ncsu.csc.itrust.beans.MessageBean;
+import edu.ncsu.csc.itrust.beans.forms.EditMessageFilterForm;
 import edu.ncsu.csc.itrust.dao.DAOFactory;
 import edu.ncsu.csc.itrust.dao.mysql.MessageDAO;
 import edu.ncsu.csc.itrust.dao.mysql.PatientDAO;
 import edu.ncsu.csc.itrust.dao.mysql.PersonnelDAO;
 import edu.ncsu.csc.itrust.dao.mysql.ReferralDAO;
 import edu.ncsu.csc.itrust.exception.DBException;
+import edu.ncsu.csc.itrust.exception.FormValidationException;
 import edu.ncsu.csc.itrust.exception.ITrustException;
+import edu.ncsu.csc.itrust.validate.EditMessageFilterValidator;
 
 /**
  * Action class for ViewMyMessages.jsp
@@ -221,7 +224,27 @@ public class ViewMyMessagesAction {
 		
 		return filtered;
 	}
-	
+
+	public String validateAndCreateFilter(String filter) throws FormValidationException {
+		EditMessageFilterForm form = new EditMessageFilterForm();
+		EditMessageFilterValidator validator = new EditMessageFilterValidator();
+		String[] filterAttributes = filter.split(",",-1);
+		form.setSender(filterAttributes[0]);
+		form.setSubject(filterAttributes[1]);
+		form.setIncludeWords(filterAttributes[2]);
+		form.setExcludeWords(filterAttributes[3]);
+		form.setStartDateStr(filterAttributes[4]);
+		form.setEndDateStr(filterAttributes[5]);
+		try {
+			validator.validate(form);
+		}catch(FormValidationException e)
+		{
+			return "Error: " + e.getMessage();
+		}
+		return filter;
+	}
+
+
 	/**
 	 * Gets a patient's name from their MID
 	 * 

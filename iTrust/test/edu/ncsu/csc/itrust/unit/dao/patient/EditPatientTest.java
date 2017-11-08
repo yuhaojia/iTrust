@@ -2,6 +2,7 @@ package edu.ncsu.csc.itrust.unit.dao.patient;
 
 import java.util.List;
 
+import edu.ncsu.csc.itrust.beans.PersonnelBean;
 import junit.framework.TestCase;
 import edu.ncsu.csc.itrust.beans.PatientBean;
 import edu.ncsu.csc.itrust.beans.PatientHistoryBean;
@@ -163,5 +164,19 @@ public class EditPatientTest extends TestCase {
 		} catch (DBException e) {
 			//Successful test
 		}
+	}
+
+	/**
+	 * Test editing filter
+	 * @throws Exception
+	 */
+	public void testEditFilter() throws Exception {
+		String filter = "Andy Programmer,Scratchy Throat,,,,";
+		long mid = 2L;
+		PatientBean p = patientDAO.getPatient(mid);
+		assertEquals(",,,,,", p.getMessageFilter());
+		patientDAO.editMessageFilter(filter, mid);
+		p = patientDAO.getPatient(mid);
+		assertEquals(filter, p.getMessageFilter());
 	}
 }
