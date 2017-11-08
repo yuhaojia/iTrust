@@ -315,8 +315,7 @@ public class ViewMyMessagesActionTest extends TestCase {
 			result = action.validateAndCreateFilter(filter);
 		}
 		catch (FormValidationException e){
-			assertTrue(e.getMessage().startsWith("Error"));
-		}
+			assertTrue(e.getMessage().startsWith("Error"));}
 
 	}
 }
