@@ -81,6 +81,7 @@ public class PatientLoader implements BeanLoader<PatientBean> {
 			p.setDateOfDeactivationStr(DATE_FORMAT.format(dateOfDeactivation));
 		}
 		p.setPreregistered(rs.getBoolean("IsPreregistered"));
+		p.setMessageFilter(rs.getString("messageFilter"));
 	}
 	
 	/**
@@ -190,6 +191,7 @@ public class PatientLoader implements BeanLoader<PatientBean> {
 		}
 		ps.setDate(i++, date);
 		ps.setBoolean(i++, p.isPreregistered());
+		ps.setString(i++, p.getMessageFilter());
 		return ps;
 	}
 }

@@ -55,7 +55,7 @@ pageTitle = "iTrust - View My Message ";
 			nf += request.getParameter("notWords").replace(",","")+",";
 			nf += request.getParameter("startDate").replace(",","")+",";
 			nf += request.getParameter("endDate");
-			
+
 			//Validate Filter
 			nf = action.validateAndCreateFilter(nf);
 			if(nf.startsWith("Error")) {
@@ -67,7 +67,7 @@ pageTitle = "iTrust - View My Message ";
 				if(request.getParameter("test") != null) {
 					response.sendRedirect("messageInbox.jsp?edit=true&testFilter="+nf);
 				} else if(request.getParameter("save") != null) {
-					f_action.editMessageFilter(nf);
+					f_action.editMessageFilter(nf, loggedInMID.longValue());
 					response.sendRedirect("messageInbox.jsp?filter=true"); 
 				}
 			}
@@ -83,7 +83,7 @@ pageTitle = "iTrust - View My Message ";
 					//do nothing
 				}
 			}
-		} else {
+		}  else {
 			String filter = dao.getPersonnel(loggedInMID.longValue()).getMessageFilter();
 			if(!filter.equals("")) {
 				String[] f = filter.split(",", -1);

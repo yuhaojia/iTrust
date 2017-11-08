@@ -59,6 +59,10 @@ public class PersonnelBeanTest extends TestCase {
 		assertEquals(0, p.getIndexIn(list));
 		assertEquals(1, p1.getIndexIn(list));
 		assertEquals(-1, p2.getIndexIn(list));
+
+		p.setMessageFilter("Message Filter");
+		assertEquals("Message Filter", p.getMessageFilter());
+
 	}
 
 }

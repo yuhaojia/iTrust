@@ -66,6 +66,7 @@ public class PatientBean implements Serializable, Comparable<PatientBean> {
 	private String isSmoker = "";
 
 	private String dateOfDeactivationStr = "";
+	private String messageFilter = ",,,,,";
 
 	private boolean isPreregistered = false;
 
@@ -535,6 +536,14 @@ public class PatientBean implements Serializable, Comparable<PatientBean> {
 	public int hashCode() {
 		assert false : "hashCode not designed";
 		return 42; // any arbitrary constant will do
+	}
+
+	public String getMessageFilter() {
+		return messageFilter;
+	}
+
+	public void setMessageFilter(String messageFilter) {
+		this.messageFilter = messageFilter;
 	}
 	
 }
