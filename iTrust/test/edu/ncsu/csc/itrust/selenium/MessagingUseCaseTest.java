@@ -197,4 +197,106 @@ public class MessagingUseCaseTest extends iTrustSeleniumTest {
 		assertTrue(driver.getPageSource().contains(stamp));
 	}
 
+	public void testHCPFilter() throws Exception {
+		// Log in as Kelly Doctor
+		driver = login("9000000000", "pw");
+		assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+		// Navigate to the Message Inbox page
+		driver.findElement(By.linkText("Message Inbox")).click();
+		assertLogged(TransactionType.INBOX_VIEW, 9000000000L, 0L, "");
+		// Click on Edit Filter and enter relevant information
+		driver.findElement(By.linkText("Edit Filter")).click();
+		driver.findElement(By.name("sender")).sendKeys("Andy Programmer");
+		driver.findElement(By.name("hasWords")).sendKeys("schedule");
+		driver.findElement(By.name("startDate")).sendKeys("02/02/2010");
+		driver.findElement(By.name("subject")).sendKeys("Scratchy Throat");
+		driver.findElement(By.name("notWords")).sendKeys("checked");
+		driver.findElement(By.name("endDate")).sendKeys("02/03/2010");
+		// Click on Test Filter and check for correct filtered messages
+		driver.findElement(By.name("test")).click();
+		assertTrue(driver.getPageSource().contains("Andy Programmer"));
+		assertTrue(driver.getPageSource().contains("Scratchy Throat"));
+		assertFalse(driver.getPageSource().contains("Random Person"));
+		assertFalse(driver.getPageSource().contains("Lab Results"));
+		assertFalse(driver.getPageSource().contains("2010-01-13 13:46:00.0"));
+		// Save the filter
+		driver.findElement(By.name("save")).click();
+
+		// Log in again as Kelly Doctor
+		driver = login("9000000000", "pw");
+		assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+		// Navigate to the Message Inbox page
+		driver.findElement(By.linkText("Message Inbox")).click();
+		assertLogged(TransactionType.INBOX_VIEW, 9000000000L, 0L, "");
+		// Apply the saved filter and check for correct filtered messages
+		driver.findElement(By.linkText("Apply Filter")).click();
+		assertTrue(driver.getPageSource().contains("Visit Request"));
+		assertTrue(driver.getPageSource().contains("Andy Programmer"));
+		assertFalse(driver.getPageSource().contains("Random Person"));
+		// Click on Edit Filter and check if the fields are saved properly
+		driver.findElement(By.linkText("Edit Filter")).click();
+		assertTrue(driver.findElement(By.name("sender")).getAttribute("value").equals("Andy Programmer"));
+		assertTrue(driver.findElement(By.name("hasWords")).getAttribute("value").equals("schedule"));
+		assertTrue(driver.findElement(By.name("startDate")).getAttribute("value").equals("02/02/2010"));
+		assertTrue(driver.findElement(By.name("subject")).getAttribute("value").equals("Scratchy Throat"));
+		assertTrue(driver.findElement(By.name("notWords")).getAttribute("value").equals("checked"));
+		assertTrue(driver.findElement(By.name("endDate")).getAttribute("value").equals("02/03/2010"));
+		// Click on Cancel and check if the filter is removed properly
+		driver.findElement(By.name("cancel")).click();
+		assertTrue(driver.getPageSource().contains("Visit Request"));
+		assertTrue(driver.getPageSource().contains("Andy Programmer"));
+		assertTrue(driver.getPageSource().contains("Random Person"));
+
+	}
+
+	public void testPatientFilter() throws Exception {
+		// Log in as Random Person
+		driver = login("2", "pw");
+		assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+		// Navigate to the inbox
+		driver.findElement(By.linkText("Message Inbox")).click();
+		assertLogged(TransactionType.INBOX_VIEW, 2L, 0L, "");
+		// Click on Edit Filter and enter relevant information
+		driver.findElement(By.linkText("Edit Filter")).click();
+		driver.findElement(By.name("sender")).sendKeys("Kelly Doctor");
+		driver.findElement(By.name("hasWords")).sendKeys("checked");
+		driver.findElement(By.name("startDate")).sendKeys("01/28/2010");
+		driver.findElement(By.name("subject")).sendKeys("Lab Procedure");
+		driver.findElement(By.name("notWords")).sendKeys("schedule");
+		driver.findElement(By.name("endDate")).sendKeys("02/03/2010");
+		// Click on Test Filter and check for correct filtered messages
+		driver.findElement(By.name("test")).click();
+		assertTrue(driver.getPageSource().contains("Kelly Doctor"));
+		assertTrue(driver.getPageSource().contains("Lab Procedure"));
+		assertFalse(driver.getPageSource().contains("Andy Programming"));
+		assertFalse(driver.getPageSource().contains("Lab Results"));
+		// Save the filter
+		driver.findElement(By.name("save")).click();
+
+		// Log in as Random Person
+		driver = login("2", "pw");
+		assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+		// Navigate to the inbox
+		driver.findElement(By.linkText("Message Inbox")).click();
+		assertLogged(TransactionType.INBOX_VIEW, 2L, 0L, "");
+		// Apply the saved filter and check for correct filtered messages
+		driver.findElement(By.linkText("Apply Filter")).click();
+		assertTrue(driver.getPageSource().contains("Lab Procedure"));
+		assertTrue(driver.getPageSource().contains("Kelly Doctor"));
+		assertFalse(driver.getPageSource().contains("Lab Results"));
+		// Click on Edit Filter and check if the fields are saved properly
+		driver.findElement(By.linkText("Edit Filter")).click();
+		assertTrue(driver.findElement(By.name("sender")).getAttribute("value").equals("Kelly Doctor"));
+		assertTrue(driver.findElement(By.name("hasWords")).getAttribute("value").equals("checked"));
+		assertTrue(driver.findElement(By.name("startDate")).getAttribute("value").equals("01/28/2010"));
+		assertTrue(driver.findElement(By.name("subject")).getAttribute("value").equals("Lab Procedure"));
+		assertTrue(driver.findElement(By.name("notWords")).getAttribute("value").equals("schedule"));
+		assertTrue(driver.findElement(By.name("endDate")).getAttribute("value").equals("02/03/2010"));
+		// Click on Cancel and check if the filter is removed properly
+		driver.findElement(By.name("cancel")).click();
+		assertTrue(driver.getPageSource().contains("Visit Request"));
+		assertTrue(driver.getPageSource().contains("Andy Programmer"));
+		assertTrue(driver.getPageSource().contains("Random Person"));
+	}
+
 }
