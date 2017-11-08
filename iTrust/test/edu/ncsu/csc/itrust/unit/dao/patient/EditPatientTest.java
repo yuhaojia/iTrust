@@ -172,7 +172,7 @@ public class EditPatientTest extends TestCase {
 	 */
 	public void testEditFilter() throws Exception {
 		String filter = "Andy Programmer,Scratchy Throat,,,,";
-		long mid = 9000000000L;
+		long mid = 2L;
 		PatientBean p = patientDAO.getPatient(mid);
 		assertEquals(",,,,,", p.getMessageFilter());
 		patientDAO.editMessageFilter(filter, mid);
