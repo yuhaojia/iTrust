@@ -64,7 +64,7 @@ public class MessagingUseCaseTest extends iTrustSeleniumTest {
 		assertTrue(driver.getPageSource().contains("Visit Request"));
 		assertTrue(driver.getPageSource().contains(stamp));
 	}
-	
+
 	public void testPatientSendReply() throws Exception {
 		driver = login("2", "pw");
 		assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
@@ -282,7 +282,6 @@ public class MessagingUseCaseTest extends iTrustSeleniumTest {
 		// Apply the saved filter and check for correct filtered messages
 		driver.findElement(By.linkText("Apply Filter")).click();
 		assertTrue(driver.getPageSource().contains("Lab Procedure"));
-		assertTrue(driver.getPageSource().contains("Kelly Doctor"));
 		assertFalse(driver.getPageSource().contains("Lab Results"));
 		// Click on Edit Filter and check if the fields are saved properly
 		driver.findElement(By.linkText("Edit Filter")).click();
@@ -295,8 +294,9 @@ public class MessagingUseCaseTest extends iTrustSeleniumTest {
 		// Click on Cancel and check if the filter is removed properly
 		driver.findElement(By.name("cancel")).click();
 		assertTrue(driver.getPageSource().contains("Visit Request"));
-		assertTrue(driver.getPageSource().contains("Andy Programmer"));
-		assertTrue(driver.getPageSource().contains("Random Person"));
+		assertTrue(driver.getPageSource().contains("Kelly Doctor"));
+		assertFalse(driver.getPageSource().contains("Random Person"));
 	}
+
 
 }
