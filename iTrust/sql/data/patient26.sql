@@ -25,7 +25,8 @@ FatherMID,
 BloodType,
 Ethnicity,
 Gender,
-TopicalNotes
+TopicalNotes,
+isPreregistered
 )
 VALUES (
 26,
@@ -54,7 +55,8 @@ VALUES (
 'O-',
 'Caucasian',
 'Male',
-"Crispy"
+"Crispy",
+TRUE
 )  ON DUPLICATE KEY UPDATE MID = MID;
 
 INSERT INTO users(MID, password, role, sQuestion, sAnswer) 
@@ -84,3 +86,7 @@ INSERT INTO transactionlog(loggedInMID, secondaryMID, transactionCode, timeLogge
                            (9000000009, 24, 1900,'2007-06-24 06:54:59','Viewed patient records'),
                            (9000000000, 24, 3400,'2011-06-24 06:54:59','Patient added to monitoring list'),
                            (9000000009, 24, 1900,'2007-06-22 06:54:59','Viewed patient records');
+
+
+ Insert Into personalhealthinformation(PatientID,OfficeVisitID,Height,Weight,Smoker,SmokingStatus,OfficeVisitDate)
+ VALUES (26,3956,1,100,1,1,'2007-06-22');

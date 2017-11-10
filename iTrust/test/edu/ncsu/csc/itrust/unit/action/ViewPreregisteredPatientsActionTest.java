@@ -38,7 +38,7 @@ public class ViewPreregisteredPatientsActionTest extends TestCase{
      */
     public void testGetPreregisteredPatients() throws Exception {
         List<PatientBean> patients = action.getPreregisteredPatients();
-        assertEquals(2,patients.size());
+        assertEquals(3,patients.size());
     }
 
 }

@@ -46,6 +46,10 @@ public class ViewPreregisteredPatientsAction {
                     b.setHeight(Double.toString(one.getHeight()));
                     b.setWeight(Double.toString(one.getWeight()));
                     b.setSmoker(one.getSmokingStatusDesc());
+                }else{
+                    b.setHeight("N/A");
+                    b.setWeight("0");
+                    b.setSmoker("NA");
                 }
             }
             return plist;
