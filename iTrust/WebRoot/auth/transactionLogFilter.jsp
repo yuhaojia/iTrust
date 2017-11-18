@@ -156,17 +156,17 @@
                     <td>
                         <label>Transaction Type: </label>
                         <select name="ttype">
-                            <option value="type_all">All</option>
+                            <option value="All">All</option>
                         <%
                         for(TransactionType type : TransactionType.values()){
                             if (type.name().equals(options[2])){
                             %>
-                            <option value="<%=type.getCode()%>" selected><%=type.name()%></option>
+                            <option value="<%=type.name()%>" selected><%=type.name()%></option>
                             <%
                             }
                             else{
                         %>
-                            <option value="<%=type.getCode()%>"><%=type.name()%></option>
+                            <option value="<%=type.name()%>"><%=type.name()%></option>
                         <%
                                 }
                         }
