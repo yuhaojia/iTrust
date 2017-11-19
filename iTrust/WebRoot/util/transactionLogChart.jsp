@@ -61,23 +61,28 @@ A few clarifications:
                 }
             }
 
+            if(flag1==true){
+                numLoggedInMIDs.add(a);
+            }
+
             for(NumSecondaryMID bb : numSecondaryMIDs){
-                if(t.getSecondaryMID()==bb.getSecondaryMIDGot()){
+                if(b.getSecondaryMIDGot()==bb.getSecondaryMIDGot()){
                     bb.setNum(bb.getNum()+1);
                     flag2=true;
                 }
-                else{
-
-                }
             }
 
-            for(NumTransactionType cc : numTransactionTypes){
-                if(){
+            if(flag2==true){
+                numSecondaryMIDs.add(b);
+            }
 
+            for(NumTransactionType dd : numTransactionTypes){
+                if(d.getTransactionTypeGot()==dd.getTransactionTypeGot()){
+                    dd.setNum(dd.getNum()+1);
                 }
-                else{
-
-                }
+            }
+            if(flag4==true){
+                numTransactionTypes.add(d);
             }
 
         }
