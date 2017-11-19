@@ -73,7 +73,7 @@
 <h1>Transaction Log</h1>
 
 <%
-    String [] rollList = new String[]{"All", "ER", "HCP", "LT", "Patient", "PHA", "PR", "Staff", "Tester", "UAP"};
+    String [] rollList = new String[]{"All", "ER", "HCP", "LT", "Patient", "PHA", "PR", "Staff", "Tester", "UAP", "Admin"};
     List<TransactionBean> list = DAOFactory.getProductionInstance().getTransactionDAO().getAllTransactions();
     String [] options = new String[5];
     if (request.getParameter("view") == null) {
@@ -206,7 +206,7 @@
 <table border=1>
     <tr>
         <th>ID></th>
-        <th>Time Logged</th>
+        <th>Time Logged</th>[0]+"
         <th>Type</th>
         <th>Code</th>
         <th>Description</th>
@@ -215,23 +215,12 @@
         <th>Extra Info</th>
     </tr>
     <%
+        List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options[0], options[1]);
+
         int startdate = Integer.parseInt(options[3].substring(6)+options[3].substring(0,2)+options[3].substring(3,5));
         int enddate = Integer.parseInt(options[4].substring(6)+options[4].substring(0,2)+options[4].substring(3,5));
 
-        System.out.println(options[0]+"/"+options[1]+"/"+options[2]+"/"+options[3]+"/"+options[4]);
-
-        for (TransactionBean t : list) {
-
-            if (!options[0].equals("All")){
-                if (!authDAO.getUserRole(t.getLoggedInMID()).getUserRolesString().equalsIgnoreCase(options[0])){
-                    continue;
-                }
-            }
-            if (!options[1].equals("All")){
-                if (!authDAO.getUserRole(t.getSecondaryMID()).getUserRolesString().equalsIgnoreCase(options[1])){
-                    continue;
-                }
-            }
+        for (TransactionBean t : tlist) {
             if (!options[2].equals("All")){
                 if (!t.getTransactionType().name().equals(options[2])){
                     continue;
@@ -243,8 +232,6 @@
                 System.out.println(String.valueOf(startdate)+"/"+String.valueOf(tempdate)+"/"+String.valueOf(enddate));
                 continue;
             }
-
-
     %>
     <tr>
         <td><%= StringEscapeUtils.escapeHtml("" + (t.getTransactionID())) %></td>

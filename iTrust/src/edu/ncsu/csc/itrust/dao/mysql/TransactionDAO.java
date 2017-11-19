@@ -68,6 +68,41 @@ public class TransactionDAO {
 		}
 	}
 
+	public List<TransactionBean> getFilteredTransactions(String r1, String r2) throws DBException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		boolean firstrole = false;
+		String query = "SELECT transactionlog.* FROM transactionlog JOIN users on transactionlog.loggedinmid=users.mid";
+		if (!r1.toLowerCase().equals("all")){
+			query += " WHERE users.role="+"\""+r1.toLowerCase()+"\"";
+			firstrole = true;
+		}
+		if (!r2.toLowerCase().equals("all")) {
+			if (firstrole) {
+				query += " AND transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + r2.toLowerCase() + "\")";
+			} else {
+				query += " WHERE transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + r2.toLowerCase() + "\")";
+			}
+		}
+
+		query += " ORDER BY timeLogged DESC";
+
+		try {
+			conn = factory.getConnection();
+			ps = conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			List<TransactionBean> loadlist = loader.loadList(rs);
+			rs.close();
+			ps.close();
+			return loadlist;
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, ps);
+		}
+	}
+
 	/**
 	 * Log a transaction, with all of the info. The meaning of secondaryMID and addedInfo changes depending on
 	 * the transaction type.
