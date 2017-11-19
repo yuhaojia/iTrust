@@ -68,21 +68,37 @@ public class TransactionDAO {
 		}
 	}
 
-	public List<TransactionBean> getFilteredTransactions(String r1, String r2) throws DBException {
+	public List<TransactionBean> getFilteredTransactions(String [] option) throws DBException {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		boolean firstrole = false;
+		boolean role = false;
 		String query = "SELECT transactionlog.* FROM transactionlog JOIN users on transactionlog.loggedinmid=users.mid";
-		if (!r1.toLowerCase().equals("all")){
-			query += " WHERE users.role="+"\""+r1.toLowerCase()+"\"";
-			firstrole = true;
+		if (!option[0].equals("All")){
+			query += " WHERE users.role="+"\""+option[0].toLowerCase()+"\"";
+			role = true;
 		}
-		if (!r2.toLowerCase().equals("all")) {
-			if (firstrole) {
-				query += " AND transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + r2.toLowerCase() + "\")";
+		if (!option[1].equals("All")) {
+			if (role) {
+				query += " AND transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + option[1].toLowerCase() + "\")";
 			} else {
-				query += " WHERE transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + r2.toLowerCase() + "\")";
+				query += " WHERE transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + option[1].toLowerCase() + "\")";
+				role = true;
 			}
+		}
+		if (!option[2].equals("All")){
+			if (role){
+				query += " AND transactionlog.transactionCode="+"\""+option[2]+"\"";
+			}
+			else{
+				query += " WHERE transactionlog.transactionCode="+"\""+option[2]+"\"";
+				role = true;
+			}
+		}
+		if (role){
+			query += " AND transactionlog.timelogged BETWEEN "+"\""+option[3]+"\""+" AND "+"\""+option[4]+"\"";
+		}
+		else {
+			query += " WHERE transactionlog.timelogged BETWEEN " + "\"" + option[3] + "\"" + " AND " + "\"" + option[4] + "\"";
 		}
 
 		query += " ORDER BY timeLogged DESC";

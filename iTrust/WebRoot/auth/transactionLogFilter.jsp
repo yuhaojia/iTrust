@@ -33,7 +33,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-            var dateFormat = "mm/dd/yyyy",
+            var dateFormat = "yyyy/mm/dd",
                 from = $( "#startDate" )
                     .datepicker({
                         defaultDate: getDate( this ),
@@ -87,12 +87,10 @@
                 }
             }
         }
+        DateFormat dateForm = new SimpleDateFormat("MM/dd/yyyy");
 
-        String mints = minimum.toString();
-        String prevdate = mints.substring(5, 7) + "/" + mints.substring(8, 10) + "/" + mints.substring(0, 4);
-
-        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        String currdate = dateFormat.format(new Date());
+        String prevdate = dateForm.format(minimum);
+        String currdate = dateForm.format(new Date());
 
         options[0] = "All";
         options[1] = "All";
@@ -161,12 +159,12 @@
                         for(TransactionType type : TransactionType.values()){
                             if (type.name().equals(options[2])){
                             %>
-                            <option value="<%=type.name()%>" selected><%=type.name()%></option>
+                            <option value="<%=type.getCode()%>" selected><%=type.name()%></option>
                             <%
                             }
                             else{
                         %>
-                            <option value="<%=type.name()%>"><%=type.name()%></option>
+                            <option value="<%=type.getCode()%>"><%=type.name()%></option>
                         <%
                                 }
                         }
@@ -177,12 +175,10 @@
                     <td>
                         <label for="startDate">Start Date: </label>
                         <input type="text" name="startDate" id="startDate" value="<%= StringEscapeUtils.escapeHtml("" + (options[3] )) %>" size="12"/>
-                        <%--<input type="button" value="Select Date" onclick="displayDatePicker('startDate').onclick="this month;" />--%>
                     </td>
                     <td>
                         <label for="endDate">End Date: </label>
                         <input type="text" name="endDate" id="endDate" value="<%= StringEscapeUtils.escapeHtml("" + (options[4] )) %>" size="12"/>
-                        <%--<input type="button" value="Select Date" onclick="displayDatePicker('endDate');" />--%>
                     </td>
                 </tr>
             </table>
@@ -206,7 +202,7 @@
 <table border=1>
     <tr>
         <th>ID></th>
-        <th>Time Logged</th>[0]+"
+        <th>Time Logged</th>
         <th>Type</th>
         <th>Code</th>
         <th>Description</th>
@@ -215,23 +211,14 @@
         <th>Extra Info</th>
     </tr>
     <%
-        List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options[0], options[1]);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
-        int startdate = Integer.parseInt(options[3].substring(6)+options[3].substring(0,2)+options[3].substring(3,5));
-        int enddate = Integer.parseInt(options[4].substring(6)+options[4].substring(0,2)+options[4].substring(3,5));
+        options[3] = dateFormat.format(new Date(options[3]));
+        options[4] = dateFormat.format(new Date(options[4]+" 23:59:59"));
+
+        List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options);
 
         for (TransactionBean t : tlist) {
-            if (!options[2].equals("All")){
-                if (!t.getTransactionType().name().equals(options[2])){
-                    continue;
-                }
-            }
-            String temp = t.getTimeLogged().toString();
-            int tempdate = Integer.parseInt(temp.substring(0, 4) + temp.substring(5, 7) + temp.substring(8, 10));
-            if (startdate > tempdate || enddate < tempdate){
-                System.out.println(String.valueOf(startdate)+"/"+String.valueOf(tempdate)+"/"+String.valueOf(enddate));
-                continue;
-            }
     %>
     <tr>
         <td><%= StringEscapeUtils.escapeHtml("" + (t.getTransactionID())) %></td>
@@ -244,12 +231,10 @@
         <td><%= StringEscapeUtils.escapeHtml("" + (t.getAddedInfo())) %></td>
     </tr>
     <%
-
         }
 
     %>
 </table>
-
 <%
     }
 %>
