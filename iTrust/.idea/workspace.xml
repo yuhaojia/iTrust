@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="iTrust:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ecb3dc-f74f-4c38-b504-ff0a4dd312d2" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,120 +23,300 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand />
+    <expand>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="itrust@localhost" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="itrust@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="itrust" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="itrust@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="itrust" type="e3449647:DbNodeDescriptor" />
+        <item name="transactionlog" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="itrust@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="itrust" type="e3449647:DbNodeDescriptor" />
+        <item name="users" type="e3449647:DbNodeDescriptor" />
+      </path>
+    </expand>
     <select />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="AuthDAO.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/AuthDAO.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-180">
+                    <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+                    <folding>
+                      <marker date="1511014881059" expanded="true" signature="2478:2564" ph="INSERT INTO users... " />
+                      <marker date="1511014881059" expanded="true" signature="3624:3681" ph="UPDATE users... " />
+                      <marker date="1511014881059" expanded="true" signature="5044:5078" ph="SELECT role users" />
+                      <marker date="1511014881059" expanded="true" signature="6077:6128" ph="SELECT DateO... patients" />
+                      <marker date="1511014881059" expanded="true" signature="7190:7237" ph="UPDATE users... " />
+                      <marker date="1511014881059" expanded="true" signature="8025:8064" ph="SELECT sQues... users" />
+                      <marker date="1511014881059" expanded="true" signature="8950:8987" ph="SELECT sAnsw... users" />
+                      <marker date="1511014881059" expanded="true" signature="10008:10109" ph="UPDATE login... " />
+                      <marker date="1511014881059" expanded="true" signature="11073:11151" ph="UPDATE reset... " />
+                      <marker date="1511014881059" expanded="true" signature="12021:12074" ph="SELECT * FRO... resetpasswordfailures" />
+                      <marker date="1511014881059" expanded="true" signature="13360:13405" ph="SELECT * FRO... loginfailures" />
+                      <marker date="1511014881059" expanded="true" signature="14413:14475" ph="INSERT INTO loginfailures... " />
+                      <marker date="1511014881059" expanded="true" signature="14967:15037" ph="INSERT INTO resetpasswordfailures... " />
+                      <marker date="1511014881059" expanded="true" signature="15502:15559" ph="UPDATE login... " />
+                      <marker date="1511014881059" expanded="true" signature="16112:16169" ph="UPDATE login... " />
+                      <marker date="1511014881059" expanded="true" signature="16608:16673" ph="UPDATE reset... " />
+                      <marker date="1511014881059" expanded="true" signature="17199:17230" ph="SELECT * FRO... users" />
+                      <marker date="1511014881059" expanded="true" signature="17942:17988" ph="Select * FRO... users" />
+                      <marker date="1511014881059" expanded="true" signature="18776:18818" ph="UPDATE users... " />
+                      <marker date="1511014881059" expanded="true" signature="19446:19495" ph="SELECT * FRO... users" />
+                      <marker date="1511014881059" expanded="true" signature="20144:20178" ph="SELECT Salt users" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="DAOFactory.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/DAOFactory.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="3255">
+                    <caret line="277" column="5" lean-forward="false" selection-start-line="277" selection-start-column="5" selection-end-line="277" selection-end-column="5" />
+                    <folding>
+                      <element signature="e#5246#5247#0" expanded="true" />
+                      <element signature="e#5285#5286#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="EventLoggingAction.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/EventLoggingAction.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="300">
+                    <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="header.jsp" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/WebRoot/header.jsp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="165">
+                    <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/css/dashboard.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-96">
+                    <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/css/bootstrap.min.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="898">
+                    <caret line="163" column="27" lean-forward="false" selection-start-line="163" selection-start-column="27" selection-end-line="163" selection-end-column="27" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="HttpSession.class" pinned="false" current-in-tab="false">
+              <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpSession.class">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="45">
+                    <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="global.jsp" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/global.jsp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-39">
+                    <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="transactionLogFilter.jsp" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-430">
+                    <caret line="161" column="58" lean-forward="false" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="58" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="manageWards.jsp" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/manageWards.jsp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="410">
+                    <caret line="134" column="20" lean-forward="false" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="menu.jsp" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="30">
+                    <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/home.jsp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="210">
+                    <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/css/main.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-1440">
+                    <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="menu.jsp" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="165">
+                    <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Enum.java" pinned="false" current-in-tab="false">
+              <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/Enum.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-898">
+                    <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
+                    <folding>
+                      <element signature="e#2036#2037#0" expanded="true" />
+                      <element signature="e#2063#2064#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="HttpServletRequest.class" pinned="false" current-in-tab="false">
+              <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpServletRequest.class">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="30">
+                    <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="21" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="TransactionDAO.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/TransactionDAO.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="362">
+                    <caret line="140" column="25" lean-forward="false" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
+                    <folding>
+                      <marker date="1511130579390" expanded="true" signature="1987:2040" ph="SELECT * FRO... transactionlog" />
+                      <marker date="1511130579390" expanded="true" signature="2501:2595" ph="SELECT trans... transactionlog" />
+                      <marker date="1511130579390" expanded="true" signature="4704:4811" ph="INSERT INTO transactionlog... " />
+                      <marker date="1511130579390" expanded="true" signature="5592:5764" ph="SELECT * FRO... transactionlog" />
+                      <marker date="1511130579390" expanded="true" signature="6766:7192" ph="SELECT * FRO... transactionlog" />
+                      <marker date="1511130579390" expanded="true" signature="8338:8589" ph="SELECT * FRO... transactionlog" />
+                      <marker date="1511130579390" expanded="true" signature="9475:9784" ph="SELECT Trans... transactionlog" />
+                      <marker date="1511130579390" expanded="true" signature="10496:10530" ph="SELECT Role users" />
+                      <marker date="1511130579390" expanded="true" signature="10909:10956" ph="SELECT Patie... declaredhcp" />
+                      <marker date="1511130579390" expanded="true" signature="11309:11374" ph="SELECT repre... representatives" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="TransactionType.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/enums/TransactionType.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="150">
+                    <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PersonnelLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/loaders/PersonnelLoader.java">
+    <leaf>
+      <file leaf-file-name="transactionLogChart.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogChart.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonnelBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="170">
+              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
-                <element signature="e#4151#4152#0" expanded="true" />
-                <element signature="e#4192#4193#0" expanded="true" />
+                <element signature="e#1516#1524#0#JAVA" expanded="true" />
+                <element signature="e#1585#1593#0#JAVA" expanded="true" />
+                <element signature="e#1713#1721#0#JAVA" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java">
+      <file leaf-file-name="TimeFilterForChart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/TimeFilterForChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-59">
-              <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="23" />
-              <folding>
-                <marker date="1509654359275" expanded="true" signature="1829:1890" ph="SELECT * FRO... message" />
-                <marker date="1509654359275" expanded="true" signature="2637:2697" ph="SELECT * FRO... message" />
-                <marker date="1509654359275" expanded="true" signature="3477:3649" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="3746:3922" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="4699:4874" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="4971:5150" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="5851:5914" ph="SELECT * FRO... message" />
-                <marker date="1509654359275" expanded="true" signature="6632:6694" ph="SELECT * FRO... message" />
-                <marker date="1509654359275" expanded="true" signature="7479:7651" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="7748:7924" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="8708:8883" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="8985:9164" ph="SELECT messa... message" />
-                <marker date="1509654359275" expanded="true" signature="9822:9977" ph="INSERT INTO message... " />
-                <marker date="1509654359275" expanded="true" signature="10371:10420" ph="UPDATE messa... " />
-                <marker date="1509654359275" expanded="true" signature="10856:10901" ph="SELECT * FRO... message" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/MessageBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditMessageFilterForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/forms/EditMessageFilterForm.java">
+      <file leaf-file-name="transactionLog.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/util/transactionLog.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="39" />
+            <state relative-caret-position="609">
+              <caret line="41" column="81" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="81" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditMessageFilterFormTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/beans/forms/EditMessageFilterFormTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecordsReleaseForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/forms/RecordsReleaseForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PatientBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/PatientBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3895">
-              <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonnelBeanTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/bean/PersonnelBeanTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -142,6 +327,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -150,6 +336,17 @@
       <find>filter</find>
       <find>edit</find>
       <find>getEndDateStr</find>
+      <find>session</find>
+      <find>.css</find>
+      <find>welcome</find>
+      <find>request</find>
+      <find>.png</find>
+      <find>out</find>
+      <find>numTransactionTypes</find>
+      <find>dataset</find>
+      <find>path</find>
+      <find>renderer3</find>
+      <find>Transaction Log</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -163,6 +360,21 @@
         <option value="$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/bean/PersonnelBeanTest.java" />
         <option value="$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/action/ViewMyMessagesActionTest.java" />
         <option value="$PROJECT_DIR$/test/edu/ncsu/csc/itrust/beans/forms/EditMessageFilterFormTest.java" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumLoggedInMID.java" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumSecondaryMID.java" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumRoll.java" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java" />
+        <option value="$PROJECT_DIR$/WebRoot/header.jsp" />
+        <option value="$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpSession.class" />
+        <option value="$PROJECT_DIR$/WebRoot/util/transactionLogChart.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/TimeFilterForChart.java" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/BarChartOutput.java" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/BarChartFile.java" />
+        <option value="$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/TransactionDAO.java" />
+        <option value="$PROJECT_DIR$/WebRoot/auth/transactionLogChart.jsp" />
       </list>
     </option>
   </component>
@@ -171,6 +383,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -184,7 +403,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -204,8 +423,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,65 +435,35 @@
             <path>
               <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
               <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
               <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="itrust" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="itrust" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="itrust" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="itrust" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="itrust" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="message test&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/action/ViewMyMessagesActionTest.java&#10;person&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;PersonnelBean&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/bean/PersonnelBeanTest.java&#10;EditMessageFilterForm&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.forms.EditMessageFilterForm&#10;messagedao&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;ViewMyMessagesAction&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.ViewMyMessagesAction&#10;messagebean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.MessageBean&#10;personnel&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;MessageDAO&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;test bean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.testutils.TestBean&#10;test message&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.action.ViewMyMessagesActionTest#testAddMessage&#10;patientBEA&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PatientBean&#10;patient&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.base.PatientBaseAction&#10;getmessagefilter&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PersonnelBean#getMessageFilter&#10;DB&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.exception.DBException&#10;global&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/WebRoot/global.jsp&#10;edit&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/action/EditPersonnelAction.java&#10;personnello&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.loaders.PersonnelLoader&#10;editpersonnel&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.EditPersonnelAction&#10;personn&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.dao.mysql.PersonnelDAO&#10;messageinbox&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/WebRoot/auth/hcp/messageInbox.jsp" />
+    <property name="SearchEverywhereHistoryKey" value="transa&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/transactionLog.jsp&#10;BarChart&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/javafx-src.zip!/javafx/scene/chart/BarChart.java&#10;BarChart.jpeg&#9;null&#9;null&#10;.png&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/image/user/1.png&#10;barchartRoll&#9;null&#9;null&#10;chartRoll.jpg&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/image/barChart.barchartRoll.jpg&#10;barchart1.png&#9;null&#9;null&#10;head&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/header.jsp&#10;global&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/global.jsp&#10;transaction&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/enums/TransactionType.java&#10;TransactionBeanLoader&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.loaders.TransactionBeanLoader&#10;EventLoggingAction&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.EventLoggingAction&#10;DAOFactory&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/DAOFactory.java&#10;AuthDAO&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.dao.mysql.AuthDAO&#10;user&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/getUser.jsp&#10;num&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java&#10;tran&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/auth/transactionLogFilter.jsp&#10;Role&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/javax/management/relation/RoleInfo.java&#10;secon&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java&#10;ER&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.enums.Role#ER&#10;transactionlogfilte&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/auth/transactionLogFilter.jsp&#10;message test&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/action/ViewMyMessagesActionTest.java&#10;person&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;PersonnelBean&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/bean/PersonnelBeanTest.java&#10;EditMessageFilterForm&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.forms.EditMessageFilterForm&#10;messagedao&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;ViewMyMessagesAction&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.ViewMyMessagesAction&#10;messagebean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.MessageBean&#10;personnel&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;MessageDAO&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;test bean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.testutils.TestBean&#10;test message&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.action.ViewMyMessagesActionTest#testAddMessage&#10;patientBEA&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PatientBean&#10;patient&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.base.PatientBaseAction&#10;getmessagefilter&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PersonnelBean#getMessageFilter&#10;DB&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.exception.DBException&#10;edit&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/action/EditPersonnelAction.java&#10;personnello&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.loaders.PersonnelLoader&#10;editpersonnel&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.EditPersonnelAction&#10;personn&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.dao.mysql.PersonnelDAO&#10;messageinbox&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/WebRoot/auth/hcp/messageInbox.jsp" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -282,6 +471,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WebRoot/auth" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -296,7 +488,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EditMessageFilterFormTest">
+  <component name="RunManager" selected="Tomcat Server.iTrust">
     <configuration name="EditMessageFilterFormTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -403,9 +595,89 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="iTrust" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M26" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/iTrust" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="iTrust:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/iTrust" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_iTrust_3" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55272" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="iTrust:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="transactionLogFilter.jsp" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/iTrust/auth/transactionLogFilter.jsp" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.iTrust" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.EditMessageFilterFormTest" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.transactionLogFilter.jsp" />
+    </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.EditMessageFilterFormTest" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.transactionLogFilter.jsp" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.EditMessageFilterFormTest" />
       </list>
     </recent_temporary>
   </component>
@@ -436,48 +708,73 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6621000" />
+    <option name="totallyTimeSpent" value="57884000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23796424" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19063005" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -486,19 +783,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -510,428 +808,474 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/chart/plot/Plot.class</url>
+          <line>66</line>
+          <properties field="DEFAULT_BACKGROUND_PAINT" class="org.jfree.chart.plot.Plot" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/data/general/AbstractDataset.class</url>
+          <line>21</line>
+          <properties field="group" class="org.jfree.data.general.AbstractDataset" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebRoot/auth/hcp/messageInbox.jsp">
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/charts/AdverseEventsData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1435">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre/lib/rt.jar!/javax/management/relation/Role.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1509820542617" expanded="true" signature="750:4291" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4299:4319" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4347:6535" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4371:6526" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="4390:4425" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4631:6516" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4644:6504" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="4663:4681" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4682:5430" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4694:4871" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="4891:4931" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4932:5122" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5134:5418" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="5449:5467" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5480:5661" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="5681:5721" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5722:5922" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5934:6208" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="6239:6258" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6283:6478" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6550:6557" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6682:7298" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6692:7289" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6698:7133" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6705:6872" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6731:6864" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6879:7059" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6906:7051" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7066:7126" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7139:7279" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7366:8473" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7373:7454" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7458:7546" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="7562:7580" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7581:7988" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="8016:8423" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="8495:8533" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/auth/hcp/messageInbox.jsp">
+    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/dao/auth/GetUserRoleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2799">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/enums/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="68" column="7" lean-forward="true" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/javax/management/relation/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1141">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1509820542617" expanded="true" signature="750:4291" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4299:4319" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4347:6535" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4371:6526" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="4390:4425" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4631:6516" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4644:6504" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="4663:4681" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4682:5430" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4694:4871" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="4891:4931" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="4932:5122" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5134:5418" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="5449:5467" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5480:5661" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="5681:5721" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5722:5922" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="5934:6208" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="6239:6258" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6283:6478" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6550:6557" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6682:7298" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6692:7289" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6698:7133" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6705:6872" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6731:6864" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6879:7059" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="6906:7051" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7066:7126" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7139:7279" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7366:8473" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7373:7454" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7458:7546" ph="..." />
-            <marker date="1509820542617" expanded="false" signature="7562:7580" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="7581:7988" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="8016:8423" ph="..." />
-            <marker date="1509820542617" expanded="true" signature="8495:8533" ph="..." />
+            <element signature="e#0#8922#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/exception/DBException.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumTransactionType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="180">
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumRoll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/util/getUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/js/getUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/ViewHealthRecordsHistoryAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="62" column="17" lean-forward="false" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/util/displayDatabase.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511014880929" expanded="true" signature="1245:1259" ph="SELECT * FRO... missingValue" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/javax/management/relation/RoleInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5650">
+          <caret line="430" column="5" lean-forward="false" selection-start-line="430" selection-start-column="5" selection-end-line="430" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#19202#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/AuthDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <marker date="1511014881059" expanded="true" signature="2478:2564" ph="INSERT INTO users... " />
+            <marker date="1511014881059" expanded="true" signature="3624:3681" ph="UPDATE users... " />
+            <marker date="1511014881059" expanded="true" signature="5044:5078" ph="SELECT role users" />
+            <marker date="1511014881059" expanded="true" signature="6077:6128" ph="SELECT DateO... patients" />
+            <marker date="1511014881059" expanded="true" signature="7190:7237" ph="UPDATE users... " />
+            <marker date="1511014881059" expanded="true" signature="8025:8064" ph="SELECT sQues... users" />
+            <marker date="1511014881059" expanded="true" signature="8950:8987" ph="SELECT sAnsw... users" />
+            <marker date="1511014881059" expanded="true" signature="10008:10109" ph="UPDATE login... " />
+            <marker date="1511014881059" expanded="true" signature="11073:11151" ph="UPDATE reset... " />
+            <marker date="1511014881059" expanded="true" signature="12021:12074" ph="SELECT * FRO... resetpasswordfailures" />
+            <marker date="1511014881059" expanded="true" signature="13360:13405" ph="SELECT * FRO... loginfailures" />
+            <marker date="1511014881059" expanded="true" signature="14413:14475" ph="INSERT INTO loginfailures... " />
+            <marker date="1511014881059" expanded="true" signature="14967:15037" ph="INSERT INTO resetpasswordfailures... " />
+            <marker date="1511014881059" expanded="true" signature="15502:15559" ph="UPDATE login... " />
+            <marker date="1511014881059" expanded="true" signature="16112:16169" ph="UPDATE login... " />
+            <marker date="1511014881059" expanded="true" signature="16608:16673" ph="UPDATE reset... " />
+            <marker date="1511014881059" expanded="true" signature="17199:17230" ph="SELECT * FRO... users" />
+            <marker date="1511014881059" expanded="true" signature="17942:17988" ph="Select * FRO... users" />
+            <marker date="1511014881059" expanded="true" signature="18776:18818" ph="UPDATE users... " />
+            <marker date="1511014881059" expanded="true" signature="19446:19495" ph="SELECT * FRO... users" />
+            <marker date="1511014881059" expanded="true" signature="20144:20178" ph="SELECT Salt users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/DAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3255">
+          <caret line="277" column="5" lean-forward="false" selection-start-line="277" selection-start-column="5" selection-end-line="277" selection-end-column="5" />
+          <folding>
+            <element signature="e#5246#5247#0" expanded="true" />
+            <element signature="e#5285#5286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/EventLoggingAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/239d2337/bb4c30d0-256c-49c9-b42a-c4fb4cca07ae/itrust.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/TransactionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/loaders/TransactionBeanLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-898">
+          <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
+          <folding>
+            <element signature="e#2036#2037#0" expanded="true" />
+            <element signature="e#2063#2064#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/enums/TransactionType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/global.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+        <state relative-caret-position="-39">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/base/PersonnelBaseAction.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="-1440">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/EditPersonnelAction.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/css/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        <state relative-caret-position="-96">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/createTables.sql">
+    <entry file="file://$PROJECT_DIR$/WebRoot/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="39" lean-forward="true" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
-          <folding>
-            <marker date="1509819265862" expanded="true" signature="0:22" ph="/* updated 2... " />
-            <marker date="1509819265862" expanded="true" signature="23:554" ph="CREATE TABLE... users" />
-            <marker date="1509819265862" expanded="true" signature="482:538" ph="/* Please us... " />
-            <marker date="1509819265862" expanded="true" signature="558:766" ph="CREATE TABLE... hospitals" />
-            <marker date="1509819265862" expanded="true" signature="769:983" ph="CREATE TABLE... wards" />
-            <marker date="1509819265862" expanded="true" signature="986:1973" ph="CREATE TABLE... personnel" />
-            <marker date="1509819265862" expanded="true" signature="1976:3882" ph="CREATE TABLE... patients" />
-            <marker date="1509819265862" expanded="true" signature="3885:5847" ph="CREATE TABLE... historypatients" />
-            <marker date="1509819265862" expanded="true" signature="5850:6262" ph="CREATE TABLE... ophthalmology" />
-            <marker date="1509819265862" expanded="true" signature="6265:6627" ph="CREATE TABLE... ophthalmologySchedule" />
-            <marker date="1509819265862" expanded="true" signature="6630:7099" ph="CREATE TABLE... ophthalmologySurgery" />
-            <marker date="1509819265862" expanded="true" signature="7102:7747" ph="CREATE TABLE... obstetrics" />
-            <marker date="1509819265862" expanded="true" signature="7750:8183" ph="CREATE TABLE... flags" />
-            <marker date="1509819265862" expanded="true" signature="8186:8387" ph="CREATE TABLE... loginfailures" />
-            <marker date="1509819265862" expanded="true" signature="8390:8599" ph="CREATE TABLE... resetpasswordfailures" />
-            <marker date="1509819265862" expanded="true" signature="8602:8867" ph="CREATE TABLE... icdcodes" />
-            <marker date="1509819265862" expanded="true" signature="8870:9081" ph="CREATE TABLE... cptcodes" />
-            <marker date="1509819265862" expanded="true" signature="9084:9303" ph="CREATE TABLE... drugreactionoverridecodes" />
-            <marker date="1509819265862" expanded="true" signature="9307:9431" ph="CREATE TABLE... ndcodes" />
-            <marker date="1509819265862" expanded="true" signature="9434:9618" ph="CREATE TABLE... druginteractions" />
-            <marker date="1509819265862" expanded="true" signature="9621:10037" ph="CREATE TABLE... transactionlog" />
-            <marker date="1509819265862" expanded="true" signature="10040:10193" ph="CREATE TABLE... hcprelations" />
-            <marker date="1509819265862" expanded="true" signature="10196:10438" ph="CREATE TABLE... personalrelations" />
-            <marker date="1509819265862" expanded="true" signature="10441:10619" ph="CREATE TABLE... representatives" />
-            <marker date="1509819265862" expanded="true" signature="10622:10757" ph="CREATE TABLE... hcpassignedhos" />
-            <marker date="1509819265862" expanded="true" signature="10760:10929" ph="CREATE TABLE... declaredhcp" />
-            <marker date="1509819265862" expanded="true" signature="10932:11365" ph="CREATE TABLE... officevisits" />
-            <marker date="1509819265862" expanded="true" signature="11368:12528" ph="CREATE TABLE... billing" />
-            <marker date="1509819265862" expanded="true" signature="12531:13542" ph="CREATE TABLE... personalhealthinformation" />
-            <marker date="1509819265862" expanded="true" signature="13495:13526" ph="/*PRIMARY KE... " />
-            <marker date="1509819265862" expanded="true" signature="13545:13727" ph="CREATE TABLE... personalallergies" />
-            <marker date="1509819265862" expanded="true" signature="13731:14176" ph="CREATE TABLE... allergies" />
-            <marker date="1509819265862" expanded="true" signature="14074:14160" ph="/*NEW, Added... " />
-            <marker date="1509819265862" expanded="true" signature="14179:14439" ph="CREATE TABLE... ovprocedure" />
-            <marker date="1509819265862" expanded="true" signature="14442:14911" ph="CREATE TABLE... ovmedication" />
-            <marker date="1509819265862" expanded="true" signature="14914:15229" ph="CREATE TABLE... ovreactionoverride" />
-            <marker date="1509819265862" expanded="true" signature="15232:15507" ph="CREATE TABLE... ovdiagnosis" />
-            <marker date="1509819265862" expanded="true" signature="15510:15606" ph="CREATE TABLE... globalvariables" />
-            <marker date="1509819265862" expanded="true" signature="15609:15673" ph="INSERT INTO globalvariables... " />
-            <marker date="1509819265862" expanded="true" signature="15676:15901" ph="CREATE TABLE... fakeemail" />
-            <marker date="1509819265862" expanded="true" signature="15904:16206" ph="CREATE TABLE... reportrequests" />
-            <marker date="1509819265862" expanded="true" signature="16209:16797" ph="CREATE TABLE... ovsurvey" />
-            <marker date="1509819265862" expanded="true" signature="16800:17028" ph="CREATE TABLE... loinc" />
-            <marker date="1509819265862" expanded="true" signature="17031:17590" ph="CREATE TABLE... labprocedure" />
-            <marker date="1509819265862" expanded="true" signature="17593:17983" ph="CREATE TABLE... message" />
-            <marker date="1509819265862" expanded="true" signature="17986:18275" ph="CREATE TABLE... appointment" />
-            <marker date="1509819265862" expanded="true" signature="18278:18513" ph="CREATE TABLE... appointmenttype" />
-            <marker date="1509819265862" expanded="true" signature="18516:18975" ph="CREATE TABLE... referrals" />
-            <marker date="1509819265862" expanded="true" signature="18978:19545" ph="CREATE TABLE... remotemonitoringdata" />
-            <marker date="1509819265862" expanded="true" signature="19548:19936" ph="CREATE TABLE... remotemonitoringlists" />
-            <marker date="1509819265862" expanded="true" signature="19939:20267" ph="CREATE TABLE... adverseevents" />
-            <marker date="1509819265862" expanded="true" signature="20270:20419" ph="CREATE TABLE... profilephotos" />
-            <marker date="1509819265862" expanded="true" signature="20422:20689" ph="CREATE TABLE... patientspecificinstructions" />
-            <marker date="1509819265862" expanded="true" signature="20692:20845" ph="CREATE TABLE... referralmessage" />
-            <marker date="1509819265862" expanded="true" signature="20848:21204" ph="CREATE TABLE... appointmentrequests" />
-            <marker date="1509819265862" expanded="true" signature="21207:21521" ph="CREATE TABLE... WardRooms" />
-            <marker date="1509819265862" expanded="true" signature="21524:21709" ph="CREATE TABLE... HCPAssignedToWard" />
-            <marker date="1509819265862" expanded="true" signature="21712:21860" ph="CREATE TABLE... WardRoomCheckout" />
-            <marker date="1509819265862" expanded="true" signature="21863:21913" ph="/*Table for " />
-            <marker date="1509819265862" expanded="true" signature="21914:22081" ph="CREATE TABLE... cdcweightstats" />
-            <marker date="1509819265862" expanded="true" signature="22084:22134" ph="/*Table for " />
-            <marker date="1509819265862" expanded="true" signature="22135:22302" ph="CREATE TABLE... cdcheightstats" />
-            <marker date="1509819265862" expanded="true" signature="22305:22378" ph="/*Table for " />
-            <marker date="1509819265862" expanded="true" signature="22379:22557" ph="CREATE TABLE... cdcheadcircumferencestats" />
-            <marker date="1509819265862" expanded="true" signature="22560:22618" ph="/*Table for " />
-            <marker date="1509819265862" expanded="true" signature="22619:22783" ph="CREATE TABLE... cdcbmistats" />
-            <marker date="1509819265862" expanded="true" signature="22786:22840" ph="/*Table for " />
-            <marker date="1509819265862" expanded="true" signature="22841:23138" ph="CREATE TABLE... normaltable" />
-            <marker date="1509819265862" expanded="true" signature="23141:23194" ph="/*Table for " />
-            <marker date="1509819265862" expanded="true" signature="23195:23679" ph="CREATE TABLE... recordsrelease" />
-            <marker date="1509819265862" expanded="true" signature="23682:23889" ph="CREATE TABLE... requiredprocedures" />
-            <marker date="1509819265862" expanded="true" signature="23896:24129" ph="CREATE TABLE... reviews" />
-            <marker date="1509819265862" expanded="true" signature="24132:24369" ph="CREATE TABLE... IF" />
-            <marker date="1509819265862" expanded="true" signature="24372:24701" ph="CREATE TABLE... IF" />
-            <marker date="1509819265862" expanded="true" signature="24704:25306" ph="CREATE TABLE... IF" />
-            <marker date="1509819265862" expanded="true" signature="25309:25615" ph="CREATE TABLE... IF" />
-            <marker date="1509819265862" expanded="true" signature="25618:26041" ph="CREATE TABLE... IF" />
-            <marker date="1509819265862" expanded="true" signature="26045:26247" ph="CREATE TABLE... IF" />
-            <marker date="1509819265862" expanded="true" signature="26251:26439" ph="CREATE TABLE... IF" />
-            <marker date="1509819265862" expanded="true" signature="26442:26737" ph="CREATE TABLE... IF" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/base/PatientBaseAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="898">
+          <caret line="163" column="27" lean-forward="false" selection-start-line="163" selection-start-column="27" selection-end-line="163" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/DAOFactory.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3225">
-          <caret line="277" column="22" lean-forward="false" selection-start-line="277" selection-start-column="22" selection-end-line="277" selection-end-column="22" />
-          <folding>
-            <element signature="e#5224#5225#0" expanded="true" />
-            <element signature="e#5258#5259#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/SendMessageAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="32" column="28" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="28" />
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/exception/AddPatientFileExceptionTest.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="165">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/exception/FormValidationExceptionTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/chart/plot/PlotOrientation.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="-58">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/testutils/TestBean.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/chart/plot/Plot.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="-255">
+          <caret line="93" column="36" lean-forward="false" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/PersonnelDAO.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/data/general/AbstractDataset.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-809">
-          <caret line="518" column="41" lean-forward="false" selection-start-line="518" selection-start-column="31" selection-end-line="518" selection-end-column="60" />
-          <folding>
-            <marker date="1509820542620" expanded="true" signature="2335:2388" ph="SELECT first... personnel" />
-            <marker date="1509820542620" expanded="true" signature="3254:3312" ph="SELECT MAX(u... users" />
-            <marker date="1509820542620" expanded="true" signature="4230:4274" ph="INSERT INTO personnel... " />
-            <marker date="1509820542620" expanded="true" signature="5031:5068" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="5862:6020" ph="UPDATE perso... " />
-            <marker date="1509820542620" expanded="true" signature="6708:6743" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="7466:7591" ph="SELECT * FRO... hcpassignedhos" />
-            <marker date="1509820542620" expanded="true" signature="8363:8611" ph="SELECT DISTI... hcpassignedhos" />
-            <marker date="1509820542620" expanded="true" signature="9533:9649" ph="SELECT * FRO... hcpassignedhos" />
-            <marker date="1509820542620" expanded="true" signature="9733:9869" ph="SELECT * FRO... hcpassignedhos" />
-            <marker date="1509820542620" expanded="true" signature="10842:10958" ph="SELECT * FRO... hcpassignedhos" />
-            <marker date="1509820542620" expanded="true" signature="11634:11690" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="12404:12483" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="12442:12482" ph="SELECT UAP F... hcprelations" />
-            <marker date="1509820542620" expanded="true" signature="13416:13496" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="13454:13495" ph="SELECT HCPID... officevisits" />
-            <marker date="1509820542620" expanded="true" signature="14559:14625" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="15368:15409" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="16314:16395" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="17030:17103" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="17804:17902" ph="SELECT * FRO... personnel" />
-            <marker date="1509820542620" expanded="true" signature="18440:18488" ph="UPDATE perso... " />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/dao/personnel/PersonnelDAOExceptionTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/chart/plot/CategoryPlot.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-767">
+          <caret line="85" column="10" lean-forward="false" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="120" column="8" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/data/category/CategoryDataset.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/data/general/Dataset.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/image/barChart.barchartRoll.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/image/user/1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/javafx-src.zip!/javafx/scene/chart/BarChart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/ViewMyMessagesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-947">
-          <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/loaders/PersonnelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="26" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4151#4152#0" expanded="true" />
-            <element signature="e#4192#4193#0" expanded="true" />
+            <element signature="e#0#26202#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/forms/EditOfficeVisitForm.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/BarChartFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="225">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/data/xy/XYDataset.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="60">
+          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/data/category/DefaultCategoryDataset.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/manageWards.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="134" column="20" lean-forward="false" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/util/transactionLog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="41" column="81" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/TimeFilterForChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-430">
+          <caret line="161" column="58" lean-forward="false" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/TransactionDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="140" column="25" lean-forward="false" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
           <folding>
-            <marker date="1509654359275" expanded="true" signature="1829:1890" ph="SELECT * FRO... message" />
-            <marker date="1509654359275" expanded="true" signature="2637:2697" ph="SELECT * FRO... message" />
-            <marker date="1509654359275" expanded="true" signature="3477:3649" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="3746:3922" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="4699:4874" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="4971:5150" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="5851:5914" ph="SELECT * FRO... message" />
-            <marker date="1509654359275" expanded="true" signature="6632:6694" ph="SELECT * FRO... message" />
-            <marker date="1509654359275" expanded="true" signature="7479:7651" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="7748:7924" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="8708:8883" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="8985:9164" ph="SELECT messa... message" />
-            <marker date="1509654359275" expanded="true" signature="9822:9977" ph="INSERT INTO message... " />
-            <marker date="1509654359275" expanded="true" signature="10371:10420" ph="UPDATE messa... " />
-            <marker date="1509654359275" expanded="true" signature="10856:10901" ph="SELECT * FRO... message" />
+            <marker date="1511130579390" expanded="true" signature="1987:2040" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511130579390" expanded="true" signature="2501:2595" ph="SELECT trans... transactionlog" />
+            <marker date="1511130579390" expanded="true" signature="4704:4811" ph="INSERT INTO transactionlog... " />
+            <marker date="1511130579390" expanded="true" signature="5592:5764" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511130579390" expanded="true" signature="6766:7192" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511130579390" expanded="true" signature="8338:8589" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511130579390" expanded="true" signature="9475:9784" ph="SELECT Trans... transactionlog" />
+            <marker date="1511130579390" expanded="true" signature="10496:10530" ph="SELECT Role users" />
+            <marker date="1511130579390" expanded="true" signature="10909:10956" ph="SELECT Patie... declaredhcp" />
+            <marker date="1511130579390" expanded="true" signature="11309:11374" ph="SELECT repre... representatives" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/MessageBean.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogChart.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/action/ViewMyMessagesActionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/PatientBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3895">
-          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/unit/bean/PersonnelBeanTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="45" />
+        <state relative-caret-position="170">
+          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/forms/EditMessageFilterForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/forms/RecordsReleaseForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/beans/forms/EditMessageFilterFormTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1516#1524#0#JAVA" expanded="true" />
+            <element signature="e#1585#1593#0#JAVA" expanded="true" />
+            <element signature="e#1713#1721#0#JAVA" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -939,9 +1283,84 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>iTrust:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>jcommon-1.0.23</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>iTrust</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: bcel:bcel:5.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
