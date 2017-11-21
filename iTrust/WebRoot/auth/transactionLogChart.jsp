@@ -1,10 +1,9 @@
 
 <%@page import="edu.ncsu.csc.itrust.enums.TransactionType"%>
 <%@page import="edu.ncsu.csc.itrust.dao.DAOFactory"%>
-<%@page import="java.util.List"%>
 <%@page import="edu.ncsu.csc.itrust.beans.TransactionBean"%>
 <%@page import="java.sql.Timestamp" %>
-<%@page import="java.util.Date"%>
+<%@page import="java.time.Month"%>
 <%@page import="java.text.DateFormat" %>
 <%@page import="java.text.SimpleDateFormat" %>
 <%@page import="java.sql.Timestamp" %>
@@ -24,7 +23,8 @@
 <%@ page import="java.text.DecimalFormat" %>
 <%@ page import="java.awt.image.BufferedImage" %>
 <%@ page import="org.jfree.chart.servlet.ServletUtilities" %>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.util.List" %>
 
 <%@include file="/global.jsp"%>
 <%
@@ -42,6 +42,7 @@
     double[] numSecondaryRolls = new double[10];
 
     ArrayList<String> transactionTypeString = new ArrayList<String>();
+    ArrayList<String> timeString = new ArrayList<String>();
     ArrayList<Double> numTransactionTypes = new ArrayList<Double>();
     //ArrayList<Double> numTransactionTypes = new ArrayList<Double>();
     ArrayList<Double> numTime = new ArrayList<Double>();
@@ -111,6 +112,57 @@
             }
 
     }
+
+    //String prevdate = dateForm.format(minimum);
+    //String currdate = dateForm.format(new Date());
+
+    Date startDate = new Date(prevdate);
+    Date dateIteration = new Date(prevdate);
+    Date dateIterationEnd = new Date(prevdate);
+    Date endDate = new Date(currdate);
+
+    int month1 = startDate.getMonth();
+    int year1 = startDate.getYear();
+
+    int month2 = endDate.getMonth();
+    int year2 = endDate.getYear();
+
+    int monthIter = month1;
+    int yearIter = year1;
+
+    int monthLimit = 12;
+
+    for(; yearIter < year2;yearIter++){
+        if(yearIter > year1){
+            monthIter = 0;
+        }
+        if(yearIter == year2)
+        {
+            monthLimit = month2;
+        }
+        for(;monthIter < monthLimit;monthIter++){
+            Calendar mycal = new GregorianCalendar(yearIter, monthIter, 1);
+            int daysInMonth = mycal.getActualMaximum(Calendar.DAY_OF_MONTH);
+            options[0] = "All";
+            options[1] = "All";
+            options[2] = "All";
+            options[3] = dateForm.format(new Date(yearIter, monthIter, 1));
+            options[3] = dateFormat.format(new Date(options[3]));
+            options[4] = dateForm.format(new Date(yearIter, daysInMonth, daysInMonth));
+            options[4] = dateFormat.format(new Date(options[4] + " 23:59:59"));
+            List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options);
+            if(tlist.size()!=0) {
+                timeString.add("/"+monthIter+"/"+yearIter);
+                Double bb = new Double((double) tlist.size());
+                numTime.add(bb);
+
+            }
+            ;
+        }
+    }
+
+
+
 
 
 
@@ -235,7 +287,7 @@
             0.0f, 0.0f, new Color(20, 255, 0), 0.0f, 0.0f, new Color
             (20, 255, 0));
 
-    renderer3.setSeriesPaint(3, p3);
+    renderer3.setSeriesPaint(1, p3);
 
     plot3.setRenderer(renderer3);
 
@@ -247,6 +299,52 @@
         File file3 = new File(path3);
         //new File( servletContext.getRealPath( "/text.XML" ) );
         ChartUtilities.saveChartAsPNG(file3, chart3, 600, 400, info);
+    } catch (Exception e) {
+        out.println(e);
+    }
+
+    //Time BarChart
+    DefaultCategoryDataset dataset4 = new DefaultCategoryDataset();
+
+    for (int i = 0; i < transactionTypeString.size(); i++) {
+        dataset4.addValue(numTime.get(i).doubleValue(), "Type", timeString.get(i));
+        %>
+        <th><%=timeString.get(i)%></th>
+        <th><%=numTime.get(i).doubleValue()%></th>
+        <%
+    }
+
+    final CategoryAxis categoryAxis3 = new CategoryAxis("Time");
+    final ValueAxis valueAxis3 = new NumberAxis("Num");
+    renderer4 = new BarRenderer();
+
+    plot4 = new CategoryPlot(dataset4, categoryAxis3, valueAxis3,
+            renderer4);
+    plot4.setOrientation(PlotOrientation.VERTICAL);
+        chart4 = new JFreeChart("Number of Tranaction Log in each /Month/Year", JFreeChart.DEFAULT_TITLE_FONT,
+            plot4, true);
+
+    chart4.setBackgroundPaint(new Color(255, 249, 252));
+
+    /*Paint p2 = new GradientPaint(
+            0.0f, 0.0f, new Color(16, 89, 172), 0.0f, 0.0f, new Color
+            (201, 201, 244));*/
+    Paint p4 = new GradientPaint(
+            0.0f, 0.0f, new Color(20, 255, 0), 0.0f, 0.0f, new Color
+            (20, 255, 0));
+
+    renderer4.setSeriesPaint(1, p4);
+
+    plot4.setRenderer(renderer4);
+
+    String path4 = null;
+    try {
+        final ChartRenderingInfo info = new ChartRenderingInfo
+                (new StandardEntityCollection());
+        path4 = getServletConfig().getServletContext().getRealPath("/auth/barChartTime.png");
+        File file4 = new File(path4);
+        //new File( servletContext.getRealPath( "/text.XML" ) );
+        ChartUtilities.saveChartAsPNG(file4, chart4, 600, 400, info);
     } catch (Exception e) {
         out.println(e);
     }
@@ -271,6 +369,8 @@
     <IMG SRC="barChartSRoll.png" WIDTH="600"
          HEIGHT="400" BORDER="0" USEMAP="#chart">
     <IMG SRC="barChartTransLogType.png" WIDTH="600"
+         HEIGHT="400" BORDER="0" USEMAP="#chart">
+    <IMG SRC="barChartTime.png" WIDTH="600"
          HEIGHT="400" BORDER="0" USEMAP="#chart">
 
 </body>
