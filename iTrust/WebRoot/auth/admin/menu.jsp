@@ -45,7 +45,6 @@
 			<li><a href="/iTrust/auth/surveyResults.jsp">Satisfaction Survey Results</a></li>
 			<li><a href="/iTrust/auth/admin/activatePatient.jsp">Activate Patient</a></li>
 			<li><a href="/iTrust/auth/transactionLogFilter.jsp">View Transaction Log</a></li>
-			<li><a href="/iTrust/auth/transactionLogChart.jsp">View Transaction Log in Bar Chart</a></li>
 		</ul>
 	</div>
 </div>

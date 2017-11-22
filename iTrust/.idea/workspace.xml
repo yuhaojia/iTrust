@@ -48,205 +48,13 @@
     </expand>
     <select />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="AuthDAO.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/AuthDAO.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-180">
-                    <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-                    <folding>
-                      <marker date="1511014881059" expanded="true" signature="2478:2564" ph="INSERT INTO users... " />
-                      <marker date="1511014881059" expanded="true" signature="3624:3681" ph="UPDATE users... " />
-                      <marker date="1511014881059" expanded="true" signature="5044:5078" ph="SELECT role users" />
-                      <marker date="1511014881059" expanded="true" signature="6077:6128" ph="SELECT DateO... patients" />
-                      <marker date="1511014881059" expanded="true" signature="7190:7237" ph="UPDATE users... " />
-                      <marker date="1511014881059" expanded="true" signature="8025:8064" ph="SELECT sQues... users" />
-                      <marker date="1511014881059" expanded="true" signature="8950:8987" ph="SELECT sAnsw... users" />
-                      <marker date="1511014881059" expanded="true" signature="10008:10109" ph="UPDATE login... " />
-                      <marker date="1511014881059" expanded="true" signature="11073:11151" ph="UPDATE reset... " />
-                      <marker date="1511014881059" expanded="true" signature="12021:12074" ph="SELECT * FRO... resetpasswordfailures" />
-                      <marker date="1511014881059" expanded="true" signature="13360:13405" ph="SELECT * FRO... loginfailures" />
-                      <marker date="1511014881059" expanded="true" signature="14413:14475" ph="INSERT INTO loginfailures... " />
-                      <marker date="1511014881059" expanded="true" signature="14967:15037" ph="INSERT INTO resetpasswordfailures... " />
-                      <marker date="1511014881059" expanded="true" signature="15502:15559" ph="UPDATE login... " />
-                      <marker date="1511014881059" expanded="true" signature="16112:16169" ph="UPDATE login... " />
-                      <marker date="1511014881059" expanded="true" signature="16608:16673" ph="UPDATE reset... " />
-                      <marker date="1511014881059" expanded="true" signature="17199:17230" ph="SELECT * FRO... users" />
-                      <marker date="1511014881059" expanded="true" signature="17942:17988" ph="Select * FRO... users" />
-                      <marker date="1511014881059" expanded="true" signature="18776:18818" ph="UPDATE users... " />
-                      <marker date="1511014881059" expanded="true" signature="19446:19495" ph="SELECT * FRO... users" />
-                      <marker date="1511014881059" expanded="true" signature="20144:20178" ph="SELECT Salt users" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="DAOFactory.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/DAOFactory.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="3255">
-                    <caret line="277" column="5" lean-forward="false" selection-start-line="277" selection-start-column="5" selection-end-line="277" selection-end-column="5" />
-                    <folding>
-                      <element signature="e#5246#5247#0" expanded="true" />
-                      <element signature="e#5285#5286#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="EventLoggingAction.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/EventLoggingAction.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="300">
-                    <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebRoot/header.jsp">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="360">
-                    <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebRoot/css/dashboard.css">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-96">
-                    <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebRoot/css/bootstrap.min.css">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="898">
-                    <caret line="163" column="27" lean-forward="false" selection-start-line="163" selection-start-column="27" selection-end-line="163" selection-end-column="27" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="HttpSession.class" pinned="false" current-in-tab="false">
-              <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpSession.class">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="45">
-                    <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="global.jsp" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebRoot/global.jsp">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-39">
-                    <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="transactionLogFilter.jsp" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="462">
-                    <caret line="218" column="126" lean-forward="false" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="126" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="transactionLog.jsp" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebRoot/util/transactionLog.jsp">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="519">
-                    <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="6" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="TransactionDAO.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/TransactionDAO.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="105">
-                    <caret line="112" column="28" lean-forward="true" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
-                    <folding>
-                      <marker date="1511240690205" expanded="true" signature="1987:2040" ph="SELECT * FRO... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="2501:2595" ph="SELECT trans... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="4170:4264" ph="SELECT trans... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="4170:4303" ph="SELECT trans... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="4170:4346" ph="SELECT trans... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="6035:6142" ph="INSERT INTO transactionlog... " />
-                      <marker date="1511240690205" expanded="true" signature="6923:7095" ph="SELECT * FRO... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="8097:8523" ph="SELECT * FRO... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="9669:9920" ph="SELECT * FRO... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="10806:11115" ph="SELECT Trans... transactionlog" />
-                      <marker date="1511240690205" expanded="true" signature="11827:11861" ph="SELECT Role users" />
-                      <marker date="1511240690205" expanded="true" signature="12240:12287" ph="SELECT Patie... declaredhcp" />
-                      <marker date="1511240690205" expanded="true" signature="12640:12705" ph="SELECT repre... representatives" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="TransactionType.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/enums/TransactionType.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-713">
-                    <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="transactionLogChart.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogChart.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="317" column="55" lean-forward="true" selection-start-line="317" selection-start-column="55" selection-end-line="317" selection-end-column="55" />
-              <folding>
-                <element signature="e#1511#1519#0#JAVA" expanded="true" />
-                <element signature="e#1571#1579#0#JAVA" expanded="true" />
-                <element signature="e#1640#1648#0#JAVA" expanded="true" />
-                <element signature="e#1768#1776#0#JAVA" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PatientDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/PatientDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3373">
-              <caret line="782" column="13" lean-forward="true" selection-start-line="782" selection-start-column="13" selection-end-line="782" selection-end-column="13" />
+            <state relative-caret-position="11400">
+              <caret line="782" column="13" lean-forward="false" selection-start-line="782" selection-start-column="13" selection-end-line="782" selection-end-column="13" />
               <folding>
                 <marker date="1511016043799" expanded="true" signature="2989:3041" ph="SELECT first... patients" />
                 <marker date="1511016043799" expanded="true" signature="4035:4080" ph="SELECT role users" />
@@ -298,73 +106,96 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/TransactionBean.java">
+      <file leaf-file-name="transactionLogFilter.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="20" />
+            <state relative-caret-position="258">
+              <caret line="553" column="4" lean-forward="true" selection-start-line="553" selection-start-column="4" selection-end-line="553" selection-end-column="4" />
               <folding>
-                <element signature="e#927#928#0" expanded="true" />
-                <element signature="e#950#951#0" expanded="true" />
+                <element signature="e#3434#3442#0#JAVA" expanded="true" />
+                <element signature="e#3494#3502#0#JAVA" expanded="true" />
+                <element signature="e#3563#3571#0#JAVA" expanded="true" />
+                <element signature="e#3691#3699#0#JAVA" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionBeanLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/loaders/TransactionBeanLoader.java">
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Date.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/Date.java">
+      <file leaf-file-name="menu.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17335">
-              <caret line="1372" column="19" lean-forward="false" selection-start-line="1372" selection-start-column="19" selection-end-line="1372" selection-end-column="19" />
-              <folding>
-                <element signature="e#57143#57144#0" expanded="true" />
-                <element signature="e#57197#57198#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="387">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Timestamp.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/sql/Timestamp.java">
+      <file leaf-file-name="menu.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="85" column="80" lean-forward="true" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
-              <folding>
-                <element signature="e#21925#21926#0" expanded="true" />
-                <element signature="e#22013#22014#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Time.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/sql/Time.java">
+      <file leaf-file-name="EditMessageFilterForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/forms/EditMessageFilterForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="289" column="19" lean-forward="false" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="19" />
-              <folding>
-                <element signature="e#8360#8361#0" expanded="true" />
-                <element signature="e#8427#8428#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Date.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/sql/Date.java">
+      <file leaf-file-name="HttpServletRequestWrapper.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpServletRequestWrapper.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3273">
-              <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="108">
+              <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hospitalListing.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/hospitalListing.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-381">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messageInbox.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/auth/patient/messageInbox.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="57" column="52" lean-forward="false" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transactionLog.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/util/transactionLog.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -388,7 +219,6 @@
       <find>session</find>
       <find>.css</find>
       <find>welcome</find>
-      <find>request</find>
       <find>out</find>
       <find>numTransactionTypes</find>
       <find>dataset</find>
@@ -397,10 +227,16 @@
       <find>getmonth</find>
       <find>.png</find>
       <find>renderer3</find>
+      <find>Transaction Log</find>
       <find>month</find>
       <find>settime</find>
+      <find>prevdate</find>
+      <find>request</find>
+      <find>getParameter</find>
+      <find>tlist</find>
+      <find>dateFormat</find>
       <find>info</find>
-      <find>Transaction Log</find>
+      <find>rollList</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -421,14 +257,15 @@
         <option value="$PROJECT_DIR$/WebRoot/header.jsp" />
         <option value="$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpSession.class" />
         <option value="$PROJECT_DIR$/WebRoot/util/transactionLogChart.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp" />
-        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/TimeFilterForChart.java" />
         <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/BarChartOutput.java" />
         <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/BarChartFile.java" />
-        <option value="$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp" />
         <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/TransactionDAO.java" />
         <option value="$PROJECT_DIR$/WebRoot/auth/transactionLogChart.jsp" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/TimeFilterForChart.java" />
+        <option value="$PROJECT_DIR$/src/edu/ncsu/csc/itrust/FilterForChart.java" />
+        <option value="$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp" />
       </list>
     </option>
   </component>
@@ -495,12 +332,31 @@
               <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
               <item name="iTrust" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="itrust" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="mysql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
               <item name="iTrust" type="462c0819:PsiDirectoryNode" />
               <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iTrust" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="tester" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iTrust" type="b2602c69:ProjectViewProjectNode" />
@@ -516,7 +372,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="tran&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/transactionLog.jsp&#10;transaction&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/loaders/TransactionBeanLoader.java&#10;transa&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/transactionLog.jsp&#10;BarChart&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/javafx-src.zip!/javafx/scene/chart/BarChart.java&#10;BarChart.jpeg&#9;null&#9;null&#10;.png&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/image/user/1.png&#10;barchartRoll&#9;null&#9;null&#10;chartRoll.jpg&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/image/barChart.barchartRoll.jpg&#10;barchart1.png&#9;null&#9;null&#10;head&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/header.jsp&#10;global&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/global.jsp&#10;TransactionBeanLoader&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.loaders.TransactionBeanLoader&#10;EventLoggingAction&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.EventLoggingAction&#10;DAOFactory&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/DAOFactory.java&#10;AuthDAO&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.dao.mysql.AuthDAO&#10;user&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/getUser.jsp&#10;num&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java&#10;Role&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/javax/management/relation/RoleInfo.java&#10;secon&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java&#10;ER&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.enums.Role#ER&#10;transactionlogfilte&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/auth/transactionLogFilter.jsp&#10;message test&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/action/ViewMyMessagesActionTest.java&#10;person&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;PersonnelBean&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/bean/PersonnelBeanTest.java&#10;EditMessageFilterForm&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.forms.EditMessageFilterForm&#10;messagedao&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;ViewMyMessagesAction&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.ViewMyMessagesAction&#10;messagebean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.MessageBean&#10;personnel&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;MessageDAO&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;test bean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.testutils.TestBean&#10;test message&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.action.ViewMyMessagesActionTest#testAddMessage&#10;patientBEA&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PatientBean&#10;patient&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.base.PatientBaseAction&#10;getmessagefilter&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PersonnelBean#getMessageFilter&#10;DB&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.exception.DBException&#10;edit&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/action/EditPersonnelAction.java&#10;personnello&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.loaders.PersonnelLoader&#10;editpersonnel&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.EditPersonnelAction&#10;personn&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.dao.mysql.PersonnelDAO&#10;messageinbox&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/WebRoot/auth/hcp/messageInbox.jsp" />
+    <property name="SearchEverywhereHistoryKey" value="png&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/image/user/1.png&#10;messagefilter&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.forms.EditMessageFilterForm&#10;hospitalListing&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/auth/admin/hospitalListing.jsp&#10;messagein&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/auth/patient/messageInbox.jsp&#10;tr&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/auth/transactionLogFilter.jsp&#10;tran&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/transactionLog.jsp&#10;transaction&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/loaders/TransactionBeanLoader.java&#10;transa&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/transactionLog.jsp&#10;BarChart&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/javafx-src.zip!/javafx/scene/chart/BarChart.java&#10;BarChart.jpeg&#9;null&#9;null&#10;.png&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/image/user/1.png&#10;barchartRoll&#9;null&#9;null&#10;chartRoll.jpg&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/image/barChart.barchartRoll.jpg&#10;barchart1.png&#9;null&#9;null&#10;head&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/header.jsp&#10;global&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/global.jsp&#10;TransactionBeanLoader&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.loaders.TransactionBeanLoader&#10;EventLoggingAction&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.EventLoggingAction&#10;DAOFactory&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/DAOFactory.java&#10;AuthDAO&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.dao.mysql.AuthDAO&#10;user&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/util/getUser.jsp&#10;num&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java&#10;Role&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/javax/management/relation/RoleInfo.java&#10;secon&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/NumSecondaryRoll.java&#10;ER&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.enums.Role#ER&#10;transactionlogfilte&#9;FILE&#9;file:///Users/yuhaojia/Downloads/WorkPlace/Gitlab/cs427fa17team17/iTrust/WebRoot/auth/transactionLogFilter.jsp&#10;message test&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/action/ViewMyMessagesActionTest.java&#10;person&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;PersonnelBean&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/test/edu/ncsu/csc/itrust/unit/bean/PersonnelBeanTest.java&#10;EditMessageFilterForm&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.forms.EditMessageFilterForm&#10;messagedao&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;ViewMyMessagesAction&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.ViewMyMessagesAction&#10;messagebean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.MessageBean&#10;personnel&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/beans/PersonnelBean.java&#10;MessageDAO&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/dao/mysql/MessageDAO.java&#10;test bean&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.testutils.TestBean&#10;test message&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.unit.action.ViewMyMessagesActionTest#testAddMessage&#10;patientBEA&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PatientBean&#10;patient&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.base.PatientBaseAction&#10;getmessagefilter&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.PersonnelBean#getMessageFilter&#10;DB&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.exception.DBException&#10;edit&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/src/edu/ncsu/csc/itrust/action/EditPersonnelAction.java&#10;personnello&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.beans.loaders.PersonnelLoader&#10;editpersonnel&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.action.EditPersonnelAction&#10;personn&#9;PSI&#9;JAVA://edu.ncsu.csc.itrust.dao.mysql.PersonnelDAO&#10;messageinbox&#9;FILE&#9;file:///Users/haojiayu/WorkPlace/SE_FINAL/cs427fa17team17/iTrust/WebRoot/auth/hcp/messageInbox.jsp" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
@@ -767,10 +623,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70661000" />
+    <option name="totallyTimeSpent" value="81613000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -812,7 +668,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -887,65 +743,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumRoll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/util/getUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/js/getUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/action/ViewHealthRecordsHistoryAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="62" column="17" lean-forward="false" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/util/displayDatabase.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-265">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1511014880929" expanded="true" signature="1245:1259" ph="SELECT * FRO... missingValue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/javax/management/relation/RoleInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5650">
-          <caret line="430" column="5" lean-forward="false" selection-start-line="430" selection-start-column="5" selection-end-line="430" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#19202#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/DAOFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3255">
           <caret line="277" column="5" lean-forward="false" selection-start-line="277" selection-start-column="5" selection-end-line="277" selection-end-column="5" />
           <folding>
-            <element signature="e#5246#5247#0" expanded="true" />
-            <element signature="e#5285#5286#0" expanded="true" />
+            <element signature="e#5246#5247#0" expanded="false" />
+            <element signature="e#5285#5286#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -954,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,14 +772,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-96">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="898">
           <caret line="163" column="27" lean-forward="false" selection-start-line="163" selection-start-column="27" selection-end-line="163" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-58">
           <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-767">
           <caret line="85" column="10" lean-forward="false" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="120" column="8" lean-forward="false" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,20 +845,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/image/barChart.barchartRoll.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/image/user/1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/image/barChart.barchartRoll.jpg" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/javafx-src.zip!/javafx/scene/chart/BarChart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1081,19 +859,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/BarChartFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/BarChartFile.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar!/org/jfree/data/xy/XYDataset.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,23 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/TimeFilterForChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,8 +895,8 @@
         <state relative-caret-position="409">
           <caret line="289" column="19" lean-forward="false" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="19" />
           <folding>
-            <element signature="e#8360#8361#0" expanded="true" />
-            <element signature="e#8427#8428#0" expanded="true" />
+            <element signature="e#8360#8361#0" expanded="false" />
+            <element signature="e#8427#8428#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1152,15 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1440">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,22 +916,6 @@
             <element signature="e#2036#2037#0" expanded="false" />
             <element signature="e#2063#2064#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1229,28 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/TransactionBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="20" />
-          <folding>
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/sql/Timestamp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="85" column="80" lean-forward="true" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
-          <folding>
-            <element signature="e#21925#21926#0" expanded="true" />
-            <element signature="e#22013#22014#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/RequiredProceduresDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1698">
@@ -1285,21 +991,166 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/enums/TransactionType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-713">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/TransactionDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="112" column="28" lean-forward="true" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+          <folding>
+            <marker date="1511240690205" expanded="true" signature="1987:2040" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="2501:2595" ph="SELECT trans... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="4170:4264" ph="SELECT trans... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="4170:4303" ph="SELECT trans... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="4170:4346" ph="SELECT trans... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="6035:6142" ph="INSERT INTO transactionlog... " />
+            <marker date="1511240690205" expanded="true" signature="6923:7095" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="8097:8523" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="9669:9920" ph="SELECT * FRO... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="10806:11115" ph="SELECT Trans... transactionlog" />
+            <marker date="1511240690205" expanded="true" signature="11827:11861" ph="SELECT Role users" />
+            <marker date="1511240690205" expanded="true" signature="12240:12287" ph="SELECT Patie... declaredhcp" />
+            <marker date="1511240690205" expanded="true" signature="12640:12705" ph="SELECT repre... representatives" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/TransactionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="20" />
+          <folding>
+            <element signature="e#927#928#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/sql/Timestamp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="85" column="80" lean-forward="true" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+          <folding>
+            <element signature="e#21925#21926#0" expanded="false" />
+            <element signature="e#22013#22014#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17335">
           <caret line="1372" column="19" lean-forward="false" selection-start-line="1372" selection-start-column="19" selection-end-line="1372" selection-end-column="19" />
           <folding>
-            <element signature="e#57143#57144#0" expanded="true" />
-            <element signature="e#57197#57198#0" expanded="true" />
+            <element signature="e#57143#57144#0" expanded="false" />
+            <element signature="e#57197#57198#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/util/transactionLog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/ncsu/csc/itrust/selenium/ManageHospitalListingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/hospitalListing.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/patient/messageInbox.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="57" column="52" lean-forward="false" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpServletRequestWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar!/javax/servlet/http/HttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/beans/forms/EditMessageFilterForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/NumLoggedInMID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/image/user/1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/FilterForChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="143" column="8" lean-forward="false" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogChart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/PatientDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3373">
-          <caret line="782" column="13" lean-forward="true" selection-start-line="782" selection-start-column="13" selection-end-line="782" selection-end-column="13" />
+        <state relative-caret-position="11400">
+          <caret line="782" column="13" lean-forward="false" selection-start-line="782" selection-start-column="13" selection-end-line="782" selection-end-column="13" />
           <folding>
             <marker date="1511016043799" expanded="true" signature="2989:3041" ph="SELECT first... patients" />
             <marker date="1511016043799" expanded="true" signature="4035:4080" ph="SELECT role users" />
@@ -1352,60 +1203,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogFilter.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="218" column="126" lean-forward="false" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="126" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/util/transactionLog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/enums/TransactionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-713">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ncsu/csc/itrust/dao/mysql/TransactionDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="112" column="28" lean-forward="true" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        <state relative-caret-position="258">
+          <caret line="553" column="4" lean-forward="true" selection-start-line="553" selection-start-column="4" selection-end-line="553" selection-end-column="4" />
           <folding>
-            <marker date="1511240690205" expanded="true" signature="1987:2040" ph="SELECT * FRO... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="2501:2595" ph="SELECT trans... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="4170:4264" ph="SELECT trans... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="4170:4303" ph="SELECT trans... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="4170:4346" ph="SELECT trans... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="6035:6142" ph="INSERT INTO transactionlog... " />
-            <marker date="1511240690205" expanded="true" signature="6923:7095" ph="SELECT * FRO... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="8097:8523" ph="SELECT * FRO... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="9669:9920" ph="SELECT * FRO... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="10806:11115" ph="SELECT Trans... transactionlog" />
-            <marker date="1511240690205" expanded="true" signature="11827:11861" ph="SELECT Role users" />
-            <marker date="1511240690205" expanded="true" signature="12240:12287" ph="SELECT Patie... declaredhcp" />
-            <marker date="1511240690205" expanded="true" signature="12640:12705" ph="SELECT repre... representatives" />
+            <element signature="e#3434#3442#0#JAVA" expanded="true" />
+            <element signature="e#3494#3502#0#JAVA" expanded="true" />
+            <element signature="e#3563#3571#0#JAVA" expanded="true" />
+            <element signature="e#3691#3699#0#JAVA" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/auth/transactionLogChart.jsp">
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="317" column="55" lean-forward="true" selection-start-line="317" selection-start-column="55" selection-end-line="317" selection-end-column="55" />
-          <folding>
-            <element signature="e#1511#1519#0#JAVA" expanded="true" />
-            <element signature="e#1571#1579#0#JAVA" expanded="true" />
-            <element signature="e#1640#1648#0#JAVA" expanded="true" />
-            <element signature="e#1768#1776#0#JAVA" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/admin/menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/auth/tester/menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
