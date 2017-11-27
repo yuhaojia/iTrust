@@ -224,8 +224,8 @@
     String action = request.getParameter("view");
     if ((request.getParameter("view") != null)){
     //if ("View".equals(action)){
-%>
 
+%>
 <table border=1>
     <tr>
         <th>ID></th>
@@ -324,7 +324,7 @@
         int month1 = startDate.getMonth();
         int year1 = startDate.getYear();
 
-        int month2 = endDate.getMonth();
+        //int month2 = endDate.getMonth();
         int year2 = endDate.getYear();
 
         int monthIter = month1;
@@ -332,32 +332,27 @@
 
         int monthLimit = 12;
 
-        for(; yearIter < year2;yearIter++){
-            if(yearIter > year1){
-                monthIter = 0;
-            }
-            if(yearIter == year2)
+        for(; yearIter <= year2;yearIter++){
+
+            /*if(yearIter == year2)
             {
                 monthLimit = month2;
-            }
-            for(;monthIter < monthLimit;monthIter++){
+            }*/
+            for(monthIter = 0;monthIter < monthLimit;monthIter++){
                 Calendar mycal = new GregorianCalendar(yearIter, monthIter, 1);
                 int daysInMonth = mycal.getActualMaximum(Calendar.DAY_OF_MONTH);
                 options[0] = "All";
                 options[1] = "All";
                 options[2] = "All";
                 options[3] = dateForm.format(new Date(yearIter, monthIter, 1));
-%>
-<th><%=daysInMonth%><th>
-<th><th>
-<th><th>
-        <%
-            options[3] = dateFormat.format(new Date(options[3]));
-            options[4] = dateForm.format(new Date(yearIter, daysInMonth, daysInMonth));
-            options[4] = dateFormat.format(new Date(options[4] + " 23:59:59"));
-            List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options);
-            if(tlist.size()!=0) {
-                timeString.add("/"+monthIter+"/"+yearIter);
+                options[3] = dateFormat.format(new Date(options[3]));
+                options[4] = dateForm.format(new Date(yearIter, monthIter, daysInMonth));
+                options[4] = dateFormat.format(new Date(options[4] + " 23:59:59"));
+                List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options);
+                if(tlist.size()!=0) {
+                    int monthIterA = monthIter+1;
+                    int yearIterA = yearIter+1900;
+                timeString.add(monthIterA+"/"+yearIterA);
                 Double bb = new Double((double) tlist.size());
                 numTime.add(bb);
 
@@ -507,12 +502,8 @@
     //Time BarChart
     DefaultCategoryDataset dataset4 = new DefaultCategoryDataset();
 
-    for (int i = 0; i < transactionTypeString.size(); i++) {
-        dataset4.addValue(numTime.get(i).doubleValue(), "Type", timeString.get(i));
-        %>
-<th><%=timeString.get(i)%></th>
-<th><%=numTime.get(i).doubleValue()%></th>
-<%
+    for (int i = 0; i < timeString.size(); i++) {
+        dataset4.addValue(numTime.get(i).doubleValue(), "Time", timeString.get(i));
     }
 
     final CategoryAxis categoryAxis3 = new CategoryAxis("Time");
