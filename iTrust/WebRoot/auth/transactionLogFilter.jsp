@@ -114,7 +114,7 @@
     String prevdate = dateForm.format(minimum);
     String currdate = dateForm.format(new Date());
 
-    if (request.getParameter("view") == null) {
+    if (request.getParameter("view") == null && request.getParameter("summarize") == null) {
 
         options[0] = "All";
         options[1] = "All";
@@ -182,7 +182,7 @@
                             <option value="All">All</option>
                         <%
                         for(TransactionType type : TransactionType.values()){
-                            if (type.name().equals(options[2])){
+                            if (!options[2].equals("All") && type.getCode() == Integer.valueOf(options[2])){
                             %>
                             <option value="<%=type.getCode()%>" selected><%=type.name()%></option>
                             <%
@@ -221,10 +221,11 @@
 
 
 <%
-    String action = request.getParameter("view");
     if ((request.getParameter("view") != null)){
-    //if ("View".equals(action)){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
+        options[3] = dateFormat.format(new Date(options[3]));
+        options[4] = dateFormat.format(new Date(options[4]+" 23:59:59"));
 %>
 <table border=1>
     <tr>
@@ -238,11 +239,6 @@
         <th>Extra Info</th>
     </tr>
     <%
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-
-        options[3] = dateFormat.format(new Date(options[3]));
-        options[4] = dateFormat.format(new Date(options[4]+" 23:59:59"));
-
         List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options);
 
         for (TransactionBean t : tlist) {
