@@ -44,10 +44,10 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-            var dateFormat = "yyyy/mm/dd",
+            var dateFormat = "mm/dd/yy",
                 from = $( "#startDate" )
                     .datepicker({
-                        defaultDate: getDate( this ),
+                        defaultDate: "+1w",
                         changeMonth: true,
                         changeYear: true,
                         numberOfMonths: 1,
