@@ -385,6 +385,7 @@
     final CategoryAxis categoryAxis = new CategoryAxis("Roll");
     final ValueAxis valueAxis = new NumberAxis("Num");
     renderer1 = new BarRenderer();
+        renderer1.setItemMargin(-2);
 
     plot1 = new CategoryPlot(dataset1, categoryAxis, valueAxis,
             renderer1);
@@ -409,7 +410,7 @@
         path1 = getServletConfig().getServletContext().getRealPath("/auth/barChartRoll.png");
         File file1 = new File(path1);
         //new File( servletContext.getRealPath( "/text.XML" ) );
-        ChartUtilities.saveChartAsPNG(file1, chart1, 600, 400, info);
+        ChartUtilities.saveChartAsPNG(file1, chart1, 1000, 400, info);
     } catch (Exception e) {
         out.println(e);
     }
@@ -428,6 +429,7 @@
 
     plot2 = new CategoryPlot(dataset2, categoryAxis1, valueAxis1,
             renderer2);
+        renderer2.setItemMargin(-2);
     plot2.setOrientation(PlotOrientation.VERTICAL);
     chart2 = new JFreeChart("Number of Tranaction Log in each Secondary roll", JFreeChart.DEFAULT_TITLE_FONT,
             plot2, true);
@@ -452,7 +454,7 @@
         path2 = getServletConfig().getServletContext().getRealPath("/auth/barChartSRoll.png");
         File file2 = new File(path2);
         //new File( servletContext.getRealPath( "/text.XML" ) );
-        ChartUtilities.saveChartAsPNG(file2, chart2, 600, 400, info);
+        ChartUtilities.saveChartAsPNG(file2, chart2, 1000, 400, info);
     } catch (Exception e) {
         out.println(e);
     }
@@ -470,6 +472,7 @@
 
     plot3 = new CategoryPlot(dataset3, categoryAxis2, valueAxis2,
             renderer3);
+        renderer2.setItemMargin(-2);
     plot3.setOrientation(PlotOrientation.VERTICAL);
     chart3 = new JFreeChart("Number of Tranaction Log in each type", JFreeChart.DEFAULT_TITLE_FONT,
             plot3, true);
@@ -494,7 +497,7 @@
         path3 = getServletConfig().getServletContext().getRealPath("/auth/barChartTransLogType.png");
         File file3 = new File(path3);
         //new File( servletContext.getRealPath( "/text.XML" ) );
-        ChartUtilities.saveChartAsPNG(file3, chart3, 600, 400, info);
+        ChartUtilities.saveChartAsPNG(file3, chart3, 1000, 400, info);
     } catch (Exception e) {
         out.println(e);
     }
@@ -512,6 +515,7 @@
 
     plot4 = new CategoryPlot(dataset4, categoryAxis3, valueAxis3,
             renderer4);
+        renderer4.setItemMargin(-2);
     plot4.setOrientation(PlotOrientation.VERTICAL);
     chart4 = new JFreeChart("Number of Tranaction Log in each /Month/Year", JFreeChart.DEFAULT_TITLE_FONT,
             plot4, true);
@@ -536,7 +540,7 @@
         path4 = getServletConfig().getServletContext().getRealPath("/auth/barChartTime.png");
         File file4 = new File(path4);
         //new File( servletContext.getRealPath( "/text.XML" ) );
-        ChartUtilities.saveChartAsPNG(file4, chart4, 600, 400, info);
+        ChartUtilities.saveChartAsPNG(file4, chart4, 1000, 400, info);
     } catch (Exception e) {
         out.println(e);
     }
@@ -544,13 +548,13 @@
 %>
 <!--
 <table border=1> -->
-<IMG SRC="barChartRoll.png" WIDTH="600"
+<IMG SRC="barChartRoll.png" WIDTH="1000"
      HEIGHT="400" BORDER="0" USEMAP="#chart">
-<IMG SRC="barChartSRoll.png" WIDTH="600"
+<IMG SRC="barChartSRoll.png" WIDTH="1000"
      HEIGHT="400" BORDER="0" USEMAP="#chart">
-<IMG SRC="barChartTransLogType.png" WIDTH="600"
+<IMG SRC="barChartTransLogType.png" WIDTH="1000"
      HEIGHT="400" BORDER="0" USEMAP="#chart">
-<IMG SRC="barChartTime.png" WIDTH="600"
+<IMG SRC="barChartTime.png" WIDTH="1000"
      HEIGHT="400" BORDER="0" USEMAP="#chart">
 <!-- <table>
 -->
