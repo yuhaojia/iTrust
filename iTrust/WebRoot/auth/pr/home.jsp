@@ -80,7 +80,7 @@
 
     try {
         long newMID = new AddPatientAction(prodDAO).addPRPatient(p, h);
-        loggingAction.logEvent(TransactionType.PATIENT_CREATE, 0, newMID, "New preregistered patient");
+        loggingAction.logEvent(TransactionType.PATIENT_CREATE, newMID, newMID, "New preregistered patient");
 %>
 <h2>New MID: <%=newMID%></h2>
 <%
