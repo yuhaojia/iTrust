@@ -32,6 +32,7 @@ public class PersonnelBean implements Serializable {
 	private String phone = "";
 	private String email = "";
 	private String specialty = "";
+	private String messageFilter = ",,,,,";
 
 	public String getEmail() {
 		return email;
@@ -199,4 +200,11 @@ public class PersonnelBean implements Serializable {
 		return 0;
 	}
 
+	public String getMessageFilter() {
+		return messageFilter;
+	}
+
+	public void setMessageFilter(String messageFilter) {
+		this.messageFilter = messageFilter;
+	}
 }

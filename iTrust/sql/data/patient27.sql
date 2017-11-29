@@ -11,7 +11,8 @@ state,
 zip,
 phone,
 dateofbirth,
-Gender)
+Gender,
+isPreregistered)
 VALUES
 (407,
 'Franco', 
@@ -24,7 +25,8 @@ VALUES
 '27606-1234', 
 '919-971-0000',
 '1993-10-25',
-'Male')
+'Male',
+TRUE )
  ON DUPLICATE KEY UPDATE MID = MID;
 
 INSERT INTO users(MID, password, role, sQuestion, sAnswer) 

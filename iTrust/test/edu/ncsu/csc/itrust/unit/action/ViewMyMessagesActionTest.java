@@ -299,4 +299,23 @@ public class ViewMyMessagesActionTest extends TestCase {
 			assertNull(resultList);
 		}
 	}
+
+	public void testValidateAndCreateFilter (){
+		String filter = "Andy Programmer,,,,,";
+		String result = "";
+		try {
+			result = action.validateAndCreateFilter(filter);
+		}
+		catch (FormValidationException e){
+			// Do Nothing
+		}
+		assertEquals(result, filter);
+		filter = ",,,,02/02/2010,02/01/2010";
+		try {
+			result = action.validateAndCreateFilter(filter);
+		}
+		catch (FormValidationException e){
+			assertTrue(e.getMessage().startsWith("Error"));}
+
+	}
 }

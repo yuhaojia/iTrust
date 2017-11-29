@@ -195,7 +195,19 @@ function showRisks(){
 		<br />
 		<a href="editPatient.jsp" style="text-decoration: none;">
 			<input type=button value="Edit" onClick="location='editPatient.jsp';">
+		</a> 
+
+		<% if (patient.isPreregistered() == true) {%>
+		<a href="registerPatient.jsp" style="text-decoration: none;">
+			<input type=button value="Register" onclick="location='registerPatient.jsp';"
+			>
 		</a>
+		<% }else {%>
+		<a href="deRegisterPatient.jsp" style="text-decoration: none;">
+			<input type=button value="DeRegister" onclick="location='deRegisterPatient.jsp';">
+		</a>
+		<% }%>
+
 	</div>
 	<div style="margin-right: 10px;">
 		<table class="fTable" align="center">

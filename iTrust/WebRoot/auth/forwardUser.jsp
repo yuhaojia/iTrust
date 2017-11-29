@@ -16,8 +16,9 @@
 if(request.getUserPrincipal() != null) {
 	
 	long mid = Long.valueOf(request.getUserPrincipal().getName());
-	
+
 	if (request.isUserInRole("patient")) {
+		System.out.println("forward, "+String.valueOf(mid));
 		response.sendRedirect("patient/home.jsp");
 		return;
 	} 

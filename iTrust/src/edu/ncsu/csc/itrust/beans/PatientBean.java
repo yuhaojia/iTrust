@@ -60,8 +60,47 @@ public class PatientBean implements Serializable, Comparable<PatientBean> {
 	private String language = "";
 	private String spiritualPractices = "";
 	private String alternateName = "";
-	private String dateOfDeactivationStr = "";
 
+	private String height = "";
+	private String weight = "";
+	private String isSmoker = "";
+
+	private String dateOfDeactivationStr = "";
+	private String messageFilter = ",,,,,";
+
+	private boolean isPreregistered = false;
+
+	public void setHeight(String h){
+		height = h;
+	}
+
+	public void setWeight(String w){
+		weight = w;
+	}
+
+	public void setSmoker(String s){
+		isSmoker = s;
+	}
+
+	public String getHeight(){
+		return height;
+	}
+
+	public String getWeight(){
+		return weight;
+	}
+
+	public String getSmoker(){
+		return isSmoker;
+	}
+
+
+
+
+
+	public boolean isPreregistered() { return isPreregistered; }
+
+	public void setPreregistered(boolean preregistered) { isPreregistered = preregistered; }
 
 	public BloodType getBloodType() {
 		return bloodType;
@@ -497,6 +536,14 @@ public class PatientBean implements Serializable, Comparable<PatientBean> {
 	public int hashCode() {
 		assert false : "hashCode not designed";
 		return 42; // any arbitrary constant will do
+	}
+
+	public String getMessageFilter() {
+		return messageFilter;
+	}
+
+	public void setMessageFilter(String messageFilter) {
+		this.messageFilter = messageFilter;
 	}
 	
 }

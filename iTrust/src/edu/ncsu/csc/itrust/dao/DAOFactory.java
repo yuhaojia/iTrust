@@ -128,9 +128,15 @@ public class DAOFactory {
 	}
 
 	/**
-	 * 
-	 * @return this DAOFactory's FamilyDAO
+	 *
+	 * @return this DAOFactory's EmailAddressDAO
 	 */
+	public EmailAddressDAO getEmailAddressDAO() { return new EmailAddressDAO(this); }
+
+    /**
+     *
+     * @return this DAOFactory's FamilyDAO
+     */
 	public FamilyDAO getFamilyDAO() {
 		return new FamilyDAO(this);
 	}

@@ -207,10 +207,10 @@ public class PatientDAO {
 					+ "DateOfDeath=?,CauseOfDeath=?,MotherMID=?,FatherMID=?,"
 					+ "BloodType=?,Ethnicity=?,Gender=?,TopicalNotes=?, CreditCardType=?, CreditCardNumber=?, "
 					+ "DirectionsToHome=?, Religion=?, Language=?, SpiritualPractices=?, "
-					+ "AlternateName=?, DateOfDeactivation=? WHERE MID=?");
+					+ "AlternateName=?, DateOfDeactivation=?, IsPreregistered=? WHERE MID=?");
 
 			patientLoader.loadParameters(ps, p);
-			ps.setLong(37, p.getMID());
+			ps.setLong(38, p.getMID());
 			ps.executeUpdate();
 			
 			addHistory(p.getMID(), hcpid);
@@ -922,6 +922,32 @@ public class PatientDAO {
 			DBUtil.closeConnection(conn, ps);
 		}
 	}
+
+
+	/**
+	 * Lists every patient in the database.
+	 *
+	 * @return A java.util.List of PatientBeans representing the patients.
+	 * @throws DBException
+	 */
+	public List<PatientBean> getAllPreregisteredPatients() throws DBException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = factory.getConnection();
+			ps = conn.prepareStatement("SELECT * FROM patients WHERE IsPreregistered = true;");
+			ResultSet rs = ps.executeQuery();
+			List<PatientBean> loadlist = patientLoader.loadList(rs);
+			rs.close();
+			ps.close();
+			return loadlist;
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, ps);
+		}
+	}
 	
 	/**
 	 * Return a list of patients with a special-diagnosis-history who
@@ -1203,5 +1229,23 @@ public class PatientDAO {
 		}
 	}
 
+	// Edit message filter for patient
+	public void editMessageFilter(final String filter, final long mid) throws DBException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = factory.getConnection();
+			pstmt = conn.prepareStatement("UPDATE patients SET messageFilter=? WHERE MID=?");
+			pstmt.setString(1, filter);
+			pstmt.setLong(2, mid);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, pstmt);
+		}
+	}
 	
 }

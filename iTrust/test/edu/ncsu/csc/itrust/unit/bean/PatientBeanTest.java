@@ -41,6 +41,10 @@ public class PatientBeanTest extends TestCase {
 		p.setSecurityAnswer("Answer");
 		p.setPassword("password");
 		p.setConfirmPassword("confirm");
+		p.setWeight("100");
+		p.setHeight("10");
+		p.setSmoker("Is Smoker");
+		p.setPreregistered(true);
 		assertEquals(BloodType.ABNeg, p.getBloodType());
 		assertNull(p.getDateOfBirth());
 		assertEquals(-1, p.getAge());
@@ -50,6 +54,10 @@ public class PatientBeanTest extends TestCase {
 		assertEquals("Answer", p.getSecurityAnswer());
 		assertEquals("password", p.getPassword());
 		assertEquals("confirm", p.getConfirmPassword());
+		assertEquals("100",p.getWeight());
+		assertEquals("10",p.getHeight());
+		assertEquals("Is Smoker",p.getSmoker());
+		assertTrue(p.isPreregistered());
 	}
 	
 	

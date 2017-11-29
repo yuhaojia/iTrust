@@ -57,8 +57,9 @@ public class PatientBaseAction {
 	private long checkPatientID(String input) throws ITrustException {
 		try {
 			long pid = Long.valueOf(input);
-			if (factory.getPatientDAO().checkPatientExists(pid))
+			if (factory.getPatientDAO().checkPatientExists(pid)) {
 				return pid;
+			}
 			else
 				throw new ITrustException("Patient does not exist");
 		} catch (NumberFormatException e) {

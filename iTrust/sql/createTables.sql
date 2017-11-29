@@ -47,6 +47,7 @@ CREATE TABLE personnel(
 	phone varchar(12) NOT NULL default '',
 	specialty varchar(40) default NULL,
 	email varchar(55)  default '',
+	messageFilter VARCHAR(500) default ',,,,,',
 	PRIMARY KEY  (MID)
 ) auto_increment=9000000000 ENGINE=MyISAM;
 
@@ -88,6 +89,8 @@ CREATE TABLE patients(
 	SpiritualPractices varchar(512) default '',
 	AlternateName varchar(32) default '',
 	DateOfDeactivation DATE default NULL,
+	IsPreregistered BOOLEAN default false,
+	messageFilter VARCHAR(500) default ',,,,,',
 	PRIMARY KEY (MID)
 ) ENGINE=MyISAM;
 
@@ -132,6 +135,8 @@ CREATE TABLE historypatients(
 	SpiritualPractices varchar(512) default '',
 	AlternateName varchar(32) default '',
 	DateOfDeactivation DATE default NULL,
+	IsPreregistered BOOLEAN default false,
+	messageFilter VARCHAR(500) default ',,,,,',
 	PRIMARY KEY (ID)
 ) ENGINE=MyISAM;
 
