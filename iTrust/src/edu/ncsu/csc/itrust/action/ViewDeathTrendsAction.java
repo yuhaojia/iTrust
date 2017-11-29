@@ -16,6 +16,7 @@ import edu.ncsu.csc.itrust.dao.mysql.PatientDAO;
 import edu.ncsu.csc.itrust.exception.DBException;
 import edu.ncsu.csc.itrust.exception.FormValidationException;
 import edu.ncsu.csc.itrust.exception.ITrustException;
+import edu.ncsu.csc.itrust.validate.DeathTrendsBeanValidator;
 
 /**
  * Used for the View Diagnosis Statistics page. Can return a list of all Diagnoses
@@ -24,7 +25,7 @@ import edu.ncsu.csc.itrust.exception.ITrustException;
 public class ViewDeathTrendsAction {
     /** Database access methods for patients information */
     private PatientDAO patientDAO;
-
+    private DeathTrendsBeanValidator validator = new DeathTrendsBeanValidator();
     /**
      * Constructor for the action. Initializes DAO fields
      * @param factory The session's factory for DAOs
@@ -32,6 +33,7 @@ public class ViewDeathTrendsAction {
     public ViewDeathTrendsAction(DAOFactory factory) {
         this.patientDAO = factory.getPatientDAO();
     }
+
 
     /**
      * Returns a list of diagnoses for currently dead patients who previously had had an
@@ -46,14 +48,13 @@ public class ViewDeathTrendsAction {
      */
     // ^^ Need these throw calls? !!!
     public DeathTrendsBean getDeathTrends(long hcpid, String startYear, String endYear, String gender) throws FormValidationException, ITrustException { // <-- Need these throw calls? !!!
-        // Error check: years passed are null
-        if (startYear == null || endYear == null)
-            return null;
+
 
         // Initialize variables
-        DeathTrendsBean dtBean = null;
-
+        DeathTrendsBean dtBean = new DeathTrendsBean(hcpid,startYear,endYear,null,null,null);
+        validator.validate(dtBean);
         dtBean = patientDAO.getDeathTrends(hcpid, startYear, endYear, gender); // Temporary placement of function. Should be in try call after validation code is implemented. !!!
+
         // try {
         //     // Validate years here? !!!
         //     Date lower = new SimpleDateFormat("MM/dd/yyyy").parse(lowerDate);

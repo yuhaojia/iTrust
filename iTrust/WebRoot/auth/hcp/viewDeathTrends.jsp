@@ -18,10 +18,12 @@
 
 <%
     // Log event !!!
-    // loggingAction.logEvent(TransactionType.DIAGNOSIS_TRENDS_VIEW, loggedInMID.longValue(), 0, "");
+    loggingAction.logEvent(TransactionType.DEATH_TRENDS_VIEW, loggedInMID.longValue(), 0, "View cause-of-death trends report");
 
     ViewDeathTrendsAction dtAction = new ViewDeathTrendsAction(prodDAO);
     DeathTrendsBean dtBean = null;
+
+    String headerMessage = "";
 
     // Validate years here? !!!
 
@@ -32,8 +34,6 @@
 
     // Initial page load
     if (startYear == null || endYear == null || gender == null){
-        startYear = "";
-        endYear = "";
         gender = "both";
     }
 
@@ -42,7 +42,8 @@
         try{
             dtBean = dtAction.getDeathTrends(loggedInMID.longValue(), startYear, endYear, gender);
         } catch(FormValidationException e){
-            e.printHTML(pageContext.getOut());
+            headerMessage += e.getMessage();
+            dtBean = null;
         }
     }
 
@@ -56,11 +57,11 @@
         <tr class="subHeader">
             <td>Start Year:</td>
             <td>
-                <input name="startYear" value="<%= StringEscapeUtils.escapeHtml("" + (startYear)) %>" size="4">
+                <input name="startYear" value="<%= StringEscapeUtils.escapeHtml(((startYear)==null?"":(startYear))) %>" size="4">
             </td>
             <td>End Year:</td>
             <td>
-                <input name="endYear" value="<%= StringEscapeUtils.escapeHtml("" + (endYear)) %>" size="4">
+                <input name="endYear" value="<%= StringEscapeUtils.escapeHtml(((endYear)==null?"":(endYear))) %>" size="4">
             </td>
             <td>Patient Gender:</td>
             <td>
@@ -85,6 +86,7 @@
             <td colspan="6" style="text-align: center;"><input type="submit" id="view_death_trends" value="View Trends"></td>
         </tr>
     </table>
+    <%= headerMessage.equals("") ? "" : "<br /><span class=\"iTrustMessage\">"+headerMessage+"</span><br /><br />" %>
 </form>
 <br />
 

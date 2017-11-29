@@ -25,6 +25,6 @@ public class GetDeathTrendsTest extends TestCase {
         DeathTrendsBean bean = patientDAO.getDeathTrends(9000000000L,"1910","2005","male");
         assertEquals(3,bean.getNumDeaths().get(0).longValue());
         assertEquals(2,bean.getNumDeaths().get(1).longValue());
-        
+
     }
 }

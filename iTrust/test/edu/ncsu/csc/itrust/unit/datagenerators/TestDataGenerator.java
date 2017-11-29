@@ -1098,6 +1098,10 @@ public class TestDataGenerator {
 		patient28();
 		patient29();
 		patient30();
+
+
+		// Added for UC20
+		deadPatients();
 	}
 
 	public void uc47SetUp() throws FileNotFoundException, SQLException,
@@ -1321,6 +1325,8 @@ public class TestDataGenerator {
 
 		return false;
 	}
-	
-	
+
+	public void deadPatients() throws FileNotFoundException, SQLException, IOException {
+		new DBBuilder(factory).executeSQLFile(DIR + "/deadPatients.sql");
+	}
 }
