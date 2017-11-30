@@ -65,6 +65,7 @@ public class SendMessageAction {
 		String fromEmail;
 		email.setFrom("noreply@itrust.com");
 		List<String> toList = new ArrayList<String>();
+
 		if (8999999999L < mBean.getFrom() && 8999999999L < mBean.getTo()){ //when from and to are LHCPs
 			PersonnelBean sender = personnelDAO.getPersonnel(loggedInMID);
 			PersonnelBean receiver = personnelDAO.getPersonnel(mBean.getTo());
@@ -121,6 +122,25 @@ public class SendMessageAction {
 		email.setSubject(String.format("A new message from %s", senderName));
 		emailer.sendEmail(email);
 		
+	}
+
+	public void sendAppointmentReminders(List<MessageBean> mBeans) throws ITrustException, SQLException, FormValidationException {
+		for (MessageBean mBean : mBeans) {
+			messVal.validate(mBean);
+			emailVal.validate(mBean);
+			messageDAO.addMessage(mBean);
+
+			Email email = new Email();
+			email.setBody(mBean.getBody());
+			email.setSubject(mBean.getSubject());
+			email.setFrom("noreply@itrust.com");
+
+			List<String> toList = new ArrayList<String>();
+			PersonnelBean receiver = personnelDAO.getPersonnel(mBean.getTo());
+			toList.add(receiver.getEmail());
+			email.setToList(toList);
+			emailer.sendEmail(email);
+		}
 	}
 	
 	/**

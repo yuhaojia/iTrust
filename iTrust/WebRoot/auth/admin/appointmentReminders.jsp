@@ -23,7 +23,14 @@
 
 <div align=center>
     <h2>Sent Reminders</h2>
-    <a href="/iTrust/auth/admin/sendAppointmentReminders.jsp">Send Appointment Reminders</a><br /><br />
+    <tr>
+        <td>
+            Appointments within <input type="text" maxlength="10" id="n_days" name="n_days" style="width: 5ch"> days
+        </td>
+        <td>
+            <a href="/iTrust/auth/admin/sendAppointmentReminders.jsp">Send Appointment Reminders</a><br /><br />
+        </td>
+    </tr>
     <%
         loggingAction.logEvent(TransactionType.OUTBOX_VIEW, loggedInMID.longValue(), 0, "");
 
