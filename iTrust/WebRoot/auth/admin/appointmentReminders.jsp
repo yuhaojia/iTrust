@@ -23,19 +23,31 @@
 
 <div align=center>
     <h2>Sent Reminders</h2>
-    <tr>
-        <td>
-            Appointments within <input type="text" maxlength="10" id="n_days" name="n_days" style="width: 5ch"> days
-        </td>
-        <td>
-            <a href="/iTrust/auth/admin/sendAppointmentReminders.jsp">Send Appointment Reminders</a><br /><br />
-        </td>
-    </tr>
+    <form method="post" action="appointmentReminders.jsp">
+        <tr>
+            <td>
+                Send reminders for appointments within <input type="number" maxlength="15" id="n_days" name="n_days" style="width: 5ch"> days
+            </td>
+            <td>
+                <input type="submit" name="send" value="Send" />
+            </td>
+        </tr>
+    </form>
     <%
         loggingAction.logEvent(TransactionType.OUTBOX_VIEW, loggedInMID.longValue(), 0, "");
 
-        SendRemindersAction remind = new SendRemindersAction(prodDAO, loggedInMID.longValue());
-        remind.sendReminders(365);
+        String nDays = request.getParameter("n_days");
+
+        if (nDays != null && !nDays.isEmpty()) {
+            try {
+                int n = Integer.parseInt(nDays);
+                SendRemindersAction remind = new SendRemindersAction(prodDAO, loggedInMID.longValue());
+                remind.sendReminders(n);
+                loggingAction.logEvent(TransactionType.APPOINTMENT_REMINDERS, loggedInMID.longValue(), 0, "");
+            } catch (NumberFormatException nfe) {
+                response.sendRedirect("appointmentReminders.jsp");
+            }
+        }
 
         ViewMyMessagesAction action = new ViewMyMessagesAction(prodDAO, loggedInMID.longValue());
         List<MessageBean> messages = null;
@@ -59,7 +71,7 @@
         }
         session.setAttribute("messages", messages);
         if (messages.size() > 0) { %>
-    <form method="post" action="messageOutbox.jsp">
+    <form method="post" action="appointmentReminders.jsp">
         <table>
             <tr>
                 <td>
