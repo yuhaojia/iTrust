@@ -10,6 +10,7 @@ import edu.ncsu.csc.itrust.exception.ITrustException;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SendRemindersAction {
@@ -40,7 +41,7 @@ public class SendRemindersAction {
         // Convert the appointments into message beans
         List<MessageBean> messageBeans = new ArrayList<>();
         for (ApptBean apptBean: apptBeans) {
-            messageBeans.add(makeReminderMessageBean(apptBean, ndays));
+            messageBeans.add(makeReminderMessageBean(apptBean));
         }
         // Send the messages
         messageAction.sendAppointmentReminders(messageBeans);
@@ -49,22 +50,27 @@ public class SendRemindersAction {
     /***
      * Create a MessageBean for sending a reminder from an ApptBean
      * @param apptBean The appointment bean to use to create a message bean
-     * @param ndays the number of days away an appointment needs to be to send a patient a reminder.
      * @return A MessageBean that can be sent to the patient.
      */
-    private MessageBean makeReminderMessageBean(ApptBean apptBean, long ndays) throws ITrustException {
+    private MessageBean makeReminderMessageBean(ApptBean apptBean) throws ITrustException {
         MessageBean messageBean = new MessageBean();
         messageBean.setTo(apptBean.getPatient());
-        // -1 indicates that the message is from the System Reminder
-        messageBean.setFrom(-1);
-        String subject = "Reminder: upcoming appointment in " + Long.toString(ndays) + " day(s)";
+        messageBean.setFrom(loggedInMID);
+        long today = System.currentTimeMillis();
+        long appointmentDate = apptBean.getDate().getTime();
+        long numDays = (appointmentDate - today) / (1000 * 60 * 60 * 24);
+        String subject = "Reminder: upcoming appointment in " + Long.toString(numDays) + " day(s)";
         messageBean.setSubject(subject);
         String[] splitDate = apptBean.getDate().toString().split(" ");
         String doctor = personnelDAO.getName(apptBean.getHcp());
         String body = null;
-        if (splitDate.length > 2)
-            body = String.format("You have an appointment on %s, %s with Dr. %s", splitDate[0], splitDate[1], doctor);
+        if (splitDate.length >= 2)
+            body = String.format("You have an appointment on %s, %s with Dr. %s", splitDate[1], splitDate[0], doctor);
         messageBean.setBody(body);
+        messageBean.setRead(0);
+        messageBean.setOriginalMessageId(0);
+        messageBean.setParentMessageId(0);
+
         return messageBean;
     }
 }

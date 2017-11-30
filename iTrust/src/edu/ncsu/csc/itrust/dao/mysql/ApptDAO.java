@@ -83,7 +83,7 @@ public class ApptDAO {
         PreparedStatement pstring = null;
         try{
             conn = factory.getConnection();
-            String query = "SELECT * FROM appointment WHERE sched_date >= NOW() AND sched_date <= NOW() + INTERVAL %s DAY ORDER BY sched_date;";
+            String query = "SELECT * FROM appointment WHERE sched_date >= NOW() AND sched_date <= NOW() + INTERVAL ? DAY ORDER BY sched_date;";
             pstring = conn.prepareStatement(query);
 
             pstring.setLong(1, ndays);

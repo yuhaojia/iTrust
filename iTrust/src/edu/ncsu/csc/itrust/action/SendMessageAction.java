@@ -124,6 +124,13 @@ public class SendMessageAction {
 		
 	}
 
+	/**
+	 * Sends reminders for appointments given a list of message beans.
+	 * @param mBeans Message beans to use to send reminders.
+	 * @throws ITrustException
+	 * @throws SQLException
+	 * @throws FormValidationException
+	 */
 	public void sendAppointmentReminders(List<MessageBean> mBeans) throws ITrustException, SQLException, FormValidationException {
 		for (MessageBean mBean : mBeans) {
 			messVal.validate(mBean);
@@ -136,7 +143,7 @@ public class SendMessageAction {
 			email.setFrom("noreply@itrust.com");
 
 			List<String> toList = new ArrayList<String>();
-			PersonnelBean receiver = personnelDAO.getPersonnel(mBean.getTo());
+			PatientBean receiver = patientDAO.getPatient(mBean.getTo());
 			toList.add(receiver.getEmail());
 			email.setToList(toList);
 			emailer.sendEmail(email);
