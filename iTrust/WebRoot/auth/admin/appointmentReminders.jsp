@@ -9,9 +9,9 @@
 
 <%@page import="java.util.List"%>
 
-<%@page import="edu.ncsu.csc.itrust.action.ViewMyMessagesAction"%>
 <%@page import="edu.ncsu.csc.itrust.beans.MessageBean"%>
 <%@page import="edu.ncsu.csc.itrust.dao.DAOFactory"%>
+<%@ page import="edu.ncsu.csc.itrust.action.*" %>
 
 <%@include file="/global.jsp" %>
 
@@ -33,6 +33,9 @@
     </tr>
     <%
         loggingAction.logEvent(TransactionType.OUTBOX_VIEW, loggedInMID.longValue(), 0, "");
+
+        SendRemindersAction remind = new SendRemindersAction(prodDAO, loggedInMID.longValue());
+        remind.sendReminders(365);
 
         ViewMyMessagesAction action = new ViewMyMessagesAction(prodDAO, loggedInMID.longValue());
         List<MessageBean> messages = null;

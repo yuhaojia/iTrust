@@ -15,6 +15,7 @@ import edu.ncsu.csc.itrust.dao.mysql.MessageDAO;
 import edu.ncsu.csc.itrust.dao.mysql.PatientDAO;
 import edu.ncsu.csc.itrust.dao.mysql.PersonnelDAO;
 import edu.ncsu.csc.itrust.dao.mysql.ReferralDAO;
+import edu.ncsu.csc.itrust.enums.Role;
 import edu.ncsu.csc.itrust.exception.DBException;
 import edu.ncsu.csc.itrust.exception.FormValidationException;
 import edu.ncsu.csc.itrust.exception.ITrustException;
@@ -253,11 +254,10 @@ public class ViewMyMessagesAction {
 	 * @throws ITrustException
 	 */
 	public String getName(long mid) throws ITrustException {
-		if (mid == -1) {
-			return "System Reminder";
-		}
-		else if(mid < 7000000000L)
+		if(mid < 7000000000L)
 			return patientDAO.getName(mid);
+		else if (personnelDAO.getPersonnel(mid).getRole() == Role.ADMIN)
+			return "System Reminder";
 		else
 			return personnelDAO.getName(mid);
 	}
