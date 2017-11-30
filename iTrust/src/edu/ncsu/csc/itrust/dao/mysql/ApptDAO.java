@@ -1,9 +1,6 @@
 package edu.ncsu.csc.itrust.dao.mysql;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 import edu.ncsu.csc.itrust.DBUtil;
 import edu.ncsu.csc.itrust.beans.ApptBean;
@@ -53,29 +50,57 @@ public class ApptDAO {
 		Connection conn = null;
 		PreparedStatement pstring = null;
 		try{
-		conn = factory.getConnection();
-		if(mid >= MIN_MID){
-			pstring = conn.prepareStatement("SELECT * FROM appointment WHERE doctor_id=? AND sched_date > NOW() ORDER BY sched_date;");
-		}
-		else {
-			pstring = conn.prepareStatement("SELECT * FROM appointment WHERE patient_id=? AND sched_date > NOW() ORDER BY sched_date;");
-		}
-		
-		pstring.setLong(1, mid);
-		
-		ResultSet results = pstring.executeQuery();
-		List<ApptBean> abList = this.abloader.loadList(results);
-		results.close();
-		pstring.close();
-		return abList;
-	} catch (SQLException e) {
-		
-		throw new DBException(e);
-	} finally {
-		DBUtil.closeConnection(conn, pstring);
+            conn = factory.getConnection();
+            if(mid >= MIN_MID){
+                pstring = conn.prepareStatement("SELECT * FROM appointment WHERE doctor_id=? AND sched_date > NOW() ORDER BY sched_date;");
+            }
+            else {
+                pstring = conn.prepareStatement("SELECT * FROM appointment WHERE patient_id=? AND sched_date > NOW() ORDER BY sched_date;");
+            }
+
+            pstring.setLong(1, mid);
+
+            ResultSet results = pstring.executeQuery();
+            List<ApptBean> abList = this.abloader.loadList(results);
+            results.close();
+            pstring.close();
+            return abList;
+        } catch (SQLException e) {
+
+            throw new DBException(e);
+        } finally {
+            DBUtil.closeConnection(conn, pstring);
+        }
 	}
+
+	/*
+	 * Get all appointments within n days from now.
+	 * @param ndays: The number of days from now to get appointments for.
+	 * @return A list of ApptBeans that are within ndays from now ordered by increasing scheduled date.
+	 */
+	public List<ApptBean> getApptsWithinNDays(final long ndays) throws SQLException, DBException {
+		Connection conn = null;
+		PreparedStatement pstring = null;
+		try{
+			conn = factory.getConnection();
+			String query = "SELECT * FROM appointment WHERE sched_date >= NOW() AND sched_date <= NOW() + INTERVAL %s DAY ORDER BY sched_date;";
+            pstring = conn.prepareStatement(query);
+
+            pstring.setLong(1, ndays);
+
+			ResultSet results = pstring.executeQuery();
+			List<ApptBean> abList = this.abloader.loadList(results);
+			results.close();
+			pstring.close();
+			return abList;
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, pstring);
+		}
 	}
-	
+
 	public List<ApptBean> getAllApptsFor(long mid) throws SQLException, DBException {
 		Connection conn = null;
 		PreparedStatement pstring = null;
