@@ -277,6 +277,7 @@
             List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options);
             numRolls[i] = (double) tlist.size();
 
+
         }
 
         for (int i = 0; i < rollList1.length; i++) {
@@ -289,6 +290,9 @@
             options[4] = dateFormat.format(new Date(options[4] + " 23:59:59"));
             List<TransactionBean> tlist = DAOFactory.getProductionInstance().getTransactionDAO().getFilteredTransactions(options);
             numSecondaryRolls[i] = (double) tlist.size();
+
+
+
         }
 
         for (TransactionType type : TransactionType.values()) {
@@ -305,6 +309,8 @@
                 transactionTypeString.add(""+type.getCode());
                 Double bb = new Double((double) tlist.size());
                 numTransactionTypes.add(bb);
+
+
             }
 
         }
