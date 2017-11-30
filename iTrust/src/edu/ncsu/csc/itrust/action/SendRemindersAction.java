@@ -1,18 +1,13 @@
 package edu.ncsu.csc.itrust.action;
 
-import edu.ncsu.csc.itrust.EmailUtil;
 import edu.ncsu.csc.itrust.beans.ApptBean;
 import edu.ncsu.csc.itrust.beans.MessageBean;
 import edu.ncsu.csc.itrust.dao.DAOFactory;
 import edu.ncsu.csc.itrust.dao.mysql.ApptDAO;
-import edu.ncsu.csc.itrust.dao.mysql.MessageDAO;
-import edu.ncsu.csc.itrust.exception.DBException;
+import edu.ncsu.csc.itrust.dao.mysql.PersonnelDAO;
 import edu.ncsu.csc.itrust.exception.FormValidationException;
 import edu.ncsu.csc.itrust.exception.ITrustException;
-import edu.ncsu.csc.itrust.validate.EMailValidator;
-import edu.ncsu.csc.itrust.validate.MessageValidator;
 
-import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +16,7 @@ public class SendRemindersAction {
     private long loggedInMID;
     private ApptDAO apptDAO;
     private SendMessageAction messageAction;
+    private PersonnelDAO personnelDAO;
 
     /**
      * Sets up defaults
@@ -30,6 +26,7 @@ public class SendRemindersAction {
     public SendRemindersAction(DAOFactory factory, long loggedInMID) {
         this.loggedInMID = loggedInMID;
         this.apptDAO = factory.getApptDAO();
+        this.personnelDAO = factory.getPersonnelDAO();
         this.messageAction = new SendMessageAction(factory, loggedInMID);
     }
 
@@ -55,14 +52,18 @@ public class SendRemindersAction {
      * @param ndays the number of days away an appointment needs to be to send a patient a reminder.
      * @return A MessageBean that can be sent to the patient.
      */
-    private MessageBean makeReminderMessageBean(ApptBean apptBean, long ndays) {
+    private MessageBean makeReminderMessageBean(ApptBean apptBean, long ndays) throws ITrustException {
         MessageBean messageBean = new MessageBean();
         messageBean.setTo(apptBean.getPatient());
         // -1 indicates that the message is from the System Reminder
         messageBean.setFrom(-1);
         String subject = "Reminder: upcoming appointment in " + Long.toString(ndays) + " day(s)";
         messageBean.setSubject(subject);
-        String body = "You have an appointment on <TIME>, <DATE> with Dr. <DOCTOR>";
+        String[] splitDate = apptBean.getDate().toString().split(" ");
+        String doctor = personnelDAO.getName(apptBean.getHcp());
+        String body = null;
+        if (splitDate.length > 2)
+            body = String.format("You have an appointment on %s, %s with Dr. %s", splitDate[0], splitDate[1], doctor);
         messageBean.setBody(body);
         return messageBean;
     }

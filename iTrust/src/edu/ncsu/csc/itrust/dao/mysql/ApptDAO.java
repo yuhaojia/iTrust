@@ -79,27 +79,27 @@ public class ApptDAO {
 	 * @return A list of ApptBeans that are within ndays from now ordered by increasing scheduled date.
 	 */
 	public List<ApptBean> getApptsWithinNDays(final long ndays) throws SQLException, DBException {
-		Connection conn = null;
-		PreparedStatement pstring = null;
-		try{
-			conn = factory.getConnection();
-			String query = "SELECT * FROM appointment WHERE sched_date >= NOW() AND sched_date <= NOW() + INTERVAL %s DAY ORDER BY sched_date;";
+        Connection conn = null;
+        PreparedStatement pstring = null;
+        try{
+            conn = factory.getConnection();
+            String query = "SELECT * FROM appointment WHERE sched_date >= NOW() AND sched_date <= NOW() + INTERVAL %s DAY ORDER BY sched_date;";
             pstring = conn.prepareStatement(query);
 
             pstring.setLong(1, ndays);
 
-			ResultSet results = pstring.executeQuery();
-			List<ApptBean> abList = this.abloader.loadList(results);
-			results.close();
-			pstring.close();
-			return abList;
-		} catch (SQLException e) {
+            ResultSet results = pstring.executeQuery();
+            List<ApptBean> abList = this.abloader.loadList(results);
+            results.close();
+            pstring.close();
+            return abList;
+        } catch (SQLException e) {
 
-			throw new DBException(e);
-		} finally {
-			DBUtil.closeConnection(conn, pstring);
-		}
-	}
+            throw new DBException(e);
+        } finally {
+            DBUtil.closeConnection(conn, pstring);
+        }
+    }
 
 	public List<ApptBean> getAllApptsFor(long mid) throws SQLException, DBException {
 		Connection conn = null;
@@ -149,7 +149,7 @@ public class ApptDAO {
 		DBUtil.closeConnection(conn, pstring);
 	}
 	}
-	
+
 	public void editAppt(final ApptBean appt) throws SQLException, DBException {
 		Connection conn = null;
 		PreparedStatement pstring = null;
