@@ -76,7 +76,7 @@ public class EditRepresentativesAction extends PatientBaseAction {
 				throw new ITrustException("This user is not a patient!");
 			else if (super.pid == representee)
 				throw new ITrustException("This user cannot represent themselves.");
-			else if(!patientDAO.checkIfRepresenteeIsActive(representee))
+			else if(!patientDAO.checkIfPatientIsActive(representee))
 				throw new ITrustException(patientDAO.getPatient(representee).getFullName() + "cannot be added as a representee, they are not active.");
 			boolean confirm = patientDAO.addRepresentative(pid, representee);
 			if (confirm) {
