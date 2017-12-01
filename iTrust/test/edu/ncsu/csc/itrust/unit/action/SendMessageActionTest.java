@@ -13,6 +13,7 @@ import edu.ncsu.csc.itrust.unit.testutils.TestDAOFactory;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -28,7 +29,8 @@ public class SendMessageActionTest extends TestCase {
 	private TestDataGenerator gen;
 	private long pateientId;
 	private long hcpId;
-	
+	private long adminId;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -38,6 +40,7 @@ public class SendMessageActionTest extends TestCase {
 		
 		this.pateientId = 2L;
 		this.hcpId = 9000000000L;
+		this.adminId = 9000000001L;
 		this.factory = TestDAOFactory.getTestInstance();
 		this.messageDAO = new MessageDAO(this.factory);
 		this.smAction = new SendMessageAction(this.factory, this.pateientId);
@@ -98,6 +101,42 @@ public class SendMessageActionTest extends TestCase {
 		List<PersonnelBean> pbList = this.smAction.getDLHCPsFor(this.pateientId);
 		
 		assertEquals(1, pbList.size());
+	}
+
+	public void testSendAppointmentReminders() throws ITrustException, FormValidationException, SQLException {
+		String body = "UNIT TEST - SendMessageActionText";
+		MessageBean mBean1 = new MessageBean();
+		MessageBean mBean2 = new MessageBean();
+
+		Timestamp timestamp = new Timestamp(this.gCal.getTimeInMillis());
+		mBean1.setFrom(this.adminId);
+		mBean1.setTo(this.pateientId);
+		mBean1.setSubject(body);
+		mBean1.setBody(body);
+		mBean1.setRead(0);
+		mBean1.setOriginalMessageId(0);
+		mBean1.setParentMessageId(0);
+		mBean1.setSentDate(timestamp);
+		mBean2.setFrom(this.adminId);
+		mBean2.setTo(this.pateientId);
+		mBean2.setSubject(body);
+		mBean2.setBody(body);
+		mBean2.setRead(0);
+		mBean2.setOriginalMessageId(0);
+		mBean2.setParentMessageId(0);
+		mBean2.setSentDate(timestamp);
+
+		List<MessageBean> messages = new ArrayList<>();
+		messages.add(mBean1);
+		messages.add(mBean2);
+
+		this.smAction.sendAppointmentReminders(messages);
+
+		List<MessageBean> mbList = this.messageDAO.getMessagesFor(this.pateientId);
+
+		assertEquals(3, mbList.size());
+		MessageBean mBeanDB = mbList.get(0);
+		assertEquals(body, mBeanDB.getBody());
 	}
 	
 }
