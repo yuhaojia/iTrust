@@ -156,8 +156,8 @@ public class ApptDAOTest extends TestCase {
 		TestDataGenerator gen = new TestDataGenerator();
 		gen.clearAllTables();
 		gen.standardData();
-		List<ApptBean> appts = apptDAO.getApptsWithinNDays(7);
-		assertEquals(6, appts.size());
+		List<ApptBean> appts = apptDAO.getApptsWithinNDays(10000);
+		assertEquals(17, appts.size());
 	}
 	
 }
