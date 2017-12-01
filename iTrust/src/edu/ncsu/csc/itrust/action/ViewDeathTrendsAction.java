@@ -54,7 +54,7 @@ public class ViewDeathTrendsAction {
         DeathTrendsBean dtBean = new DeathTrendsBean(hcpid,startYear,endYear,null,null,null);
         validator.validate(dtBean);
         dtBean = patientDAO.getDeathTrends(hcpid, startYear, endYear, gender); // Temporary placement of function. Should be in try call after validation code is implemented. !!!
-        
+
 
 
         return dtBean;
