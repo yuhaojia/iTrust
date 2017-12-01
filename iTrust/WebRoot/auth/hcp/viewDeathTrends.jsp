@@ -57,11 +57,11 @@
         <tr class="subHeader">
             <td>Start Year:</td>
             <td>
-                <input name="startYear" value="<%= StringEscapeUtils.escapeHtml(((startYear)==null?"":(startYear))) %>" size="4">
+                <input name="startYear" id="start" value="<%= StringEscapeUtils.escapeHtml(((startYear)==null?"":(startYear))) %>" size="4">
             </td>
             <td>End Year:</td>
             <td>
-                <input name="endYear" value="<%= StringEscapeUtils.escapeHtml(((endYear)==null?"":(endYear))) %>" size="4">
+                <input name="endYear" id="end" value="<%= StringEscapeUtils.escapeHtml(((endYear)==null?"":(endYear))) %>" size="4">
             </td>
             <td>Patient Gender:</td>
             <td>
@@ -86,7 +86,7 @@
             <td colspan="6" style="text-align: center;"><input type="submit" id="view_death_trends" value="View Trends"></td>
         </tr>
     </table>
-    <%= headerMessage.equals("") ? "" : "<br /><span class=\"iTrustMessage\">"+headerMessage+"</span><br /><br />" %>
+    <%= headerMessage.equals("") ? "" : "<br /><span id=\"validateMessage\" class=\"iTrustMessage\">"+headerMessage+"</span><br /><br />" %>
 </form>
 <br />
 
