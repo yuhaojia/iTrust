@@ -27,7 +27,7 @@ public class LogTransactionTest extends TestCase {
 		assertEquals(1L, list.get(3).getLoggedInMID());
 		assertEquals(TransactionType.DEMOGRAPHICS_EDIT, list.get(3).getTransactionType());
 	}
-	
+
 	public void testLogFull() throws Exception {
 		tranDAO.logTransaction(TransactionType.OFFICE_VISIT_EDIT, 9000000000L, 1L, "added information");
 		List<TransactionBean> list = tranDAO.getAllTransactions();

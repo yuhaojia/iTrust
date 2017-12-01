@@ -97,7 +97,7 @@ function fillLoginFields(u,p) {
         Email*<br />
         <input type="text" maxlength="55" id="j_email" name="j_email" style="width: 97%;"><br />
         Password*<br />
-        <input type="password" maxlength="20" id="j_password" name="j_password" style="width: 97%;"><br />
+        <input type="password" maxlength="20" id="j_pass" name="j_pass" style="width: 97%;"><br />
         Password Verification*<br />
         <input type="password" maxlength="20" id="j_passwordverif" name="j_passwordverif" style="width: 97%;"><br />
 

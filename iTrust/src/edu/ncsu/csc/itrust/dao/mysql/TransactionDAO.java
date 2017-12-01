@@ -68,16 +68,108 @@ public class TransactionDAO {
 		}
 	}
 
-	/**
-	 * Log a transaction, with all of the info. The meaning of secondaryMID and addedInfo changes depending on
-	 * the transaction type.
-	 * 
-	 * @param type The {@link TransactionType} enum representing the type this transaction is.
-	 * @param loggedInMID The MID of the user who is logged in.
-	 * @param secondaryMID Typically, the MID of the user who is being acted upon.
-	 * @param addedInfo A note about a subtransaction, or specifics of this transaction (for posterity).
-	 * @throws DBException
+	public List<TransactionBean> getFilteredTransactions(String [] option) throws DBException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		boolean role = false;
+		String query = "SELECT transactionlog.* FROM transactionlog JOIN users on transactionlog.loggedinmid=users.mid";
+		if (!option[0].equals("All")){
+			query += " WHERE users.role="+"\""+option[0].toLowerCase()+"\"";
+			role = true;
+		}
+		if (!option[1].equals("All")) {
+			if (role) {
+				query += " AND transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + option[1].toLowerCase() + "\")";
+			} else {
+				query += " WHERE transactionlog.secondaryMID IN (SELECT mid FROM users WHERE role=" + "\"" + option[1].toLowerCase() + "\")";
+				role = true;
+			}
+		}
+		if (!option[2].equals("All")){
+			if (role){
+				query += " AND transactionlog.transactionCode="+"\""+option[2]+"\"";
+			}
+			else{
+				query += " WHERE transactionlog.transactionCode="+"\""+option[2]+"\"";
+				role = true;
+			}
+		}
+		if (role){
+			query += " AND transactionlog.timelogged BETWEEN "+"\""+option[3]+"\""+" AND "+"\""+option[4]+"\"";
+		}
+		else {
+			query += " WHERE transactionlog.timelogged BETWEEN " + "\"" + option[3] + "\"" + " AND " + "\"" + option[4] + "\"";
+		}
+
+		query += " ORDER BY timeLogged DESC";
+
+		try {
+			conn = factory.getConnection();
+			ps = conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			List<TransactionBean> loadlist = loader.loadList(rs);
+			rs.close();
+			ps.close();
+			return loadlist;
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, ps);
+		}
+	}
+	/*
+	public List<TransactionBean> getFilteredTransactionsByTime(int month, int year) throws DBException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String monthS = ""+month;
+		String yearS = ""+year;
+		String query = "SELECT transactionlog.* FROM transactionlog JOIN users on transactionlog.loggedinmid=users.mid WHERE transactionlog.timelogged.month= monthS AND transactionlog.timelogged.year=";
+
+		try {
+			conn = factory.getConnection();
+			ps = conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			List<TransactionBean> loadlist = loader.loadList(rs);
+			rs.close();
+			ps.close();
+			return loadlist;
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, ps);
+		}
+
+	}
+
+
+	conn = factory.getConnection();
+			ps = conn
+					.prepareStatement("SELECT * FROM transactionlog WHERE secondaryMID=? AND transactionCode "
+							+ "IN(" + TransactionType.patientViewableStr + ") AND loggedInMID!=? ORDER BY timeLogged DESC");
+			ps.setLong(1, patientID);
+			ps.setLong(2, dlhcpID);
+			ResultSet rs = ps.executeQuery();
+			List<TransactionBean> tbList = loader.loadList(rs);
+
+			tbList = addAndSortRoles(tbList, patientID, getByRole);
+
+			rs.close();
+			ps.close();
+			return tbList;
 	 */
+
+		/**
+         * Log a transaction, with all of the info. The meaning of secondaryMID and addedInfo changes depending on
+         * the transaction type.
+         *
+         * @param type The {@link TransactionType} enum representing the type this transaction is.
+         * @param loggedInMID The MID of the user who is logged in.
+         * @param secondaryMID Typically, the MID of the user who is being acted upon.
+         * @param addedInfo A note about a subtransaction, or specifics of this transaction (for posterity).
+         * @throws DBException
+         */
 	public void logTransaction(TransactionType type, long loggedInMID, long secondaryMID, String addedInfo)
 			throws DBException {
 		Connection conn = null;
