@@ -173,26 +173,11 @@ public class ViewMyRecordsAction {
 		} catch (DBException e) {
 			throw new ITrustException(e.getMessage());
 		}
-		
-		if(parents != null) {
-			List<FamilyMemberBean> grandparents = new ArrayList<FamilyMemberBean>();
-			for(FamilyMemberBean parent : parents) {
-				try {
-					grandparents.addAll(familyDAO.getParents(parent.getMid()));
-				} catch (DBException e) {
-					throw new ITrustException(e.getMessage());
-				}
-			}
-			
-			fam.addAll(grandparents);
-			
-			for(FamilyMemberBean gp : grandparents) {
-				gp.setRelation("Grandparent");
-			}
-		}
+
+		checkIfPatientIsNull(fam, parents);
 		return fam;
 	}
-	
+
 	/**
 	 * Returns a list of Parents, Siblings, and Grand Parents of the currently logged in patient
 	 * 
@@ -208,7 +193,16 @@ public class ViewMyRecordsAction {
 		} catch (DBException e) {
 			throw new ITrustException(e.getMessage());
 		}
-		
+
+		checkIfPatientIsNull(fam, parents);
+		return fam;
+	}
+
+
+	/**
+	 * Check if patient is null in getFamily() and getFamilyHistory()
+	 */
+	public void checkIfPatientIsNull(List<FamilyMemberBean> fam, List<FamilyMemberBean> parents) throws ITrustException {
 		if(parents != null) {
 			List<FamilyMemberBean> grandparents = new ArrayList<FamilyMemberBean>();
 			for(FamilyMemberBean parent : parents) {
@@ -218,14 +212,13 @@ public class ViewMyRecordsAction {
 					throw new ITrustException(e.getMessage());
 				}
 			}
-			
+
 			fam.addAll(grandparents);
-			
+
 			for(FamilyMemberBean gp : grandparents) {
 				gp.setRelation("Grandparent");
 			}
 		}
-		return fam;
 	}
 
 	/**
