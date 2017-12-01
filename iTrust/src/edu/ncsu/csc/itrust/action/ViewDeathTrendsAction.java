@@ -54,21 +54,7 @@ public class ViewDeathTrendsAction {
         DeathTrendsBean dtBean = new DeathTrendsBean(hcpid,startYear,endYear,null,null,null);
         validator.validate(dtBean);
         dtBean = patientDAO.getDeathTrends(hcpid, startYear, endYear, gender); // Temporary placement of function. Should be in try call after validation code is implemented. !!!
-
-        // try {
-        //     // Validate years here? !!!
-        //     Date lower = new SimpleDateFormat("MM/dd/yyyy").parse(lowerDate);
-        //     Date upper = new SimpleDateFormat("MM/dd/yyyy").parse(upperDate);
-
-        //     if (lower.after(upper))
-        //         throw new FormValidationException("Start date must be before end date!");
-
-        //     // Get death trends from database
-        //     dtBean = patientDAO.getDeathTrends(hcpid, startYear, endYear);
-
-        // } catch (ParseException e) {
-        //     throw new FormValidationException("!!! VALIDATION ERROR MESSAGE !!!");
-        // }
+        
 
 
         return dtBean;
