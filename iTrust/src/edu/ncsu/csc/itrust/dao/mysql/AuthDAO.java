@@ -451,7 +451,7 @@ public class AuthDAO {
 			if (results.next()) {
 				// if we're more than X minutes out, clear the failure count
 				if (System.currentTimeMillis() - results.getTimestamp("lastFailure").getTime() > LOGIN_TIMEOUT) {
-					updateFailuresToZero(ipAddr);
+					resetLoginFailuresToZero(ipAddr);
 					results.close();
 					numFailures = 0;
 				} else {
@@ -509,23 +509,6 @@ public class AuthDAO {
 			DBUtil.closeConnection(conn, pstmt);
 		}
 	}
-
-	private void updateFailuresToZero(final String ipAddr) throws DBException, SQLException {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		try {
-			conn = factory.getConnection();
-			pstmt = conn.prepareStatement("UPDATE loginfailures SET failureCount=0 WHERE IPAddress=?");
-			pstmt.setString(1, ipAddr);
-			pstmt.executeUpdate();
-			pstmt.close();
-		} catch (SQLException e) {
-			
-			throw new DBException(e);
-		} finally {
-			DBUtil.closeConnection(conn, pstmt);
-		}
-	}
 	
 	/**
 	 * resetLoginFailuresToZero
@@ -538,8 +521,7 @@ public class AuthDAO {
 		PreparedStatement pstmt = null;
 		try{
 			conn = factory.getConnection();
-			pstmt = conn
-					.prepareStatement("UPDATE loginfailures SET failureCount=0 WHERE IPAddress=?");
+			pstmt = conn.prepareStatement("UPDATE loginfailures SET failureCount=0 WHERE IPAddress=?");
 			pstmt.setString(1, ipAddr);
 			pstmt.executeUpdate();
 			pstmt.close();
