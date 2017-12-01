@@ -157,7 +157,7 @@ public class ApptDAOTest extends TestCase {
 		gen.clearAllTables();
 		gen.standardData();
 		List<ApptBean> appts = apptDAO.getApptsWithinNDays(7);
-		assertEquals(4, appts.size());
+		assertEquals(6, appts.size());
 	}
 	
 }

@@ -39,10 +39,12 @@ public class SendRemindersActionTest extends TestCase {
         action.sendReminders(7);
         List<MessageBean> mbList = this.messageDAO.getMessagesFor(this.patientId);
 
-        assertEquals(3, mbList.size());
+        assertEquals(4, mbList.size());
         MessageBean mBeanDB0 = mbList.get(0);
         MessageBean mBeanDB1 = mbList.get(1);
-        assertEquals("You have an appointment on 09:30:00.0, 2017-12-07 with Dr. Gandalf Stormcrow", mBeanDB0.getBody());
-        assertEquals("You have an appointment on 13:45:00.0, 2017-12-07 with Dr. John Zoidberg", mBeanDB1.getBody());
+        MessageBean mBeanDB2 = mbList.get(2);
+        assertEquals("You have an appointment on 09:10:00.0, 2017-12-05 with Dr. Kelly Doctor", mBeanDB0.getBody());
+        assertEquals("You have an appointment on 13:30:00.0, 2017-12-05 with Dr. Kelly Doctor", mBeanDB1.getBody());
+        assertEquals("You have an appointment on 09:30:00.0, 2017-12-08 with Dr. Gandalf Stormcrow", mBeanDB2.getBody());
     }
 }
