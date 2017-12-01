@@ -2,13 +2,11 @@ package edu.ncsu.csc.itrust.selenium;
 
 import com.meterware.httpunit.HttpUnitOptions;
 import edu.ncsu.csc.itrust.enums.TransactionType;
-import org.apache.james.mime4j.field.datetime.DateTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 public class AppointmentReminderTest extends iTrustSeleniumTest {
