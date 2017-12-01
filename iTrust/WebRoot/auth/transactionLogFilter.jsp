@@ -392,7 +392,7 @@
     plot1 = new CategoryPlot(dataset1, categoryAxis, valueAxis,
             renderer1);
     plot1.setOrientation(PlotOrientation.VERTICAL);
-    chart1 = new JFreeChart("Number of Tranaction Log in each roll", JFreeChart.DEFAULT_TITLE_FONT,
+    chart1 = new JFreeChart("Number of Transaction Log in each roll", JFreeChart.DEFAULT_TITLE_FONT,
             plot1, true);
 
     chart1.setBackgroundPaint(new Color(249, 231, 236));
@@ -433,7 +433,7 @@
             renderer2);
         renderer2.setItemMargin(-2);
     plot2.setOrientation(PlotOrientation.VERTICAL);
-    chart2 = new JFreeChart("Number of Tranaction Log in each Secondary roll", JFreeChart.DEFAULT_TITLE_FONT,
+    chart2 = new JFreeChart("Number of Transaction Log in each Secondary roll", JFreeChart.DEFAULT_TITLE_FONT,
             plot2, true);
 
     chart2.setBackgroundPaint(new Color(249, 231, 236));
@@ -476,7 +476,7 @@
             renderer3);
         renderer2.setItemMargin(-2);
     plot3.setOrientation(PlotOrientation.VERTICAL);
-    chart3 = new JFreeChart("Number of Tranaction Log in each type", JFreeChart.DEFAULT_TITLE_FONT,
+    chart3 = new JFreeChart("Number of Transaction Log in each type", JFreeChart.DEFAULT_TITLE_FONT,
             plot3, true);
 
     chart3.setBackgroundPaint(new Color(255, 249, 252));
@@ -519,7 +519,7 @@
             renderer4);
         renderer4.setItemMargin(-2);
     plot4.setOrientation(PlotOrientation.VERTICAL);
-    chart4 = new JFreeChart("Number of Tranaction Log in each /Month/Year", JFreeChart.DEFAULT_TITLE_FONT,
+    chart4 = new JFreeChart("Number of Transaction Log in each /Month/Year", JFreeChart.DEFAULT_TITLE_FONT,
             plot4, true);
 
     chart4.setBackgroundPaint(new Color(255, 249, 252));
