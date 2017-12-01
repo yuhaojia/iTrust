@@ -226,6 +226,8 @@ public enum TransactionType {
     APPOINTMENT_REQUEST_REJECTED(2251, "Appointment request rejected", "rejected an appointment request", true),
     /**APPOINTMENT_REQUEST_VIEW*/
     APPOINTMENT_REQUEST_VIEW(2260, "View All Appointment Requests", "viewed all appointment requests", true),
+	/**APPOINTMENT_REMINDERS*/
+	APPOINTMENT_REMINDERS(2270, "Send appointment reminders", "sent out reminders", false),
     /**COMPREHENSIVE_REPORT_VIEW*/
     COMPREHENSIVE_REPORT_VIEW(2300, "Comprehensive Report", "viewed your comprehensive report", true),
     /**COMPREHENSIVE_REPORT_ADD*/

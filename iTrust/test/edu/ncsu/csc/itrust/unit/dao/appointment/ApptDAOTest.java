@@ -1,5 +1,7 @@
 package edu.ncsu.csc.itrust.unit.dao.appointment;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -9,6 +11,7 @@ import edu.ncsu.csc.itrust.beans.ApptTypeBean;
 import edu.ncsu.csc.itrust.dao.DAOFactory;
 import edu.ncsu.csc.itrust.dao.mysql.ApptDAO;
 import edu.ncsu.csc.itrust.dao.mysql.ApptTypeDAO;
+import edu.ncsu.csc.itrust.exception.DBException;
 import edu.ncsu.csc.itrust.unit.datagenerators.TestDataGenerator;
 import edu.ncsu.csc.itrust.unit.testutils.TestDAOFactory;
 import junit.framework.TestCase;
@@ -147,6 +150,14 @@ public class ApptDAOTest extends TestCase {
 		
 		assertEquals(30, type.getDuration());
 		assertEquals("Ultrasound", type.getName());
+	}
+
+	public void testGetApptsWithinNDays() throws SQLException, DBException, IOException {
+		TestDataGenerator gen = new TestDataGenerator();
+		gen.clearAllTables();
+		gen.standardData();
+		List<ApptBean> appts = apptDAO.getApptsWithinNDays(10000);
+		assertEquals(17, appts.size());
 	}
 	
 }

@@ -8,12 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import edu.ncsu.csc.itrust.DBUtil;
-import edu.ncsu.csc.itrust.beans.DiagnosisBean;
-import edu.ncsu.csc.itrust.beans.PatientBean;
-import edu.ncsu.csc.itrust.beans.PatientHistoryBean;
-import edu.ncsu.csc.itrust.beans.PersonnelBean;
-import edu.ncsu.csc.itrust.beans.PrescriptionBean;
-import edu.ncsu.csc.itrust.beans.ProcedureBean;
+import edu.ncsu.csc.itrust.beans.*;
 import edu.ncsu.csc.itrust.beans.loaders.DiagnosisBeanLoader;
 import edu.ncsu.csc.itrust.beans.loaders.PatientLoader;
 import edu.ncsu.csc.itrust.beans.loaders.PersonnelLoader;
@@ -575,32 +570,6 @@ public class PatientDAO {
 		}
 	}
 
-	public boolean checkIfRepresenteeIsActive(long representee) throws DBException
-	{
-		Connection conn = null;
-		PreparedStatement ps = null;
-		try {
-			if (representee == 0L) throw new SQLException("pid cannot be 0");
-			conn = factory.getConnection();
-			ps = conn.prepareStatement("SELECT * FROM patients WHERE MID=? AND DateOfDeactivation IS NULL");
-			ps.setLong(1, representee);
-			ResultSet rs = ps.executeQuery();
-			PatientBean bean = new PatientBean();
-			if(rs.next())
-				bean = patientLoader.loadSingle(rs);
-			rs.close();
-			ps.close();
-			if(bean.getMID() == representee)
-				return true;
-			return false;
-		} catch (SQLException e) {
-			
-			throw new DBException(e);
-		} finally {
-			DBUtil.closeConnection(conn, ps);
-		}
-	}
-	
 	public boolean checkIfPatientIsActive(long pid) throws ITrustException
 	{
 		Connection conn = null;
@@ -1247,5 +1216,76 @@ public class PatientDAO {
 			DBUtil.closeConnection(conn, pstmt);
 		}
 	}
-	
+
+	public DeathTrendsBean getDeathTrends(long hcpid, String startYear, String endYear, String gender) throws DBException {
+		// Initialize variables
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		List<String> icdCodes = new ArrayList<String>();
+		List<String> icdNames = new ArrayList<String>();
+		List<Long> numDeaths = new ArrayList<Long>();
+
+		try {
+			// Initialize SQL query
+			conn = factory.getConnection();
+			String genderStr = "AND Gender=? ";
+			if(gender.equals("both")) { genderStr = ""; }
+			pstmt = conn.prepareStatement("SELECT patients.CauseOfDeath AS ICDCode, icdcodes.Description AS ICDName, COUNT(CauseOfDeath) AS NumDeaths FROM patients, icdcodes "
+					+ "WHERE patients.CauseOfDeath=icdcodes.Code "
+					+ "AND MID IN "
+					+ "( "
+					+ "    SELECT DISTINCT PatientID AS MID FROM officevisits "
+					+ "    WHERE (HCPID=? AND visitDate >= ? AND visitDate <= ?) "
+					+ "    OR (HCPID=? AND visitDate LIKE ?) "
+					+ ") "
+					+ "AND DateOfDeath IS NOT NULL "
+					+ genderStr
+					+ "GROUP BY CauseOfDeath "
+					+ "ORDER BY COUNT(CauseOfDeath) DESC;");
+
+			// Insert HCP ID
+			pstmt.setLong(1, hcpid);
+			pstmt.setLong(4, hcpid);
+
+			// Insert start year
+			pstmt.setString(2, startYear);
+
+
+			// Insert end year
+			pstmt.setString(3, endYear);
+			pstmt.setString(5, endYear+"%");
+
+
+			// Insert gender
+			if(!gender.equals("both")) {
+				pstmt.setString(6, gender);
+			}
+
+			// Get results of sql query and load them into death trends bean
+			ResultSet results = pstmt.executeQuery();
+			System.out.println(results);
+			while (results.next()) {
+				// Store the given result line
+				icdCodes.add(results.getString("ICDCode"));
+				icdNames.add(results.getString("ICDName"));
+				numDeaths.add(results.getLong("NumDeaths"));
+
+				// Limit to 2 results
+				if(icdCodes.size() == 2) { break; }
+			}
+			DeathTrendsBean dtBean = new DeathTrendsBean(hcpid, startYear, endYear, icdCodes, icdNames, numDeaths);
+
+			// Close result set and prepared statement and return death trends bean
+			results.close();
+			pstmt.close();
+			return dtBean;
+
+		} catch (SQLException e) {
+			throw new DBException(e);
+		} finally {
+			// Close database connection
+			DBUtil.closeConnection(conn, pstmt);
+		}
+	}
+
 }
