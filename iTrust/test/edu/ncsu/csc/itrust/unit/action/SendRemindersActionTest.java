@@ -20,7 +20,7 @@ public class SendRemindersActionTest extends TestCase {
     private SendRemindersAction action;
     private DAOFactory factory;
     private MessageDAO messageDAO;
-    private long patientId = 2L;
+    private long patientId = 101L;
     private long adminId = 9000000001L;
     TestDataGenerator gen;
 
@@ -29,6 +29,7 @@ public class SendRemindersActionTest extends TestCase {
         gen = new TestDataGenerator();
         gen.clearAllTables();
         gen.standardData();
+        gen.patient101();
 
         this.factory = TestDAOFactory.getTestInstance();
         this.action = new SendRemindersAction(this.factory, this.adminId);
@@ -39,6 +40,6 @@ public class SendRemindersActionTest extends TestCase {
         action.sendReminders(10000);
         List<MessageBean> mbList = this.messageDAO.getMessagesFor(this.patientId);
 
-        assertEquals(11, mbList.size());
+        assertEquals(1, mbList.size());
     }
 }

@@ -94,6 +94,18 @@ public class TestDataGenerator {
 		new DBBuilder(factory).executeSQLFile(DIR + "/deleteFromAllTables.sql");
 	}
 
+	/**
+	 * Created for appointment reminders (UC 41) testing purposes).
+     *
+	 * @throws SQLException
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public void clearAppts() throws SQLException, FileNotFoundException,
+			IOException {
+		new DBBuilder(factory).executeSQLFile(DIR + "/deleteAppts.sql");
+	}
+
 	public void clearAppointments() throws SQLException, FileNotFoundException,
 			IOException {
 		new DBBuilder(factory).executeSQLFile(DIR + "/clearAppointments.sql");
@@ -660,6 +672,18 @@ public class TestDataGenerator {
 	public void patient100() throws FileNotFoundException, SQLException,
 			IOException {
 		new DBBuilder(factory).executeSQLFile(DIR + "/patient100.sql");
+	} // NEW
+
+	/**
+	 * Adds patient for UC 41 testing purposes.
+	 *
+	 * @throws FileNotFoundException
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	public void patient101() throws FileNotFoundException, SQLException,
+			IOException {
+		new DBBuilder(factory).executeSQLFile(DIR + "/patient101.sql");
 	} // NEW
 
 	public void patientLabProcedures() throws FileNotFoundException,
