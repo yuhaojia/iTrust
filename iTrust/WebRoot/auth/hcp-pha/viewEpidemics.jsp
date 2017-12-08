@@ -5,6 +5,9 @@
 <%@page import="edu.ncsu.csc.itrust.beans.DiagnosisBean"%>
 <%@page import="edu.ncsu.csc.itrust.beans.DiagnosisStatisticsBean"%>
 <%@page import="edu.ncsu.csc.itrust.exception.FormValidationException"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
 
 <% 
 	//log the page view
@@ -100,16 +103,22 @@
 
 <% if (dsBean != null && avgBean != null) { %>
 
-<p style="display:block; margin-left:auto; margin-right:auto; width:600px;">
-<%@include file="DiagnosisEpidemicsChart.jsp" %>
-</p>
+<%--<p style="display:block; margin-left:auto; margin-right:auto; width:600px;">--%>
+<%--<%@include file="DiagnosisEpidemicsChart.jsp" %>--%>
+<%--</p>--%>
 
 <%
 	boolean isEp = false;
+	SimpleDateFormat form = new SimpleDateFormat("MM/dd/yyyy");
+	Date inputDate = form.parse(startDate);
+	Calendar cal = Calendar.getInstance();
+	cal.setTime(inputDate);
+	cal.add(Calendar.HOUR, -7*24);
+	String inputDateS = form.format(cal.getTime()).toString();
 	if (icdCode.equals("84.50")) {
-		isEp = diagnoses.isMalariaEpidemic(startDate, zipCode, threshold);
+		isEp = diagnoses.isMalariaEpidemic(inputDateS, zipCode, threshold);
 	} else if (icdCode.equals("487.00")) {
-		isEp = diagnoses.isFluEpidemic(startDate, zipCode);
+		isEp = diagnoses.isFluEpidemic(inputDateS, zipCode);
 	}
 	
 %>
