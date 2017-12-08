@@ -11,6 +11,7 @@
 <%@page import="edu.ncsu.csc.itrust.dao.mysql.ICDCodesDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
+<%@ page import="edu.ncsu.csc.itrust.ApiTest" %>
 
 <%@include file="/global.jsp"%>
 
@@ -37,10 +38,11 @@ ICDCodesDAO icdcodesDAO = prodDAO.getICDCodesDAO();
 	<tr>
 		<th>Diagnosis</th>
 	</tr>
-<%for(DiagnosisBean d : diagnoses) { String link = icdcodesDAO.getICDCode(d.getICDCode()).getURL(); %>
+<%for(DiagnosisBean d : diagnoses) { String link = icdcodesDAO.getICDCode(d.getICDCode()).getURL();
+	String icd10 = ApiTest.sendGET(d.getICDCode()); %>
 	<tr>
 		<td><p><a href="myDiagnoses.jsp?icd=<%= StringEscapeUtils.escapeHtml("" + (d.getICDCode())) %>"><%= StringEscapeUtils.escapeHtml("" + (d.getFormattedDescription())) %></a></p>
-		<p>Go to this site for more info: <a href="https://icd.codes/icd9cm/<%= StringEscapeUtils.escapeHtml("" + (d.getICDCode().replace(".",""))) %>">Site</a></p></td>
+		<p>Go to this site for more info: <a href="https://icd.codes/icd10cm/<%= StringEscapeUtils.escapeHtml("" + (icd10)) %>">Site</a></p></td>
 	</tr>
 <%} %>
 </table>
