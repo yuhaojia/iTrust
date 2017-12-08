@@ -21,6 +21,7 @@ public class ViewDeathTrendsTest extends iTrustSeleniumTest {
         super.setUp();
         gen.clearAllTables();
         gen.standardData();
+        gen.uc20();
     }
 
 
