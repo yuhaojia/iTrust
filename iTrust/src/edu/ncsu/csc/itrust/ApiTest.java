@@ -38,7 +38,7 @@ public class ApiTest {
                     test = test.replace("\"", "");
                     test = test.replace(",", "");
                     in.close();
-                    //return test;
+                    return test;
                 }
                 response.append(inputLine);
             }

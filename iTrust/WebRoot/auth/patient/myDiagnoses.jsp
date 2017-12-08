@@ -39,14 +39,30 @@ ICDCodesDAO icdcodesDAO = prodDAO.getICDCodesDAO();
 		<th>Diagnosis</th>
 	</tr>
 <%for(DiagnosisBean d : diagnoses) { String link = icdcodesDAO.getICDCode(d.getICDCode()).getURL();
-	String icd10 = ApiTest.sendGET(d.getICDCode()); %>
+System.out.println(link);%>
+
 	<tr>
 		<td><p><a href="myDiagnoses.jsp?icd=<%= StringEscapeUtils.escapeHtml("" + (d.getICDCode())) %>"><%= StringEscapeUtils.escapeHtml("" + (d.getFormattedDescription())) %></a></p>
-		<p>Go to this site for more info: <a href="https://icd.codes/icd10cm/<%= StringEscapeUtils.escapeHtml("" + (icd10)) %>">Site</a></p></td>
+		<p>Go to this site for more info: <a href=<%= icdcodesDAO.getICDCode(d.getICDCode()).getURL() %>>Site</a></p></td>
 	</tr>
 <%} %>
 </table>
-</div> 
+	<h2>Search</h2>
+	<form method="" action="https://www.webmd.com/search/search_results/default.aspx">
+		<tr>
+			<td>
+				Search for Term <input type="text" maxlength="45" id="query" name="query" style="width: 45ch">
+			</td>
+			<td>
+				<input type="submit" value="Send" />
+			</td>
+		</tr>
+	</form>
+
+</div>
+
+
+
 <br />
 
 <%
