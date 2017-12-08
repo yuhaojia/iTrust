@@ -100,9 +100,9 @@
 
 <% if (dsBean != null && avgBean != null) { %>
 
-<p style="display:block; margin-left:auto; margin-right:auto; width:600px;">
-<%@include file="DiagnosisEpidemicsChart.jsp" %>
-</p>
+<%--<p style="display:block; margin-left:auto; margin-right:auto; width:600px;">--%>
+<%--<%@include file="DiagnosisEpidemicsChart.jsp" %>--%>
+<%--</p>--%>
 
 <%
 	boolean isEp = false;
