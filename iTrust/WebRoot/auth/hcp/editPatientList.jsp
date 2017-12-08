@@ -30,26 +30,28 @@ if (action.isPatientInList(pid)) {
 String confirm = "";
 boolean conf_bool = false;
 
+	String[] checkBoxes = new String[] {
+			request.getParameter("bloodPressure"),
+			request.getParameter("glucose"),
+			request.getParameter("height"),
+			request.getParameter("weight"),
+			request.getParameter("pedometer")};
+	boolean[] permissions = new boolean[5];
+	for (int i = 0; i < 5; i++) {
+		permissions[i] = checkBoxes[i] != null && checkBoxes[i].equals("on");
+	}
+
+	TelemedicineBean tBean = new TelemedicineBean();
+	tBean.setSystolicBloodPressureAllowed(permissions[0]);
+	tBean.setDiastolicBloodPressureAllowed(permissions[0]);
+	tBean.setGlucoseLevelAllowed(permissions[1]);
+	tBean.setHeightAllowed(permissions[2]);
+	tBean.setWeightAllowed(permissions[3]);
+	tBean.setPedometerReadingAllowed(permissions[4]);
+
 if ("true".equals(request.getParameter("confirmAction"))) {
 	if (request.getParameter("fSubmit").equals("Update Permissions")) {
-		String[] checkBoxes = new String[] {
-				request.getParameter("bloodPressure"),
-				request.getParameter("glucose"),
-				request.getParameter("height"),
-				request.getParameter("weight"),
-				request.getParameter("pedometer")};
-		boolean[] permissions = new boolean[5];
-		for (int i = 0; i < 5; i++) {
-			permissions[i] = checkBoxes[i] != null && checkBoxes[i].equals("on");
-		}
-		
-		TelemedicineBean tBean = new TelemedicineBean();
-		tBean.setSystolicBloodPressureAllowed(permissions[0]);
-		tBean.setDiastolicBloodPressureAllowed(permissions[0]);
-		tBean.setGlucoseLevelAllowed(permissions[1]);
-		tBean.setHeightAllowed(permissions[2]);
-		tBean.setWeightAllowed(permissions[3]);
-		tBean.setPedometerReadingAllowed(permissions[4]);
+
 		
 		conf_bool = action.removeFromList(pid);
 		boolean conf_bool2 = action.addToList(pid, tBean);
@@ -73,24 +75,6 @@ if ("true".equals(request.getParameter("confirmAction"))) {
 <%
 	} else {
 		if(addOrRemove.equals("Add")) {
-			String[] checkBoxes = new String[] {
-										request.getParameter("bloodPressure"),
-										request.getParameter("glucose"),
-										request.getParameter("height"),
-										request.getParameter("weight"),
-										request.getParameter("pedometer")};
-			boolean[] permissions = new boolean[5];
-			for (int i = 0; i < 5; i++) {
-				permissions[i] = checkBoxes[i] != null && checkBoxes[i].equals("on");
-			}
-			
-			TelemedicineBean tBean = new TelemedicineBean();
-			tBean.setSystolicBloodPressureAllowed(permissions[0]);
-			tBean.setDiastolicBloodPressureAllowed(permissions[0]);
-			tBean.setGlucoseLevelAllowed(permissions[1]);
-			tBean.setHeightAllowed(permissions[2]);
-			tBean.setWeightAllowed(permissions[3]);
-			tBean.setPedometerReadingAllowed(permissions[4]);
 	
 			conf_bool = action.addToList(pid, tBean);
 			if(conf_bool) {
