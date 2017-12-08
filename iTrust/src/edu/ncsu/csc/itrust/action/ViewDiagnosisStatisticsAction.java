@@ -201,9 +201,9 @@ public class ViewDiagnosisStatisticsAction {
 		double thresholdN = calcThreshold(weekOfYr+1); 
 		
 		DiagnosisStatisticsBean dbNow = diagnosesDAO.getCountForWeekOf(ICD_INFLUENZA, zip, cal.getTime());
-		cal.add(Calendar.HOUR, -12*7);
+		cal.add(Calendar.HOUR, -24*7);
 		DiagnosisStatisticsBean dbLast = diagnosesDAO.getCountForWeekOf(ICD_INFLUENZA, zip, cal.getTime());
-		cal.add(Calendar.HOUR, 2*12*7);
+		cal.add(Calendar.HOUR, 2*24*7);
 		DiagnosisStatisticsBean dbNext =  diagnosesDAO.getCountForWeekOf(ICD_INFLUENZA, zip, cal.getTime());
 		
 		double weekNow = (double) dbNow.getRegionStats();
