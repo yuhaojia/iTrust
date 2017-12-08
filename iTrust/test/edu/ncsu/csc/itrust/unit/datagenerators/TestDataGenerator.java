@@ -1101,7 +1101,7 @@ public class TestDataGenerator {
 
 
 		// Added for UC20
-		//deadPatients();
+		deadPatients();
 	}
 
 	public void uc47SetUp() throws FileNotFoundException, SQLException,
@@ -1152,6 +1152,14 @@ public class TestDataGenerator {
 	 */
 	public void uc59() throws SQLException, FileNotFoundException, IOException {
 		new DBBuilder(factory).executeSQLFile(DIR + "/uc59.sql");
+	}
+
+	/**
+	 * Generate dependency data for uc59 acceptance. Create a dependent user and
+	 * a representative user
+	 */
+	public void uc20() throws SQLException, FileNotFoundException, IOException {
+		new DBBuilder(factory).executeSQLFile(DIR + "/deadPatients.sql");
 	}
 
 	/**
