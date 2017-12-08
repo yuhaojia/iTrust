@@ -48,10 +48,10 @@ System.out.println(link);%>
 <%} %>
 </table>
 	<h2>Search</h2>
-	<form method="" action="https://www.webmd.com/search/search_results/default.aspx">
+	<form method="" action="https://en.wikipedia.org/wiki/w/index.php">
 		<tr>
 			<td>
-				Search for Term <input type="text" maxlength="45" id="query" name="query" style="width: 45ch">
+				Search on Wikipedia <input type="text" maxlength="45" id="search" name='search' style="width: 45ch">
 			</td>
 			<td>
 				<input type="submit" value="Send" />
@@ -59,6 +59,16 @@ System.out.println(link);%>
 		</tr>
 	</form>
 
+	<form method="" action="https://www.webmd.com/search/search_results/default.aspx">
+		<tr>
+			<td>
+				Search on WebMD <input type="text" maxlength="45" id="query" name="query" style="width: 45ch">
+			</td>
+			<td>
+				<input type="submit" value="Send" />
+			</td>
+		</tr>
+	</form>
 </div>
 
 
