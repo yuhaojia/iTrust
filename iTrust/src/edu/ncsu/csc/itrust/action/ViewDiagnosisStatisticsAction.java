@@ -93,7 +93,39 @@ public class ViewDiagnosisStatisticsAction {
 		
 		return dsBean;
 	}
-	
+
+	/**
+	 * A wrapper function for getDiagnosisStatistics that sets the lower date to be N weeks prior to the provided date.
+	 *
+	 * @param nWeeks The number of weeks before the upper date to use as the start date
+	 * @param upperDate The ending date for the time range
+	 * @param icdCode The diagnosis code to examine
+	 * @param zip The zip code to examine
+	 * @return A bean containing the local and regional counts
+	 * @throws FormValidationException
+	 * @throws ITrustException
+	 */
+	public DiagnosisStatisticsBean getDiagnosisStatisticsNWeeksBefore(long nWeeks, String upperDate, String icdCode, String zip) throws FormValidationException, ITrustException {
+		DiagnosisStatisticsBean dsBean;
+		try {
+
+			if (upperDate == null || nWeeks < 0)
+				return null;
+
+			Date upper = new SimpleDateFormat("MM/dd/yyyy").parse(upperDate);
+			Date lower = new Date(upper.getTime() - nWeeks*(7*24*60*60*1000));
+			String lowerDate = new SimpleDateFormat("MM/dd/yyyy").format(lower);
+
+			dsBean = getDiagnosisStatistics(lowerDate, upperDate, icdCode, zip);
+
+		} catch (ParseException e) {
+			throw new FormValidationException("Enter dates in MM/dd/yyyy");
+		}
+
+
+		return dsBean;
+	}
+
 	/**
 	 * Gets the local and regional counts for the specified week and calculates the prior average.
 	 * 
