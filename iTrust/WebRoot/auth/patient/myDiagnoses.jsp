@@ -54,7 +54,7 @@ System.out.println(link);%>
 				Search on Wikipedia <input type="text" maxlength="45" id="search" name='search' style="width: 45ch">
 			</td>
 			<td>
-				<input type="submit" value="Send" />
+				<input type="submit" value="Search" />
 			</td>
 		</tr>
 	</form>
@@ -65,7 +65,7 @@ System.out.println(link);%>
 				Search on WebMD <input type="text" maxlength="45" id="query" name="query" style="width: 45ch">
 			</td>
 			<td>
-				<input type="submit" value="Send" />
+				<input type="submit" value="Search" />
 			</td>
 		</tr>
 	</form>
