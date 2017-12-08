@@ -87,7 +87,28 @@ public class ViewDiagnosisStatisticsActionTest extends TestCase {
 			assertEquals("ICDCode must be valid diagnosis!", e.getErrorList().get(0));
 		}
 	}
-	
+
+	public void testGetDiagnosisStatisticsNWeeksBeforeValid() throws Exception {
+        DiagnosisStatisticsBean dsBean = action.getDiagnosisStatisticsNWeeksBefore(14, "09/28/2011", "487.00", "27606-1234");
+        assertEquals(2, dsBean.getZipStats());
+        assertEquals(5, dsBean.getRegionStats());
+	}
+
+	public void testGetDiagnosisStatisticsNWeeksBeforeInvalidDate() throws Exception {
+		try {
+			action.getDiagnosisStatisticsNWeeksBefore(14, "09-28/2011", "11114.00", "27606");
+			fail("Should have failed but didn't");
+		} catch (FormValidationException e) {
+			assertEquals(1, e.getErrorList().size());
+			assertEquals("Enter dates in MM/dd/yyyy", e.getErrorList().get(0));
+		}
+	}
+
+	public void testGetDiagnosisStatisticsNWeeksBeforeNullFields() throws Exception {
+        DiagnosisStatisticsBean dsBean = action.getDiagnosisStatisticsNWeeksBefore(-1, "09-28/2011", "11114.00", "27606");
+		assertEquals(null, dsBean);
+	}
+
 	public void testIsMalariaEpidemic() throws Exception {
 		gen.malaria_epidemic();
 		assertTrue(action.isMalariaEpidemic("11/02/" + thisYear, "27606", "110"));
