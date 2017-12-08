@@ -21,30 +21,30 @@
 <%@include file="/header.jsp"%>
 
 <%
-	loggingAction.logEvent(TransactionType.DIAGNOSES_LIST_VIEW, loggedInMID.longValue(), loggedInMID.longValue(), "");
-	session.removeAttribute("personnelList");
-	String icdcode = request.getParameter("icd");
-	LOINCDAO loincDAO = DAOFactory.getProductionInstance().getLOINCDAO();
-	MyDiagnosisAction action = new MyDiagnosisAction(prodDAO, loggedInMID.longValue());
-	List<DiagnosisBean> diagnoses = action.getDiagnoses();
-	ICDCodesDAO icdcodesDAO = prodDAO.getICDCodesDAO();
+loggingAction.logEvent(TransactionType.DIAGNOSES_LIST_VIEW, loggedInMID.longValue(), loggedInMID.longValue(), "");
+session.removeAttribute("personnelList");
+String icdcode = request.getParameter("icd");
+LOINCDAO loincDAO = DAOFactory.getProductionInstance().getLOINCDAO();
+MyDiagnosisAction action = new MyDiagnosisAction(prodDAO, loggedInMID.longValue());
+List<DiagnosisBean> diagnoses = action.getDiagnoses();
+ICDCodesDAO icdcodesDAO = prodDAO.getICDCodesDAO();
 %>
 
 <input type="hidden" name="formIsFilled" value="true">
 <div align="center">
-	<h2>Diagnoses</h2>
-	<table class="fTable">
-		<tr>
-			<th>Diagnosis</th>
-		</tr>
-		<%for(DiagnosisBean d : diagnoses) { String link = icdcodesDAO.getICDCode(d.getICDCode()).getURL(); %>
-		<tr>
-			<td><p><a href="myDiagnoses.jsp?icd=<%= StringEscapeUtils.escapeHtml("" + (d.getICDCode())) %>"><%= StringEscapeUtils.escapeHtml("" + (d.getFormattedDescription())) %></a></p>
-				<p>Go to this site for more info: <a href=<%= link %>><%= link %></a></p></td>
-		</tr>
-		<%} %>
+<h2>Diagnoses</h2>
+<table class="fTable">
+	<tr>
+		<th>Diagnosis</th>
+	</tr>
+	<%for(DiagnosisBean d : diagnoses) { String link = icdcodesDAO.getICDCode(d.getICDCode()).getURL(); %>
+	<tr>
+		<td><p><a href="myDiagnoses.jsp?icd=<%= StringEscapeUtils.escapeHtml("" + (d.getICDCode())) %>"><%= StringEscapeUtils.escapeHtml("" + (d.getFormattedDescription())) %></a></p>
+			<p>Go to this site for more info: <a href=<%= link %>><%= link %></a></p></td>
+	</tr>
+	<%} %>
 
-	</table>
+</table>
 </div> 
 <br />
 
