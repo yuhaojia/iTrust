@@ -44,7 +44,32 @@ ICDCodesDAO icdcodesDAO = prodDAO.getICDCodesDAO();
 	</tr>
 <%} %>
 </table>
-</div> 
+	<h2>Search</h2>
+	<form method="" action="https://en.wikipedia.org/wiki/w/index.php">
+		<tr>
+			<td>
+				Search on Wikipedia <input type="text" text="Search on Wikipedia" maxlength="45" id="search" name='search' style="width: 45ch">
+			</td>
+			<td>
+				<input type="submit" value="Search" id="wikisearch" />
+			</td>
+		</tr>
+	</form>
+
+	<form method="" action="https://www.webmd.com/search/search_results/default.aspx">
+		<tr>
+			<td>
+				Search on WebMD <input type="text" text="Search on WebMD" maxlength="45" id="query" name="query" style="width: 45ch">
+			</td>
+			<td>
+				<input type="submit" value="Search" id="mdsearch" />
+			</td>
+		</tr>
+	</form>
+</div>
+
+
+
 <br />
 
 <%
