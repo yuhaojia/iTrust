@@ -51,10 +51,10 @@ System.out.println(link);%>
 	<form method="" action="https://en.wikipedia.org/wiki/w/index.php">
 		<tr>
 			<td>
-				Search on Wikipedia <input type="text" maxlength="45" id="search" name='search' style="width: 45ch">
+				Search on Wikipedia <input type="text" text="Search on Wikipedia" maxlength="45" id="search" name='search' style="width: 45ch">
 			</td>
 			<td>
-				<input type="submit" value="Search" />
+				<input type="submit" value="Search" id="wikisearch" />
 			</td>
 		</tr>
 	</form>
@@ -62,10 +62,10 @@ System.out.println(link);%>
 	<form method="" action="https://www.webmd.com/search/search_results/default.aspx">
 		<tr>
 			<td>
-				Search on WebMD <input type="text" maxlength="45" id="query" name="query" style="width: 45ch">
+				Search on WebMD <input type="text" text="Search on WebMD" maxlength="45" id="query" name="query" style="width: 45ch">
 			</td>
 			<td>
-				<input type="submit" value="Search" />
+				<input type="submit" value="Search" id="mdsearch" />
 			</td>
 		</tr>
 	</form>
