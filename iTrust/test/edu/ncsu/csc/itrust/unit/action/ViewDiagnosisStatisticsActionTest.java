@@ -94,6 +94,51 @@ public class ViewDiagnosisStatisticsActionTest extends TestCase {
         assertEquals(5, dsBean.getRegionStats());
 	}
 
+	//testGetAllDiagnosisCount
+	public void testGetAllDiagnosisCount() throws Exception {
+		int dsBean = action.getAllDiagnosisCount(14, "09/28/2011", "487.00", "27606-1234");
+		assertEquals(5, dsBean);
+	}
+
+	//testGetAllDiagnosisCountInvalidDate
+	public void testGetAllDiagnosisCountInvalidDate() throws Exception {
+		try {
+			int dsBean = action.getAllDiagnosisCount(14, "09-28/2011", "11114.00", "27606");
+			assertEquals(2, dsBean);
+		}catch (FormValidationException e) {
+			assertEquals(1, e.getErrorList().size());
+			assertEquals("Enter dates in MM/dd/yyyy", e.getErrorList().get(0));
+		}
+	}
+
+	public void testGetAllDiagnosisCountNullFields() throws Exception {
+		int dsBean = action.getAllDiagnosisCount(-1, "09-28/2011", "11114.00", "27606");
+		assertEquals(0, dsBean);
+	}
+
+	//testGetAllDiagnosisCount
+	public void testGetDiagnosisStatisticsState() throws Exception {
+		int dsBean = action.getDiagnosisStatisticsState(14, "09/28/2011", "487.00", "27606-1234");
+		assertEquals(5, dsBean);
+	}
+
+	//testGetAllDiagnosisCountInvalidDate
+	public void testGetDiagnosisStatisticsStateInvalidDate() throws Exception {
+		try {
+			int dsBean = action.getDiagnosisStatisticsState(14, "09-28/2011", "11114.00", "27606");
+			assertEquals(2, dsBean);
+		}catch (FormValidationException e) {
+			assertEquals(1, e.getErrorList().size());
+			assertEquals("Enter dates in MM/dd/yyyy", e.getErrorList().get(0));
+		}
+	}
+
+	public void testGetDiagnosisStatisticsStateNullFields() throws Exception {
+		int dsBean = action.getDiagnosisStatisticsState(-1, "09-28/2011", "11114.00", "27606");
+		assertEquals(0, dsBean);
+	}
+	////
+
 	public void testGetDiagnosisStatisticsNWeeksBeforeInvalidDate() throws Exception {
 		try {
 			action.getDiagnosisStatisticsNWeeksBefore(14, "09-28/2011", "11114.00", "27606");

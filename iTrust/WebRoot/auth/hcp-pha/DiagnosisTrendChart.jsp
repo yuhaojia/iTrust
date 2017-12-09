@@ -114,7 +114,7 @@
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Week', 'ZIP', 'Region', 'All'],
+                ['Week', 'Region', 'State', 'All'],
                 ['WEEK-8', <%=DiagnosisBeanInt[0][0]%>, <%=DiagnosisBeanInt[0][1]%>, <%=DiagnosisBeanInt[0][2]%>],
                 ['WEEK-7', <%=DiagnosisBeanInt[1][0]%>, <%=DiagnosisBeanInt[1][1]%>, <%=DiagnosisBeanInt[1][2]%>],
                 ['WEEK-6', <%=DiagnosisBeanInt[2][0]%>, <%=DiagnosisBeanInt[2][1]%>, <%=DiagnosisBeanInt[2][2]%>],
