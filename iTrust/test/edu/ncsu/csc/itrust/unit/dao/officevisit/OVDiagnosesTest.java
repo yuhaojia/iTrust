@@ -91,6 +91,20 @@ public class OVDiagnosesTest extends TestCase {
 		assertEquals(3, dsBean.getZipStats());
 		assertEquals(5, dsBean.getRegionStats());
 	}
+
+	public void testGetDiagnosisCountsState() throws Exception {
+		Date lower = new SimpleDateFormat("MM/dd/yyyy").parse("06/28/2011");
+		Date upper = new SimpleDateFormat("MM/dd/yyyy").parse("09/28/2011");
+		int dsBean = diagDAO.getDiagnosisCountsState("487.00", "27607", lower, upper);
+		assertEquals(5, dsBean);
+	}
+
+	public void testGetDiagnosisCountsWithoutZIP() throws Exception {
+		Date lower = new SimpleDateFormat("MM/dd/yyyy").parse("06/28/2011");
+		Date upper = new SimpleDateFormat("MM/dd/yyyy").parse("09/28/2011");
+		int dsBean = diagDAO.getDiagnosisCountsWithoutZIP("487.00", "27607", lower, upper);
+		assertEquals(5, dsBean);
+	}
 	
 	/**
 	 * testGetWeeklyStatisticsValid
