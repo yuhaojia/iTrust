@@ -15,7 +15,8 @@
 	loggingAction.logEvent(TransactionType.DIAGNOSIS_TRENDS_VIEW, loggedInMID.longValue(), 0, "");
 
 	ViewDiagnosisStatisticsAction diagnoses = new ViewDiagnosisStatisticsAction(prodDAO);
-	DiagnosisStatisticsBean dsBean8 = null;
+	ArrayList<DiagnosisStatisticsBean> dsBean = new ArrayList<DiagnosisStatisticsBean>();
+	/*DiagnosisStatisticsBean dsBean8 = null;
 	DiagnosisStatisticsBean dsBean7 = null;
 	DiagnosisStatisticsBean dsBean6 = null;
 	DiagnosisStatisticsBean dsBean5 = null;
@@ -23,6 +24,8 @@
 	DiagnosisStatisticsBean dsBean3 = null;
 	DiagnosisStatisticsBean dsBean2 = null;
 	DiagnosisStatisticsBean dsBean1 = null;
+	*/
+	int count [] = new int [8];
 
 
 	//get form data
@@ -38,14 +41,18 @@
 		//try to get the statistics. If there's an error, print it. If null is returned, it's the first page load
 		try {
 
-			dsBean8 = diagnoses.getDiagnosisStatisticsNWeeksBefore(8, endDate, icdCode, zipCode);
-			dsBean7 = diagnoses.getDiagnosisStatisticsNWeeksBefore(7, endDate, icdCode, zipCode);
-			dsBean6 = diagnoses.getDiagnosisStatisticsNWeeksBefore(6, endDate, icdCode, zipCode);
-			dsBean5 = diagnoses.getDiagnosisStatisticsNWeeksBefore(5, endDate, icdCode, zipCode);
-			dsBean4 = diagnoses.getDiagnosisStatisticsNWeeksBefore(4, endDate, icdCode, zipCode);
-			dsBean3 = diagnoses.getDiagnosisStatisticsNWeeksBefore(3, endDate, icdCode, zipCode);
-			dsBean2 = diagnoses.getDiagnosisStatisticsNWeeksBefore(2, endDate, icdCode, zipCode);
-			dsBean1 = diagnoses.getDiagnosisStatisticsNWeeksBefore(1, endDate, icdCode, zipCode);
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(1, endDate, icdCode, zipCode)) ;
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(2, endDate, icdCode, zipCode))  ;
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(3, endDate, icdCode, zipCode))  ;
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(4, endDate, icdCode, zipCode))  ;
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(5, endDate, icdCode, zipCode))  ;
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(6, endDate, icdCode, zipCode))  ;
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(7, endDate, icdCode, zipCode))  ;
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(8, endDate, icdCode, zipCode))  ;
+
+			for(int i = 0; i<8;i++)
+				count[i]=diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode);
+
 		} catch (FormValidationException e) {
 			e.printHTML(pageContext.getOut());
 		}
@@ -99,7 +106,7 @@
 
 <br />
 
-<% if (dsBean8 != null) { %>
+<% if (dsBean.get(7) != null) { %>
 
 
 
@@ -115,8 +122,8 @@
 <tr style="text-align:center;">
 	<td><%=icdCode%></td>
 	<td><%=zipCode%></td>
-	<td><%=dsBean8.getZipStats()%></td>
-	<td><%=dsBean8.getRegionStats()%></td>
+	<td><%=dsBean.get(7).getZipStats()%></td>
+	<td><%=dsBean.get(7).getRegionStats()%></td>
 	<td><%=endDate%></td>
 </tr>
 
