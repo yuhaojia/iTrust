@@ -152,7 +152,7 @@ public class ViewDiagnosisStatisticsAction {
 	 * @throws ITrustException
 	 */
 
-	public int getAllDiagnosisCount(long nWeeks, String upperDate, String icdCode) throws FormValidationException, ITrustException {
+	public int getAllDiagnosisCount(long nWeeks, String upperDate, String icdCode,  String zip) throws FormValidationException, ITrustException {
 		int dsBeanCount=0;
 		try {
 
@@ -167,6 +167,9 @@ public class ViewDiagnosisStatisticsAction {
 			if (lower.after(upper))
 				throw new FormValidationException("Start date must be before end date!");
 
+			if (!zip.matches("([0-9]{5})|([0-9]{5}-[0-9]{4})"))
+				throw new FormValidationException("Zip Code must be 5 digits!");
+
 			boolean validCode = false;
 			for(DiagnosisBean diag : getDiagnosisCodes()) {
 				if (diag.getICDCode().equals(icdCode))
@@ -176,7 +179,7 @@ public class ViewDiagnosisStatisticsAction {
 				throw new FormValidationException("ICDCode must be valid diagnosis!");
 			}
 
-			dsBeanCount = diagnosesDAO.getDiagnosisCountsWithoutZIP(icdCode,lower, upper);
+			dsBeanCount = diagnosesDAO.getDiagnosisCountsWithoutZIP(icdCode,zip, lower, upper);
 
 
 		} catch (ParseException e) {

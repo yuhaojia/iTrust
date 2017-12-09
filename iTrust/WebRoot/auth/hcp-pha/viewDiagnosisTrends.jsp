@@ -44,7 +44,7 @@
 
 			for (int i = 0; i < 8; i++){
 			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(i+1, endDate, icdCode, zipCode));
-			count[i] = (long) diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode);
+			count[i] = (long) diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode, zipCode);
 			countS[i] = (long) diagnoses.getDiagnosisStatisticsState(i+1, endDate, icdCode,zipCode);
 		}
 

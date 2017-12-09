@@ -69,10 +69,10 @@ public class DiagnosesDAO {
 			DBUtil.closeConnection(conn, ps);
 		}
 	}
-	
+
 	/**
 	 * Gets a local zip code count and regional count of a specified diagnosis code
-	 * 
+	 *
 	 * @param icdCode The diagnosis code
 	 * @param zipCode The zip code to evaluate
 	 * @param lower The starting date
@@ -92,7 +92,7 @@ public class DiagnosesDAO {
 			ps.setTimestamp(3, new Timestamp(lower.getTime()));
 			// add 1 day's worth to include the upper
 			ps.setTimestamp(4, new Timestamp(upper.getTime() + 1000L * 60L * 60 * 24L));
-			
+
 			ResultSet rs = ps.executeQuery();
 			rs.last();
 			int local = rs.getRow();
@@ -103,22 +103,22 @@ public class DiagnosesDAO {
 			ps.setTimestamp(3, new Timestamp(lower.getTime()));
 			// add 1 day's worth to include the upper
 			ps.setTimestamp(4, new Timestamp(upper.getTime() + 1000L * 60L * 60 * 24L));
-			
+
 			rs = ps.executeQuery();
 			rs.last();
 			int region = rs.getRow();
-			
+
 			dsBean = new DiagnosisStatisticsBean(zipCode, local, region, lower, upper);
 			rs.close();
 			ps.close();
 			return dsBean;
 		} catch (SQLException e) {
-			
+
 			throw new DBException(e);
 		} finally {
 			DBUtil.closeConnection(conn, ps);
 		}
-		
+
 	}
 
 	/**
@@ -174,21 +174,22 @@ public class DiagnosesDAO {
 	 * @throws DBException
 	 */
 
-	public int getDiagnosisCountsWithoutZIP(String icdCode, java.util.Date lower, java.util.Date upper) throws DBException {
+	public int getDiagnosisCountsWithoutZIP(String icdCode, String zipCode, java.util.Date lower, java.util.Date upper) throws DBException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		//DiagnosisStatisticsBean dsBean = null;
 		int allCount = 0;
 		try {
 			conn = factory.getConnection();
-			ps = conn.prepareStatement("SELECT * FROM ovdiagnosis INNER JOIN officevisits ON ovdiagnosis.VisitID=officevisits.ID INNER JOIN patients ON officevisits.PatientID=patients.MID WHERE ICDCode=? AND visitDate >= ? AND visitDate <= ? ");
+			ps = conn.prepareStatement("SELECT * FROM ovdiagnosis INNER JOIN officevisits ON ovdiagnosis.VisitID=officevisits.ID INNER JOIN patients ON officevisits.PatientID=patients.MID WHERE ICDCode=? AND zip LIKE ? AND visitDate >= ? AND visitDate <= ? ");
 			ps.setString(1, icdCode);
-			ps.setTimestamp(2, new Timestamp(lower.getTime()));
+			ps.setString(2, zipCode.substring(0, 0) + "%");
+			ps.setTimestamp(3, new Timestamp(lower.getTime()));
 			// add 1 day's worth to include the upper
-			ps.setTimestamp(3, new Timestamp(upper.getTime() + 1000L * 60L * 60 * 24L));
+			ps.setTimestamp(4, new Timestamp(upper.getTime() + 1000L * 60L * 60 * 24L));
 
 			ResultSet rs = ps.executeQuery();
-
+			rs.last();
 			allCount = rs.getRow();
 
 			//dsBean = new DiagnosisStatisticsBean(zipCode, local, region, lower, upper);
@@ -203,10 +204,10 @@ public class DiagnosesDAO {
 		}
 
 	}
-	
+
 	/**
 	 * Gets a weekly local zip code count and regional count of a specified diagnosis code over a time period
-	 * 
+	 *
 	 * @param icdCode The diagnosis code
 	 * @param zipCode The zip code to evaluate
 	 * @param lower The starting date
@@ -221,23 +222,23 @@ public class DiagnosesDAO {
 		Date lowerDate = cal.getTime();
 		cal.add(Calendar.HOUR, 24*6);
 		Date upperDate = cal.getTime();
-		
+
 		ArrayList<DiagnosisStatisticsBean> weekStats = new ArrayList<DiagnosisStatisticsBean>();
-		
+
 		do {
 			DiagnosisStatisticsBean db = getDiagnosisCounts(icdCode, zipCode, lowerDate, upperDate);
 			weekStats.add(db);
-			
+
 			cal.setTime(upperDate);
 			cal.add(Calendar.HOUR, 24);
 			lowerDate = cal.getTime();
 			cal.add(Calendar.HOUR, 24*6);
 			upperDate = cal.getTime();
 		} while (lowerDate.before(upper));
-		
+
 		return weekStats;
 	}
-	
+
 	public DiagnosisStatisticsBean getCountForWeekOf(String icdCode, String zipCode, java.util.Date lower) throws DBException {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(lower);
@@ -248,17 +249,17 @@ public class DiagnosesDAO {
 
 		return  getDiagnosisCounts(icdCode, zipCode, lowerDate, upperDate);
 	}
-	
+
 	public Date findEarliestIncident(String icdCode) throws DBException{
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
 			conn = factory.getConnection();
 			ps = conn.prepareStatement("SELECT MIN(visitDate) AS visitDate FROM ovdiagnosis d INNER JOIN officevisits o " +
-										" ON d.VisitID=o.ID " + 
+										" ON d.VisitID=o.ID " +
 										" WHERE ICDCode LIKE ?");
 			ps.setString(1, icdCode + "%");
-			
+
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				Date date = rs.getDate("visitDate");
@@ -271,14 +272,14 @@ public class DiagnosesDAO {
 				return null;
 			}
 		} catch (SQLException e) {
-			
+
 			throw new DBException(e);
 		} finally {
 			DBUtil.closeConnection(conn, ps);
 		}
-		
+
 	}
-	
+
 	/**
 	 * Adds a diagnosis bean to the database.
 	 * @param pres The prescription bean to be added.
@@ -299,17 +300,17 @@ public class DiagnosesDAO {
 			ps.close();
 			return DBUtil.getLastInsert(conn);
 		} catch (SQLException e) {
-			
+
 			throw new DBException(e);
 		} finally {
 			DBUtil.closeConnection(conn, ps);
 		}
 	}
-	
-	
+
+
 	/**
 	 * Edits an existing prescription bean.
-	 * 
+	 *
 	 * @param pres The newly updated prescription bean.
 	 * @return A long indicating the ID of the newly updated prescription bean.
 	 * @throws DBException
@@ -330,7 +331,7 @@ public class DiagnosesDAO {
 			ps.close();
 			return DBUtil.getLastInsert(conn);
 		} catch (SQLException e) {
-			
+
 			throw new DBException(e);
 		} finally {
 			DBUtil.closeConnection(conn, ps);
@@ -339,7 +340,7 @@ public class DiagnosesDAO {
 
 	/**
 	 * Removes the given diagnosis from its office visit
-	 * 
+	 *
 	 * @param ovMedicationID The unique ID of the medication to be removed.
 	 * @throws DBException
 	 */
