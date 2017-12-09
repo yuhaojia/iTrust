@@ -39,14 +39,40 @@ ICDCodesDAO icdcodesDAO = prodDAO.getICDCodesDAO();
 		<th>Diagnosis</th>
 	</tr>
 <%for(DiagnosisBean d : diagnoses) { String link = icdcodesDAO.getICDCode(d.getICDCode()).getURL();
-	String icd10 = ApiTest.sendGET(d.getICDCode()); %>
+System.out.println(link);%>
+
 	<tr>
 		<td><p><a href="myDiagnoses.jsp?icd=<%= StringEscapeUtils.escapeHtml("" + (d.getICDCode())) %>"><%= StringEscapeUtils.escapeHtml("" + (d.getFormattedDescription())) %></a></p>
-		<p>Go to this site for more info: <a href="https://icd.codes/icd10cm/<%= StringEscapeUtils.escapeHtml("" + (icd10)) %>">Site</a></p></td>
+		<p>Go to this site for more info: <a href=<%= icdcodesDAO.getICDCode(d.getICDCode()).getURL() %>>Site</a></p></td>
 	</tr>
 <%} %>
 </table>
-</div> 
+	<h2>Search</h2>
+	<form method="" action="https://en.wikipedia.org/wiki/w/index.php">
+		<tr>
+			<td>
+				Search on Wikipedia <input type="text" text="Search on Wikipedia" maxlength="45" id="search" name='search' style="width: 45ch">
+			</td>
+			<td>
+				<input type="submit" value="Search" id="wikisearch" />
+			</td>
+		</tr>
+	</form>
+
+	<form method="" action="https://www.webmd.com/search/search_results/default.aspx">
+		<tr>
+			<td>
+				Search on WebMD <input type="text" text="Search on WebMD" maxlength="45" id="query" name="query" style="width: 45ch">
+			</td>
+			<td>
+				<input type="submit" value="Search" id="mdsearch" />
+			</td>
+		</tr>
+	</form>
+</div>
+
+
+
 <br />
 
 <%
