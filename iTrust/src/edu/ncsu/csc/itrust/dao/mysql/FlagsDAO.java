@@ -27,22 +27,26 @@ public class FlagsDAO {
 		this.factory = factory;
 		this.flagsLoader = new FlagsLoader();
 	}
- 
+
 	/**
 	 * Based on input, either inserts a new flag record, deletes an existing flag record,
 	 * or does nothing. It will insert the flag if a match is not found for the MID and flagType.
 	 * It will delete a flag if a match is found in the database and the flagged value is false.
 	 * The idea is that the database only holds flagged flags, so missing = false.
-	 * 
+	 *
 	 * @throws DBException
 	 */
 	public void setFlag(FlagsBean p) throws DBException {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		
+
 		try {
 			conn = factory.getConnection();
-			ResultSet rs = getFlagsFromDB(conn, ps, p);
+			ps = conn.prepareStatement("SELECT * FROM flags WHERE MID = ? AND pregId = ? AND flagType = ?");
+			ps.setLong(1, p.getMid());
+			ps.setLong(2, p.getPregId());
+			ps.setString(3, p.getFlagValue().toString());
+			ResultSet rs = ps.executeQuery();
 
 			//if the result exists
 			if (rs.next()) {
@@ -57,7 +61,7 @@ public class FlagsDAO {
 					ps.execute();
 				}
 				//else, it's true and it exists so nothing needs to change
-				
+
 				rs.close();
 				ps.close();
 			}
@@ -72,9 +76,9 @@ public class FlagsDAO {
 					ps.execute();
 				}
 				//else, it's false, so ignore it
-				
+
 			}
-			
+
 			ps.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -83,7 +87,7 @@ public class FlagsDAO {
 			DBUtil.closeConnection(conn, ps);
 		}
 	}
-	
+
 	/**
 	 * Returns a FlagsBean object for the record indicated in the FlagsBean argument.
 	 * @param p
@@ -95,11 +99,15 @@ public class FlagsDAO {
 		PreparedStatement ps = null;
 		try {
 			conn = factory.getConnection();
-			ResultSet rs = getFlagsFromDB(conn, ps, p);
-			
+			ps = conn.prepareStatement("SELECT * FROM flags WHERE MID = ? AND pregId = ? AND flagType = ?");
+			ps.setLong(1, p.getMid());
+			ps.setLong(2, p.getPregId());
+			ps.setString(3, p.getFlagValue().toString());
+			ResultSet rs = ps.executeQuery();
+
 			//now set the bean to whether or not the record exists in the database
 			p.setFlagged(rs.next());
-			
+
 			ps.close();
 			return p;
 		} catch (SQLException e) {
@@ -108,15 +116,5 @@ public class FlagsDAO {
 		} finally {
 			DBUtil.closeConnection(conn, ps);
 		}
-	}
-
-	// Gets result set of flags from the database
-	public ResultSet getFlagsFromDB(Connection conn, PreparedStatement ps, FlagsBean p) throws SQLException {
-		ps = conn.prepareStatement("SELECT * FROM flags WHERE MID = ? AND pregId = ? AND flagType = ?");
-		ps.setLong(1, p.getMid());
-		ps.setLong(2, p.getPregId());
-		ps.setString(3, p.getFlagValue().toString());
-		ResultSet rs = ps.executeQuery();
-		return rs;
 	}
 }
