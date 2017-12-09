@@ -333,7 +333,12 @@ public class ViewDiagnosisStatisticsTest extends iTrustSeleniumTest {
 		
 		WebElement table = driver.findElement(By.id("diagnosisStatisticsTable"));
 		long region1 = Long.parseLong(table.findElements(By.tagName("td")).get(3).getText());
-		
+
+		// View Trend
+		assertTrue(driver.getCurrentUrl().equals(ADDRESS + "auth/hcp-pha/viewDiagnosisStatistics.jsp"));
+		new Select(driver.findElement(By.name("viewSelect"))).selectByValue("trends");
+		driver.findElement(By.id("select_View")).click();
+
 		new Select(driver.findElement(By.name("icdCode"))).selectByVisibleText("84.50 - Malaria");
 		driver.findElement(By.name("zipCode")).clear();
 		driver.findElement(By.name("zipCode")).sendKeys("27606");
