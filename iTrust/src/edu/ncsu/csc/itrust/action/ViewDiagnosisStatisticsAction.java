@@ -202,12 +202,15 @@ public class ViewDiagnosisStatisticsAction {
 	 * @throws FormValidationException
 	 * @throws ITrustException
 	 */
-	public DiagnosisStatisticsBean getDiagnosisStatisticsNWeeksBefore(long nWeeks, String upperDate, String icdCode, String zip) throws FormValidationException, ITrustException {
+	public DiagnosisStatisticsBean 	getDiagnosisStatisticsNWeeksBefore(long nWeeks, String upperDate, String icdCode, String zip) throws FormValidationException, ITrustException {
 		DiagnosisStatisticsBean dsBean;
 		try {
 
 			if (upperDate == null || nWeeks < 0)
 				return null;
+
+			if (!zip.matches("([0-9]{5})|([0-9]{5}-[0-9]{4})"))
+				throw new FormValidationException("Zip Code must be 5 digits!");
 
 			Date upper = new SimpleDateFormat("MM/dd/yyyy").parse(upperDate);
 			Date lower = new Date(upper.getTime() - nWeeks*(7*24*60*60*1000));

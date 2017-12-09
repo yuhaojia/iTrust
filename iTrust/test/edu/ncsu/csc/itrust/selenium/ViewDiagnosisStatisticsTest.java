@@ -74,10 +74,7 @@ public class ViewDiagnosisStatisticsTest extends iTrustSeleniumTest {
 			fail("Element should be present");
 		}
 		//assertTrue(isElementPresent(By.id("diagnosisStatisticsTable")));
-		WebElement zip = elem.findElements(By.tagName("td")).get(2);
-		/* I know this is a stupid assert. This is how it was originally */
-		assertTrue(zip.getText().contains("0"));
-		WebElement region = elem.findElements(By.tagName("td")).get(3);
+		WebElement region = elem.findElements(By.tagName("td")).get(2);
 		assertTrue(region.getText().contains("2"));
 	}
 
@@ -353,49 +350,7 @@ public class ViewDiagnosisStatisticsTest extends iTrustSeleniumTest {
 		
 		assertEquals(region1, region2);
 	}
-	
-	/*
-	 * Authenticate HCP
-	 * MID 9000000000
-	 * Password: pw
-	 * Choose "Diagnosis Trends"
-	 * Enter Fields:
-	 * ICDCode: 84.50
-	 * ZipCode: 27519
-	 * StartDate: 09/28/2011, EndDate: 09/28/2011
-	 */
-	/**
-	 * testViewDiagnosisTrends_SameDateStartEnd
-	 * @throws Exception
-	 */
-	public void testViewDiagnosisTrends_SameDateStartEnd() throws Exception {
-		driver = (HtmlUnitDriver)login("9000000008", "pw");
 
-		// Click Diagnosis Trends
-		driver.findElement(By.cssSelector("h2.panel-title")).click();
-		driver.findElement(By.xpath("//div[@class='panel-body']/ul/li[11]")).click();
-		driver.findElement(By.linkText("Diagnosis Trends")).click();
-
-		// View Trend
-		assertTrue(driver.getCurrentUrl().equals(ADDRESS + "auth/hcp-pha/viewDiagnosisStatistics.jsp"));
-		new Select(driver.findElement(By.name("viewSelect"))).selectByValue("trends");
-		driver.findElement(By.id("select_View")).click();
-		new Select(driver.findElement(By.name("icdCode"))).selectByVisibleText("84.50 - Malaria");
-		driver.findElement(By.name("zipCode")).clear();
-		driver.findElement(By.name("zipCode")).sendKeys("27519");
-		//driver.findElement(By.name("startDate")).clear();
-		//driver.findElement(By.name("startDate")).sendKeys("09/28/2011");
-		driver.findElement(By.name("endDate")).sendKeys("09/28/2011");
-		driver.findElement(By.id("select_diagnosis")).click();
-		assertTrue(driver.getCurrentUrl().equals(ADDRESS + "auth/hcp-pha/viewDiagnosisStatistics.jsp"));
-		assertLogged(TransactionType.DIAGNOSIS_TRENDS_VIEW, 9000000008L, 0L, "");
-
-		WebElement table = driver.findElement(By.id("diagnosisStatisticsTable"));
-		long local = Long.parseLong(table.findElements(By.tagName("td")).get(2).getText());
-		long region = Long.parseLong(table.findElements(By.tagName("td")).get(3).getText());
-		assertEquals(local, 0);
-		assertEquals(region, 0);
-	}
 	
 	/*
 	 * Authenticate HCP

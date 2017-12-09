@@ -27,17 +27,21 @@
 	*/
 	long [] count = new long [8];
 	long [] countS = new long [8];
+	long region = 0;
 
-
+	count[7] = 0;
+	countS[7] = 0;
 	//get form data
 	String endDate = request.getParameter("endDate");
 
+
+
 	String zipCode = request.getParameter("zipCode");
-	if (zipCode == null)
-		zipCode = "";
+
 
 	String icdCode = request.getParameter("icdCode");
-
+	if (icdCode == null)
+		icdCode = "";
 
 		//try to get the statistics. If there's an error, print it. If null is returned, it's the first page load
 		try {
@@ -46,16 +50,22 @@
 			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(i+1, endDate, icdCode, zipCode));
 			count[i] = (long) diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode, zipCode);
 			countS[i] = (long) diagnoses.getDiagnosisStatisticsState(i+1, endDate, icdCode,zipCode);
+
 		}
+		if(dsBean.size() > 7)
+			region = dsBean.get(7).getRegionStats();
+;
+
 
 		} catch (FormValidationException e) {
 			e.printHTML(pageContext.getOut());
 		}
 
+	if (zipCode == null)
+		zipCode = "";
+
 	if (endDate == null)
 		endDate = "";
-	if (icdCode == null)
-		icdCode = "";
 
 %>
 <br />
@@ -101,7 +111,7 @@
 
 <br />
 
-<% if (dsBean.get(7) != null) { %>
+<% if (dsBean.size() > 7) { %>
 
 
 
@@ -109,16 +119,17 @@
 <tr>
 	<th>Diagnosis code</th>
 	<th>Complete Zip</th>
-	<th>Cases in Zip</th>
 	<th>Cases in Region</th>
-	<th>Start Date</th>
-	<th>End Date</th>
+	<th>Cases in State</th>
+	<th>All Cases</th>
+	<th>Date</th>
 </tr>
 <tr style="text-align:center;">
 	<td><%=icdCode%></td>
 	<td><%=zipCode%></td>
-	<td><%=dsBean.get(7).getZipStats()%></td>
-	<td><%=dsBean.get(7).getRegionStats()%></td>
+	<td><%=region%></td>
+	<td><%=countS[7]%></td>
+	<td><%=count[7]%></td>
 	<td><%=endDate%></td>
 </tr>
 
