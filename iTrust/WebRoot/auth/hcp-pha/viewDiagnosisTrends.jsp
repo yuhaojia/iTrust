@@ -37,17 +37,20 @@
 
 
 	String zipCode = request.getParameter("zipCode");
+	if (zipCode == null)
+		zipCode = "";
 
 
 	String icdCode = request.getParameter("icdCode");
-	if (icdCode == null)
-		icdCode = "";
+
 
 		//try to get the statistics. If there's an error, print it. If null is returned, it's the first page load
 		try {
 
 			for (int i = 0; i < 8; i++){
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(i+1, endDate, icdCode, zipCode));
+			    DiagnosisStatisticsBean b =diagnoses.getDiagnosisStatisticsNWeeksBefore(i+1, endDate, icdCode, zipCode);
+			    if(b!=null)
+					dsBean.add(b);
 			count[i] = (long) diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode, zipCode);
 			countS[i] = (long) diagnoses.getDiagnosisStatisticsState(i+1, endDate, icdCode,zipCode);
 
@@ -61,11 +64,11 @@
 			e.printHTML(pageContext.getOut());
 		}
 
-	if (zipCode == null)
-		zipCode = "";
-
 	if (endDate == null)
 		endDate = "";
+
+	if (icdCode == null)
+		icdCode = "";
 
 %>
 <br />
