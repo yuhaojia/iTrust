@@ -105,7 +105,7 @@ public class ViewDiagnosisStatisticsAction {
 	 * @throws ITrustException
 	 */
 	public int getAllDiagnosisCount(long nWeeks, String upperDate, String icdCode) throws FormValidationException, ITrustException {
-		int dsBeanCount;
+		int dsBeanCount=0;
 		try {
 
 			if (upperDate == null || nWeeks < 0)
@@ -114,6 +114,7 @@ public class ViewDiagnosisStatisticsAction {
 			Date upper = new SimpleDateFormat("MM/dd/yyyy").parse(upperDate);
 			Date lower = new Date(upper.getTime() - nWeeks*(7*24*60*60*1000));
 			String lowerDate = new SimpleDateFormat("MM/dd/yyyy").format(lower);
+			lower = new SimpleDateFormat("MM/dd/yyyy").parse(lowerDate);
 
 			if (lower.after(upper))
 				throw new FormValidationException("Start date must be before end date!");

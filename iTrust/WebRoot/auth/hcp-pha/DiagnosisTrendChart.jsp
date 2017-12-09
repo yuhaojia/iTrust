@@ -125,10 +125,10 @@
 
             var options = {
                 chart: {
-                    title: 'Company Performance',
-                    subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                    title: 'Examine recent trends in diagnoses',
+                    subtitle: 'Count in last 8 week',
                 },
-                bars: 'horizontal' // Required for Material Bar Charts.
+                bars: 'vertical' // Required for Material Bar Charts.
             };
 
             var chart = new google.charts.Bar(document.getElementById('barchart_material'));

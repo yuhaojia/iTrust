@@ -121,19 +121,11 @@ public class DiagnosesDAO {
 		
 	}
 
-	/**
-	 * Gets a local zip code count and regional count of a specified diagnosis code
-	 *
-	 * @param icdCode The diagnosis code
-	 * @param lower The starting date
-	 * @param upper The ending date
-	 * @return A bean containing the local and regional counts
-	 * @throws DBException
-	 */
 	public int getDiagnosisCountsWithoutZIP(String icdCode, java.util.Date lower, java.util.Date upper) throws DBException {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		DiagnosisStatisticsBean dsBean = null;
+		//DiagnosisStatisticsBean dsBean = null;
+		int allCount = 0;
 		try {
 			conn = factory.getConnection();
 			ps = conn.prepareStatement("SELECT * FROM ovdiagnosis INNER JOIN officevisits ON ovdiagnosis.VisitID=officevisits.ID INNER JOIN patients ON officevisits.PatientID=patients.MID WHERE ICDCode=? AND visitDate >= ? AND visitDate <= ? ");
@@ -144,7 +136,7 @@ public class DiagnosesDAO {
 
 			ResultSet rs = ps.executeQuery();
 
-			int allCount = rs.getRow();
+			allCount = rs.getRow();
 
 			//dsBean = new DiagnosisStatisticsBean(zipCode, local, region, lower, upper);
 			rs.close();

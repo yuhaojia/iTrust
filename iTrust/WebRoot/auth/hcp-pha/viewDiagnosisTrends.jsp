@@ -25,7 +25,7 @@
 	DiagnosisStatisticsBean dsBean2 = null;
 	DiagnosisStatisticsBean dsBean1 = null;
 	*/
-	int count [] = new int [8];
+	long [] count = new long [8];
 
 
 	//get form data
@@ -41,17 +41,10 @@
 		//try to get the statistics. If there's an error, print it. If null is returned, it's the first page load
 		try {
 
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(1, endDate, icdCode, zipCode)) ;
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(2, endDate, icdCode, zipCode))  ;
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(3, endDate, icdCode, zipCode))  ;
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(4, endDate, icdCode, zipCode))  ;
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(5, endDate, icdCode, zipCode))  ;
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(6, endDate, icdCode, zipCode))  ;
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(7, endDate, icdCode, zipCode))  ;
-			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(8, endDate, icdCode, zipCode))  ;
-
-			for(int i = 0; i<8;i++)
-				count[i]=diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode);
+			for (int i = 0; i < 8; i++){
+			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(i+1, endDate, icdCode, zipCode));
+			count[i] = (long) diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode);
+		}
 
 		} catch (FormValidationException e) {
 			e.printHTML(pageContext.getOut());
@@ -130,11 +123,9 @@
 </table>
 
 <br />
-<!--
 <p style="display:block; margin-left:auto; margin-right:auto; width:600px;">
 <%@include file="DiagnosisTrendChart.jsp" %>
 </p>
--->
 		<%} %>
 
 
