@@ -121,6 +121,59 @@ public class DiagnosesDAO {
 		
 	}
 
+	/**
+	 * Gets a state zip code count and regional count of a specified diagnosis code
+	 *
+	 * @param icdCode The diagnosis code
+	 * @param zipCode The zip code to evaluate
+	 * @param lower The starting date
+	 * @param upper The ending date
+	 * @return A list of beans containing the local and regional count for each week in the time period
+	 * @throws DBException
+	 */
+
+
+	public int getDiagnosisCountsState(String icdCode, String zipCode, java.util.Date lower, java.util.Date upper) throws DBException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		//int dsBean = Integer.parseInt(null);
+		int state=0;
+		try {
+			conn = factory.getConnection();
+			ps = conn.prepareStatement("SELECT * FROM ovdiagnosis INNER JOIN officevisits ON ovdiagnosis.VisitID=officevisits.ID INNER JOIN patients ON officevisits.PatientID=patients.MID WHERE ICDCode=? AND zip LIKE ? AND visitDate >= ? AND visitDate <= ? ");
+			ps.setString(1, icdCode);
+			ps.setString(2, zipCode.substring(0, 2) + "%");
+			ps.setTimestamp(3, new Timestamp(lower.getTime()));
+			// add 1 day's worth to include the upper
+			ps.setTimestamp(4, new Timestamp(upper.getTime() + 1000L * 60L * 60 * 24L));
+
+			ResultSet rs = ps.executeQuery();
+			rs.last();
+			 state = rs.getRow();
+
+			//dsBean = new DiagnosisStatisticsBean(zipCode, local, region, lower, upper);
+			rs.close();
+			ps.close();
+			return state;
+		} catch (SQLException e) {
+
+			throw new DBException(e);
+		} finally {
+			DBUtil.closeConnection(conn, ps);
+		}
+
+	}
+
+	/**
+	 * Gets a weekly all zip code count and regional count of a specified diagnosis code over a time period
+	 *
+	 * @param icdCode The diagnosis code
+	 * @param lower The starting date
+	 * @param upper The ending date
+	 * @return A list of beans containing the local and regional count for each week in the time period
+	 * @throws DBException
+	 */
+
 	public int getDiagnosisCountsWithoutZIP(String icdCode, java.util.Date lower, java.util.Date upper) throws DBException {
 		Connection conn = null;
 		PreparedStatement ps = null;

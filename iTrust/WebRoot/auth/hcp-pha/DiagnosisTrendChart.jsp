@@ -35,13 +35,16 @@
 	if (view.equalsIgnoreCase("trends")) {
 		DiagnosisBeanInt = new long[8][3];
 		for(int i = 0; i<7;i++){
-			DiagnosisBeanInt[i][0] = dsBean.get(7-i).getZipStats()-dsBean.get(6-i).getZipStats();
-			DiagnosisBeanInt[i][1] = dsBean.get(7-i).getRegionStats()-dsBean.get(6-i).getRegionStats();
+			//DiagnosisBeanInt[i][0] = dsBean.get(7-i).getZipStats()-dsBean.get(6-i).getZipStats();
+
+			DiagnosisBeanInt[i][0] = dsBean.get(7-i).getRegionStats()-dsBean.get(6-i).getRegionStats();
+			DiagnosisBeanInt[i][1] = countS[7-i]-countS[6-i];
 			DiagnosisBeanInt[i][2] = count[7-i]-count[6-i];
 		}
 
-		DiagnosisBeanInt[7][0] = dsBean.get(0).getZipStats();
-		DiagnosisBeanInt[7][1] = dsBean.get(0).getRegionStats();
+		//DiagnosisBeanInt[7][0] = dsBean.get(0).getZipStats()
+		DiagnosisBeanInt[7][0] = dsBean.get(0).getRegionStats();
+		DiagnosisBeanInt[7][1] = countS[0];
 		DiagnosisBeanInt[7][2] = count[0];
 
 

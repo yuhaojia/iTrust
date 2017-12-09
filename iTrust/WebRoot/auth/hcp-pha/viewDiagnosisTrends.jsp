@@ -26,6 +26,7 @@
 	DiagnosisStatisticsBean dsBean1 = null;
 	*/
 	long [] count = new long [8];
+	long [] countS = new long [8];
 
 
 	//get form data
@@ -44,6 +45,7 @@
 			for (int i = 0; i < 8; i++){
 			dsBean.add(diagnoses.getDiagnosisStatisticsNWeeksBefore(i+1, endDate, icdCode, zipCode));
 			count[i] = (long) diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode);
+			countS[i] = (long) diagnoses.getDiagnosisStatisticsState(i+1, endDate, icdCode,zipCode);
 		}
 
 		} catch (FormValidationException e) {
