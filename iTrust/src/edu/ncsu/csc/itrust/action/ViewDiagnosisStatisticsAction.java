@@ -105,6 +105,103 @@ public class ViewDiagnosisStatisticsAction {
 	 * @throws FormValidationException
 	 * @throws ITrustException
 	 */
+	public int getDiagnosisStatisticsState(long nWeeks, String upperDate, String icdCode, String zip) throws FormValidationException, ITrustException {
+		//DiagnosisStatisticsBean dsBean;
+		int dsBean=0;
+		try {
+
+			if (upperDate == null || nWeeks < 0)
+				return 0;
+
+			Date upper = new SimpleDateFormat("MM/dd/yyyy").parse(upperDate);
+			Date lower = new Date(upper.getTime() - nWeeks*(7*24*60*60*1000));
+
+			if (lower.after(upper))
+				throw new FormValidationException("Start date must be before end date!");
+
+			if (!zip.matches("([0-9]{5})|([0-9]{5}-[0-9]{4})"))
+				throw new FormValidationException("Zip Code must be 5 digits!");
+
+			boolean validCode = false;
+			for(DiagnosisBean diag : getDiagnosisCodes()) {
+				if (diag.getICDCode().equals(icdCode))
+					validCode = true;
+			}
+			if (validCode == false) {
+				throw new FormValidationException("ICDCode must be valid diagnosis!");
+			}
+
+			dsBean = diagnosesDAO.getDiagnosisCountsState(icdCode, zip, lower, upper);
+
+
+		} catch (ParseException e) {
+			throw new FormValidationException("Enter dates in MM/dd/yyyy");
+		}
+
+
+		return dsBean;
+	}
+
+	/**
+	 * Gets the counts of local and regional diagnoses for the specified input
+	 *
+	 * @param upperDate The ending date for the time range
+	 * @param icdCode The diagnosis code to examine
+	 * @return A bean containing the local and regional counts
+	 * @throws FormValidationException
+	 * @throws ITrustException
+	 */
+
+	public int getAllDiagnosisCount(long nWeeks, String upperDate, String icdCode,  String zip) throws FormValidationException, ITrustException {
+		int dsBeanCount=0;
+		try {
+
+			if (upperDate == null || nWeeks < 0)
+				return 0;
+
+			Date upper = new SimpleDateFormat("MM/dd/yyyy").parse(upperDate);
+			Date lower = new Date(upper.getTime() - nWeeks*(7*24*60*60*1000));
+			//String lowerDate = new SimpleDateFormat("MM/dd/yyyy").format(lower);
+			//lower = new SimpleDateFormat("MM/dd/yyyy").parse(lowerDate);
+
+			if (lower.after(upper))
+				throw new FormValidationException("Start date must be before end date!");
+
+			if (!zip.matches("([0-9]{5})|([0-9]{5}-[0-9]{4})"))
+				throw new FormValidationException("Zip Code must be 5 digits!");
+
+			boolean validCode = false;
+			for(DiagnosisBean diag : getDiagnosisCodes()) {
+				if (diag.getICDCode().equals(icdCode))
+					validCode = true;
+			}
+			if (validCode == false) {
+				throw new FormValidationException("ICDCode must be valid diagnosis!");
+			}
+
+			dsBeanCount = diagnosesDAO.getDiagnosisCountsWithoutZIP(icdCode,zip, lower, upper);
+
+
+		} catch (ParseException e) {
+			throw new FormValidationException("Enter dates in MM/dd/yyyy");
+		}
+		return dsBeanCount;
+	}
+
+	//getDiagnosisCountsState
+
+
+	/**
+	 * A wrapper function for getDiagnosisStatistics that sets the lower date to be N weeks prior to the provided date.
+	 *
+	 * @param nWeeks The number of weeks before the upper date to use as the start date
+	 * @param upperDate The ending date for the time range
+	 * @param icdCode The diagnosis code to examine
+	 * @param zip The zip code to examine
+	 * @return A bean containing the local and regional counts
+	 * @throws FormValidationException
+	 * @throws ITrustException
+	 */
 	public DiagnosisStatisticsBean getDiagnosisStatisticsNWeeksBefore(long nWeeks, String upperDate, String icdCode, String zip) throws FormValidationException, ITrustException {
 		DiagnosisStatisticsBean dsBean;
 		try {

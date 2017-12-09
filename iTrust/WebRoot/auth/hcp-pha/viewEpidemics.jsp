@@ -8,6 +8,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.ArrayList" %>
 
 <% 
 	//log the page view
