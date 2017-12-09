@@ -16,15 +16,8 @@
 
 	ViewDiagnosisStatisticsAction diagnoses = new ViewDiagnosisStatisticsAction(prodDAO);
 	ArrayList<DiagnosisStatisticsBean> dsBean = new ArrayList<DiagnosisStatisticsBean>();
-	/*DiagnosisStatisticsBean dsBean8 = null;
-	DiagnosisStatisticsBean dsBean7 = null;
-	DiagnosisStatisticsBean dsBean6 = null;
-	DiagnosisStatisticsBean dsBean5 = null;
-	DiagnosisStatisticsBean dsBean4 = null;
-	DiagnosisStatisticsBean dsBean3 = null;
-	DiagnosisStatisticsBean dsBean2 = null;
-	DiagnosisStatisticsBean dsBean1 = null;
-	*/
+
+	
 	long [] count = new long [8];
 	long [] countS = new long [8];
 	long region = 0;
