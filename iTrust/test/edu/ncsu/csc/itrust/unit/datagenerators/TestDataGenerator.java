@@ -1123,9 +1123,6 @@ public class TestDataGenerator {
 		patient29();
 		patient30();
 
-
-		// Added for UC20
-		deadPatients();
 	}
 
 	public void uc47SetUp() throws FileNotFoundException, SQLException,
