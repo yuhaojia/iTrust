@@ -1,9 +1,10 @@
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="edu.ncsu.csc.itrust.action.ViewDiagnosisStatisticsAction"%>
-<%@page import="edu.ncsu.csc.itrust.beans.DiagnosisBean"%>
-<%@page import="edu.ncsu.csc.itrust.beans.DiagnosisStatisticsBean"%>
-<%@page import="edu.ncsu.csc.itrust.exception.FormValidationException"%>
+
+<html>
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
 
 <%
 
@@ -52,13 +53,6 @@
 
 
 %>
-
-<html>
-<head>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
