@@ -72,7 +72,7 @@ public class TransactionDAO {
 	 * Returns the filtered transaction log that satisfies given conditions
 	 *
 	 * @param option
-	 * @return
+	 * @return A java.util.List of transactions.
 	 * @throws DBException
 	 */
 	public List<TransactionBean> getFilteredTransactions(String [] option) throws DBException {
