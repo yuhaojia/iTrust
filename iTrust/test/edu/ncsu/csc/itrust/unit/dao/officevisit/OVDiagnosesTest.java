@@ -92,6 +92,10 @@ public class OVDiagnosesTest extends TestCase {
 		assertEquals(5, dsBean.getRegionStats());
 	}
 
+	/**
+	 * testGetDiagnosisCountsState
+	 * @throws Exception
+	 */
 	public void testGetDiagnosisCountsState() throws Exception {
 		Date lower = new SimpleDateFormat("MM/dd/yyyy").parse("06/28/2011");
 		Date upper = new SimpleDateFormat("MM/dd/yyyy").parse("09/28/2011");
@@ -99,6 +103,10 @@ public class OVDiagnosesTest extends TestCase {
 		assertEquals(5, dsBean);
 	}
 
+	/**
+	 * testGetDiagnosisCountsWithoutZIP
+	 * @throws Exception
+	 */
 	public void testGetDiagnosisCountsWithoutZIP() throws Exception {
 		Date lower = new SimpleDateFormat("MM/dd/yyyy").parse("06/28/2011");
 		Date upper = new SimpleDateFormat("MM/dd/yyyy").parse("09/28/2011");

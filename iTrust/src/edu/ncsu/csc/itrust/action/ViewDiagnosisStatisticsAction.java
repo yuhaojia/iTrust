@@ -95,7 +95,7 @@ public class ViewDiagnosisStatisticsAction {
 	}
 
 	/**
-	 * A wrapper function for getDiagnosisStatistics that sets the lower date to be N weeks prior to the provided date.
+	 * Gets the counts of state diagnoses for the specified input
 	 *
 	 * @param nWeeks The number of weeks before the upper date to use as the start date
 	 * @param upperDate The ending date for the time range
@@ -143,7 +143,7 @@ public class ViewDiagnosisStatisticsAction {
 	}
 
 	/**
-	 * Gets the counts of local and regional diagnoses for the specified input
+	 * Gets the counts of all diagnoses for the specified input
 	 *
 	 * @param upperDate The ending date for the time range
 	 * @param icdCode The diagnosis code to examine

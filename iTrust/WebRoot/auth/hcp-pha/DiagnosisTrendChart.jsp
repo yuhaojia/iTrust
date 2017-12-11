@@ -16,21 +16,7 @@
 
 <%
 
-	// This calls the class from the useBean tag and initializes the Adverse Event list and pres/immu name
-
-
-/*
-	if ( view.equalsIgnoreCase("trends") ) {
-
-		DSchart.initializeDiagnosisStatistics(dsBean8, view);
-
-	} else  {
-
-		return;
-
-	}
-	*/
-
+	//Get the number of diagnoses by weeks in region, state and all area
 	long[][] DiagnosisBeanInt;
 	if (view.equalsIgnoreCase("trends")) {
 		DiagnosisBeanInt = new long[8][3];
@@ -59,6 +45,7 @@
 
 <html>
 <head>
+	<!-- Barchart border -->
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
         google.charts.load('current', {'packages':['bar']});

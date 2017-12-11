@@ -84,17 +84,23 @@
 <h1>Transaction Log</h1>
 
 <%
+
     String [] rollList = new String[]{"All", "ER", "HCP", "LT", "Patient", "PHA", "PR", "Staff", "Tester", "UAP", "Admin"};
+
+    //All roles used to ouput bar chart
     String [] rollList1 = new String[]{"ER", "HCP", "LT", "Patient", "PHA", "PR", "Staff", "Tester", "UAP", "Admin"};
     List<TransactionBean> list = DAOFactory.getProductionInstance().getTransactionDAO().getAllTransactions();
 
+    //number of transaction logs of each rolls and second rolls
     double[] numRolls = new double[10];
     double[] numSecondaryRolls = new double[10];
 
+    //The name of transactionType and time whose value is not 0
     ArrayList<String> transactionTypeString = new ArrayList<String>();
     ArrayList<String> timeString = new ArrayList<String>();
+
+    //The number value of transactionType and time whose value is not 0
     ArrayList<Double> numTransactionTypes = new ArrayList<Double>();
-    //ArrayList<Double> numTransactionTypes = new ArrayList<Double>();
     ArrayList<Double> numTime = new ArrayList<Double>();
 
     String [] options = new String[5];
@@ -259,12 +265,14 @@
     %>
 </table>
 <%
-    //request.getParameter("view") = null;
     }
 
+    //Click the summarize button
     else if(request.getParameter("summarize") != null){
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
+        //get all TransactionBean num according to roll
         for (int i = 0; i < rollList1.length; i++) {
             options[0] = rollList1[i];
             options[1] = "All";
@@ -280,6 +288,7 @@
 
         }
 
+        //get all TransactionBean num according to second roll
         for (int i = 0; i < rollList1.length; i++) {
             options[0] = "All";
             options[1] = rollList1[i];
@@ -295,6 +304,7 @@
 
         }
 
+        //get all TransactionBean num according to type
         for (TransactionType type : TransactionType.values()) {
 
             options[0] = "All";
@@ -334,6 +344,7 @@
 
         int monthLimit = 12;
 
+        //get all TransactionBean num according to time
         for(; yearIter <= year2;yearIter++){
 
             /*if(yearIter == year2)
@@ -363,7 +374,7 @@
         }
     }
 
-
+    //start output the bar chart
     JFreeChart chart1 = null;
     JFreeChart chart2 = null;
     JFreeChart chart3 = null;
@@ -548,8 +559,7 @@
     }
 
 %>
-<!--
-<table border=1> -->
+<!-- Barchart border -->
 <IMG SRC="barChartRoll.png" WIDTH="1000"
      HEIGHT="400" BORDER="0" USEMAP="#chart">
 <IMG SRC="barChartSRoll.png" WIDTH="1000"

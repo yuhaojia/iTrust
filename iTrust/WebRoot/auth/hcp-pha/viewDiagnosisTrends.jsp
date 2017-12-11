@@ -17,25 +17,22 @@
 	ViewDiagnosisStatisticsAction diagnoses = new ViewDiagnosisStatisticsAction(prodDAO);
 	ArrayList<DiagnosisStatisticsBean> dsBean = new ArrayList<DiagnosisStatisticsBean>();
 
-	
-	long [] count = new long [8];
-	long [] countS = new long [8];
+
+	long [] count = new long [8]; //The count of specific diagnoses in all area within 8 weeks
+	long [] countS = new long [8]; //The count of specific diagnoses in current state within 8 weeks
 	long region = 0;
 
 	count[7] = 0;
 	countS[7] = 0;
+
 	//get form data
 	String endDate = request.getParameter("endDate");
-
-
 
 	String zipCode = request.getParameter("zipCode");
 	if (zipCode == null)
 		zipCode = "";
 
-
 	String icdCode = request.getParameter("icdCode");
-
 
 		//try to get the statistics. If there's an error, print it. If null is returned, it's the first page load
 		try {
@@ -47,11 +44,9 @@
 			count[i] = (long) diagnoses.getAllDiagnosisCount(i+1, endDate, icdCode, zipCode);
 			countS[i] = (long) diagnoses.getDiagnosisStatisticsState(i+1, endDate, icdCode,zipCode);
 
-		}
-		if(dsBean.size() > 7)
+			}
+			if(dsBean.size() > 7)
 			region = dsBean.get(7).getRegionStats();
-;
-
 
 		} catch (FormValidationException e) {
 			e.printHTML(pageContext.getOut());
@@ -108,8 +103,6 @@
 <br />
 
 <% if (dsBean.size() > 7) { %>
-
-
 
 <table class="fTable" align="center" id="diagnosisStatisticsTable">
 <tr>

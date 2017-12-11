@@ -122,7 +122,7 @@ public class DiagnosesDAO {
 	}
 
 	/**
-	 * Gets a state zip code count and regional count of a specified diagnosis code
+	 * Gets a state count of a specified diagnosis code
 	 *
 	 * @param icdCode The diagnosis code
 	 * @param zipCode The zip code to evaluate
@@ -165,7 +165,7 @@ public class DiagnosesDAO {
 	}
 
 	/**
-	 * Gets a weekly all zip code count and regional count of a specified diagnosis code over a time period
+	 * Gets all count of a specified diagnosis code
 	 *
 	 * @param icdCode The diagnosis code
 	 * @param lower The starting date
