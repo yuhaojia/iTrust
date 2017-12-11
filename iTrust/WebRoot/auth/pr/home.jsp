@@ -46,8 +46,6 @@
         // Could not parse the user input
     }
 
-
-    // TODO: Find a cleaner way of doing this
     // Populate the patient bean
     if (addr1 != null)
         p.setStreetAddress1(addr1);
