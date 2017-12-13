@@ -62,6 +62,12 @@ public class EditPersonnelAction extends PersonnelBaseAction {
 		personnelDAO.editPersonnel(personnelForm);
 	}
 
+	/**
+	 * Update message filter for specific person
+	 * @param filter
+	 * @param mid
+	 */
+
 	public void editMessageFilter(String filter, long mid) {
 		try {
 			personnelDAO.editMessageFilter(filter, mid);

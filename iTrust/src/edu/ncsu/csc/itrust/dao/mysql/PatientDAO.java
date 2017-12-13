@@ -1198,7 +1198,14 @@ public class PatientDAO {
 		}
 	}
 
-	// Edit message filter for patient
+
+
+	/**
+	 * Edit message filter for patient
+	 * @param filter
+	 * @param mid
+	 * @throws DBException
+	 */
 	public void editMessageFilter(final String filter, final long mid) throws DBException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -1217,6 +1224,15 @@ public class PatientDAO {
 		}
 	}
 
+	/**
+	 * Get the dead trend from the database
+	 * @param hcpid
+	 * @param startYear
+	 * @param endYear
+	 * @param gender
+	 * @return
+	 * @throws DBException
+	 */
 	public DeathTrendsBean getDeathTrends(long hcpid, String startYear, String endYear, String gender) throws DBException {
 		// Initialize variables
 		Connection conn = null;

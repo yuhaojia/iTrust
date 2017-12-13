@@ -162,6 +162,11 @@ public class EditPatientAction extends PatientBaseAction {
 		return true;
 	}
 
+	/**
+	 * Update the message filter for specific patient
+	 * @param filter
+	 * @param mid
+	 */
 	public void editMessageFilter(String filter, long mid) {
 		try {
 			patientDAO.editMessageFilter(filter, mid);

@@ -46,7 +46,6 @@ public class ViewDeathTrendsAction {
      * @throws FormValidationException
      * @throws ITrustException
      */
-    // ^^ Need these throw calls? !!!
     public DeathTrendsBean getDeathTrends(long hcpid, String startYear, String endYear, String gender) throws FormValidationException, ITrustException { // <-- Need these throw calls? !!!
 
 

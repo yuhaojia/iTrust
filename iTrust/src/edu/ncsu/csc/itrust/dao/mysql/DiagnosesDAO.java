@@ -250,6 +250,12 @@ public class DiagnosesDAO {
 		return  getDiagnosisCounts(icdCode, zipCode, lowerDate, upperDate);
 	}
 
+	/**
+	 * Find the earliest incident of the diagnosis from the entire database
+	 * @param icdCode
+	 * @return
+	 * @throws DBException
+	 */
 	public Date findEarliestIncident(String icdCode) throws DBException{
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -282,7 +288,7 @@ public class DiagnosesDAO {
 
 	/**
 	 * Adds a diagnosis bean to the database.
-	 * @param pres The prescription bean to be added.
+	 * @param bean The prescription bean to be added.
 	 * @return The unique ID of the newly added bean.
 	 * @throws DBException
 	 */
@@ -311,7 +317,7 @@ public class DiagnosesDAO {
 	/**
 	 * Edits an existing prescription bean.
 	 *
-	 * @param pres The newly updated prescription bean.
+	 * @param bean The newly updated prescription bean.
 	 * @return A long indicating the ID of the newly updated prescription bean.
 	 * @throws DBException
 	 */
@@ -341,7 +347,7 @@ public class DiagnosesDAO {
 	/**
 	 * Removes the given diagnosis from its office visit
 	 *
-	 * @param ovMedicationID The unique ID of the medication to be removed.
+	 * @param ovDiagnosisID The unique ID of the medication to be removed.
 	 * @throws DBException
 	 */
 	public void remove(long ovDiagnosisID) throws DBException {

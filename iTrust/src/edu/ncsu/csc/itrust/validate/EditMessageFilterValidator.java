@@ -5,8 +5,12 @@ import edu.ncsu.csc.itrust.exception.ErrorList;
 import edu.ncsu.csc.itrust.exception.FormValidationException;
 
 import java.util.Date;
-
-public class EditMessageFilterValidator extends BeanValidator<EditMessageFilterForm>{
+/**
+ * Validator used to validate adding a Message Filter
+ *
+ *
+ */
+ public class EditMessageFilterValidator extends BeanValidator<EditMessageFilterForm>{
     /**
      * Performs the act of validating the bean in question, which varies depending on the
      * type of validator.  If the validation does not succeed, a {@link FormValidationException} is thrown.

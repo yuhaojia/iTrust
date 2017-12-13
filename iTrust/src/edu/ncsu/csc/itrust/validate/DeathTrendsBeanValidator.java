@@ -5,8 +5,16 @@ import edu.ncsu.csc.itrust.exception.ErrorList;
 import edu.ncsu.csc.itrust.exception.FormValidationException;
 import java.util.Date;
 
+/**
+ * Validator used to validate viewing dead trend
+ */
 public class DeathTrendsBeanValidator extends BeanValidator<DeathTrendsBean>{
-
+    /**
+     * Performs the act of validating the bean in question, which varies depending on the
+     * type of validator.  If the validation does not succeed, a {@link FormValidationException} is thrown.
+     * @param bean
+     * @throws FormValidationException
+     */
 
     @Override
     public void validate(DeathTrendsBean bean) throws FormValidationException {

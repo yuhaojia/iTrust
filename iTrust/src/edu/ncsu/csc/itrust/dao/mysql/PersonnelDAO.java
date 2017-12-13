@@ -85,6 +85,7 @@ public class PersonnelDAO {
 		}
 	}
 
+
 	public long getNextID(final Role role) throws DBException, ITrustException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -590,7 +591,12 @@ public class PersonnelDAO {
 		}
 	}
 
-	// Edit message filter for personnel
+	/**
+	 * Edit message filter for personnel
+	 * @param filter
+	 * @param mid
+	 * @throws DBException
+	 */
 	public void editMessageFilter(final String filter, final long mid) throws DBException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
